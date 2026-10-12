@@ -43,6 +43,12 @@ Verification: audit extended; interval student_t (not applied: deterministic); c
 
 `regressleuth demo --format html --output report.html` shows the good/bad state, every combination tried, how the candidate causes were eliminated, the effective verification settings, and the assumption checks.
 
+**Free online demo:** [space_static](space_static) contains eight precomputed reports from
+two bundled synthetic incidents. It can be hosted as a free Hugging Face Static Space
+or on GitHub Pages; no API or paid compute is needed. The browser selects existing
+reports and does not execute a new diagnosis. The live [Gradio template](space) runs
+locally; [new hosted Gradio Spaces currently require a paid Hugging Face plan](https://huggingface.co/docs/hub/main/spaces-sdks-static).
+
 ## Installation
 
 ```bash

@@ -37,8 +37,11 @@ python -m venv /tmp/rl-clean && /tmp/rl-clean/bin/pip install dist/*.whl
 - Add the final GitHub project URL to `[project.urls]` in `pyproject.toml` and the
   README when the owner and repository name are known. Rebuild the distributions
   after changing metadata. Add an ORCID to `CITATION.cff` if you have one.
-- The Space template pins `regressleuth==0.1.0a1`; deploy it only after that exact version
-  exists on PyPI, and update the pin for later releases.
+- The free static Space in `space_static/` can be hosted before PyPI publication; it
+  contains precomputed reports and needs no server or API. Regenerate it after changing
+  the demo code or package version with `python tools/build_static_space.py`.
+- The optional live Gradio template in `space/` pins `regressleuth==0.1.0a1`; deploy
+  it only after that version exists on PyPI and if its hosting cost is acceptable.
 
 ## 2. GitHub (not yet done)
 
@@ -88,20 +91,26 @@ the CI workflow passes on all three Python versions.
    environment. Mark the GitHub Release as a pre-release and use the `0.1.0a1`
    changelog section as notes.
 
-## 5. Hugging Face Space (optional, after PyPI alpha)
+## 5. Hugging Face Space (free static route)
 
-Create a public Gradio Space in the chosen Hugging Face namespace. Copy the contents
-of `space/` to the Space repository root: its `README.md` sets Python 3.12 and
-Gradio 6.30.0, `requirements.txt` pins the PyPI alpha, and `app.py` runs the demo.
-Check the Space build log and try the built-in pair example and double-healer
-control. The Space executes no submitted user code. Add the final Space URL to
-the GitHub README after deployment.
+Create a public **Static** Space in the chosen Hugging Face namespace and copy the
+contents of `space_static/` to its repository root. Check that both the pair example
+and double-healer control load with `extended` and historical `full` audits, and that
+the full reports open. The eight reports are snapshots made by the actual engine;
+selection in the browser does not run a new investigation. This route needs no
+package installation, API key, or paid compute. It can also be hosted on GitHub Pages.
+Add the final Space URL to the GitHub README after deployment.
+
+The live Gradio template remains in `space/` for local use or an account with paid
+compute access. As of October 2026, Hugging Face requires a paid plan to create a
+new Gradio or Docker Space, even on CPU Basic; [Static Spaces are free for everyone](https://huggingface.co/docs/hub/main/spaces-sdks-static).
 
 ## 6. Stable release (`0.1.0`, separate decision)
 
 Do not infer stable-release readiness from a successful alpha upload. Review the
 limitations in [the roadmap](docs/ROADMAP.md) and the dependency-drift negative
 result first. If a stable release is justified, update versions in `pyproject.toml`,
-`src/regressleuth/__init__.py`, `CITATION.cff`, the Space pin, and `CHANGELOG.md`;
+`src/regressleuth/__init__.py`, `CITATION.cff`, the Gradio Space pin, the static
+snapshots, and `CHANGELOG.md`;
 rerun section 0; commit. Then the manually pushed `v0.1.0` tag follows the same
 PyPI workflow. PyPI does not permit replacing an uploaded version.

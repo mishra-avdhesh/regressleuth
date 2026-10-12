@@ -16,3 +16,7 @@ Interactive demo of Regressleuth: budgeted counterfactual replay that isolates t
 
 Deploy this Space after `regressleuth==0.1.0a1` is available on PyPI. Update
 `requirements.txt` when deploying a later release.
+
+This is the live Gradio template. [Hugging Face currently requires a paid plan](https://huggingface.co/docs/hub/main/spaces-sdks-static) to
+create a new hosted Gradio Space. For a no-cost public demo, use the precomputed
+`space_static/` template from the main repository instead.

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Regressleuth replay explorer</title>
+  <style>
+    :root { color-scheme: light dark; --bg:#f4f7fb; --surface:#fff; --text:#182330; --muted:#536273; --line:#d8e0eb; --accent:#354fc7; --good:#14765a; --warn:#a45115; }
+    @media (prefers-color-scheme:dark) { :root { --bg:#10151e; --surface:#1a2330; --text:#eef2f8; --muted:#bbc7d5; --line:#394658; --accent:#9cafff; --good:#72d8b4; --warn:#ffc18a; } }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,sans-serif; }
+    main { max-width:1180px; margin:auto; padding:2rem 1rem 4rem; }
+    .eyebrow { color:var(--accent); font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; }
+    h1 { font-size:clamp(2rem,5vw,3.6rem); line-height:1.06; margin:.3rem 0 .8rem; }
+    h2 { margin:0 0 .8rem; font-size:1.25rem; }
+    p { max-width:75ch; }
+    .lead { color:var(--muted); font-size:1.08rem; }
+    .panel { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:1.2rem; margin-top:1.2rem; box-shadow:0 8px 28px #0000000a; }
+    .controls { display:grid; grid-template-columns:2fr 1fr 1fr; gap:1rem; }
+    label { display:block; font-size:.86rem; font-weight:700; margin-bottom:.35rem; }
+    select { width:100%; padding:.7rem; border-radius:8px; border:1px solid var(--line); background:var(--surface); color:var(--text); font:inherit; }
+    select:focus-visible, a:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+    .note { background:#fdf3e6; border-left:4px solid #c16b15; color:#5f3308; padding:.75rem 1rem; border-radius:6px; margin-top:1rem; }
+    @media (prefers-color-scheme:dark) { .note { background:#3d2d1b; color:#ffdab3; } }
+    .summary { display:flex; flex-wrap:wrap; align-items:baseline; gap:.7rem 1.2rem; }
+    .badge { display:inline-block; border-radius:999px; border:1px solid currentColor; padding:.15rem .65rem; font-weight:700; font-size:.85rem; }
+    .verified { color:var(--good); }
+    .assumption_violated { color:var(--warn); }
+    .metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.8rem; margin-top:1rem; }
+    .metric { border:1px solid var(--line); border-radius:10px; padding:.7rem; }
+    .metric strong { display:block; font-size:1.25rem; overflow-wrap:anywhere; }
+    .metric span { color:var(--muted); font-size:.8rem; }
+    .detail { color:var(--muted); margin:.8rem 0 0; }
+    .report-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.4rem; margin-bottom:.8rem; }
+    a { color:var(--accent); }
+    iframe { width:100%; height:780px; border:1px solid var(--line); border-radius:10px; background:#fff; }
+    footer { color:var(--muted); font-size:.9rem; margin-top:1.3rem; }
+    @media (max-width:720px) { .controls,.metrics { grid-template-columns:1fr 1fr; } .controls div:first-child { grid-column:1/-1; } iframe { height:650px; } }
+    @media (max-width:480px) { .metrics { grid-template-columns:1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Regressleuth · static replay explorer</div>
+      <h1>Which change broke the model?</h1>
+      <p class="lead">Compare real outputs from the Regressleuth engine on bundled synthetic incidents. These are precomputed snapshots: the browser calls no external API and runs no Python.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="controls-title">
+      <h2 id="controls-title">Choose a replay</h2>
+      <div class="controls">
+        <div><label for="incident">Incident</label><select id="incident"><option value="pair_model_preprocessing_k5">Model + preprocessing interaction</option><option value="control_double_healer_k6">Double-healer safety control</option></select></div>
+        <div><label for="strategy">Search strategy</label><select id="strategy"><option value="adaptive">Adaptive</option><option value="ddmin">Delta debugging</option></select></div>
+        <div><label for="audit">Verification audit</label><select id="audit"><option value="extended">Extended (product default)</option><option value="full">Full (historical)</option></select></div>
+      </div>
+      <p id="legacy-note" class="note" hidden>The historical <code>full</code> audit can falsely verify the non-monotone control. The product default is <code>extended</code>; this option is retained to reproduce the earlier benchmark.</p>
+    </section>
+
+    <section class="panel" aria-live="polite" aria-labelledby="result-title">
+      <div class="summary"><h2 id="result-title">Result</h2><span id="status" class="badge">Loading</span></div>
+      <div class="metrics">
+        <div class="metric"><strong id="diagnosis">—</strong><span>reported cause</span></div>
+        <div class="metric"><strong id="isolation">—</strong><span>isolation replays</span></div>
+        <div class="metric"><strong id="audit-cost">—</strong><span>audit replays</span></div>
+        <div class="metric"><strong id="total">—</strong><span>total replays</span></div>
+      </div>
+      <p id="detail" class="detail"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="report-title">
+      <div class="report-head"><h2 id="report-title">Evidence and assumptions</h2><a id="open-report" href="#" target="_blank" rel="noopener">Open full report</a></div>
+      <iframe id="report" title="Selected precomputed investigation report" loading="lazy"></iframe>
+    </section>
+
+    <footer>Generated with Regressleuth <span id="version">0.1.0a1</span>, seed 0 and isolation budget 16. All cases are synthetic oracles. The metric is deterministic, so the configured interval is not applied. A “verified” result is verified under the configured replay model, assumptions, and audit checks.</footer>
+  </main>
+  <script>
+    const incident = document.getElementById('incident');
+    const strategy = document.getElementById('strategy');
+    const audit = document.getElementById('audit');
+    const status = document.getElementById('status');
+    let snapshots = [];
+
+    function update() {
+      const item = snapshots.find(row => row.incident === incident.value && row.strategy === strategy.value && row.audit === audit.value);
+      if (!item) return;
+      status.textContent = item.status.replaceAll('_', ' ');
+      status.className = `badge ${item.status}`;
+      document.getElementById('diagnosis').textContent = item.diagnosis ? item.diagnosis.join(' + ') : 'withheld';
+      document.getElementById('isolation').textContent = item.isolation_replays;
+      document.getElementById('audit-cost').textContent = item.audit_replays;
+      document.getElementById('total').textContent = item.total_replays;
+      document.getElementById('detail').textContent = item.incident === 'control_double_healer_k6'
+        ? 'This control contains a healing interaction. Compare audits to see why a historical verified result is unsafe.'
+        : 'The model and preprocessing changes only cause the regression together.';
+      document.getElementById('legacy-note').hidden = audit.value !== 'full';
+      document.getElementById('report').src = item.report;
+      document.getElementById('open-report').href = item.report;
+    }
+
+    for (const control of [incident, strategy, audit]) control.addEventListener('change', update);
+    fetch('manifest.json').then(response => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    }).then(data => {
+      snapshots = data.snapshots;
+      document.getElementById('version').textContent = data.tool_version;
+      update();
+    }).catch(() => {
+      status.textContent = 'Unable to load local snapshots';
+    });
+  </script>
+</body>
+</html>

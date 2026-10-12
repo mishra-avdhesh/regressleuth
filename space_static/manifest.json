@@ -1,0 +1,169 @@
+{
+  "snapshots": [
+    {
+      "audit": "extended",
+      "audit_replays": 13,
+      "budget": 16,
+      "diagnosis": [
+        "model",
+        "preprocessing"
+      ],
+      "ground_truth": [
+        "model",
+        "preprocessing"
+      ],
+      "incident": "pair_model_preprocessing_k5",
+      "interval": "normal",
+      "interval_applied": false,
+      "isolation_replays": 9,
+      "kind": "pair",
+      "report": "reports/pair_model_preprocessing_k5_adaptive_extended.html",
+      "status": "verified",
+      "strategy": "adaptive",
+      "total_replays": 22
+    },
+    {
+      "audit": "full",
+      "audit_replays": 4,
+      "budget": 16,
+      "diagnosis": [
+        "model",
+        "preprocessing"
+      ],
+      "ground_truth": [
+        "model",
+        "preprocessing"
+      ],
+      "incident": "pair_model_preprocessing_k5",
+      "interval": "normal",
+      "interval_applied": false,
+      "isolation_replays": 9,
+      "kind": "pair",
+      "report": "reports/pair_model_preprocessing_k5_adaptive_full.html",
+      "status": "verified",
+      "strategy": "adaptive",
+      "total_replays": 13
+    },
+    {
+      "audit": "extended",
+      "audit_replays": 11,
+      "budget": 16,
+      "diagnosis": [
+        "model",
+        "preprocessing"
+      ],
+      "ground_truth": [
+        "model",
+        "preprocessing"
+      ],
+      "incident": "pair_model_preprocessing_k5",
+      "interval": "normal",
+      "interval_applied": false,
+      "isolation_replays": 11,
+      "kind": "pair",
+      "report": "reports/pair_model_preprocessing_k5_ddmin_extended.html",
+      "status": "verified",
+      "strategy": "ddmin",
+      "total_replays": 22
+    },
+    {
+      "audit": "full",
+      "audit_replays": 4,
+      "budget": 16,
+      "diagnosis": [
+        "model",
+        "preprocessing"
+      ],
+      "ground_truth": [
+        "model",
+        "preprocessing"
+      ],
+      "incident": "pair_model_preprocessing_k5",
+      "interval": "normal",
+      "interval_applied": false,
+      "isolation_replays": 11,
+      "kind": "pair",
+      "report": "reports/pair_model_preprocessing_k5_ddmin_full.html",
+      "status": "verified",
+      "strategy": "ddmin",
+      "total_replays": 15
+    },
+    {
+      "audit": "extended",
+      "audit_replays": 30,
+      "budget": 16,
+      "diagnosis": null,
+      "ground_truth": [
+        "model"
+      ],
+      "incident": "control_double_healer_k6",
+      "interval": "normal",
+      "interval_applied": false,
+      "isolation_replays": 6,
+      "kind": "double_healer",
+      "report": "reports/control_double_healer_k6_adaptive_extended.html",
+      "status": "assumption_violated",
+      "strategy": "adaptive",
+      "total_replays": 36
+    },
+    {
+      "audit": "full",
+      "audit_replays": 5,
+      "budget": 16,
+      "diagnosis": [
+        "model"
+      ],
+      "ground_truth": [
+        "model"
+      ],
+      "incident": "control_double_healer_k6",
+      "interval": "normal",
+      "interval_applied": false,
+      "isolation_replays": 6,
+      "kind": "double_healer",
+      "report": "reports/control_double_healer_k6_adaptive_full.html",
+      "status": "verified",
+      "strategy": "adaptive",
+      "total_replays": 11
+    },
+    {
+      "audit": "extended",
+      "audit_replays": 29,
+      "budget": 16,
+      "diagnosis": null,
+      "ground_truth": [
+        "model"
+      ],
+      "incident": "control_double_healer_k6",
+      "interval": "normal",
+      "interval_applied": false,
+      "isolation_replays": 6,
+      "kind": "double_healer",
+      "report": "reports/control_double_healer_k6_ddmin_extended.html",
+      "status": "assumption_violated",
+      "strategy": "ddmin",
+      "total_replays": 35
+    },
+    {
+      "audit": "full",
+      "audit_replays": 5,
+      "budget": 16,
+      "diagnosis": [
+        "model"
+      ],
+      "ground_truth": [
+        "model"
+      ],
+      "incident": "control_double_healer_k6",
+      "interval": "normal",
+      "interval_applied": false,
+      "isolation_replays": 6,
+      "kind": "double_healer",
+      "report": "reports/control_double_healer_k6_ddmin_full.html",
+      "status": "verified",
+      "strategy": "ddmin",
+      "total_replays": 11
+    }
+  ],
+  "tool_version": "0.1.0a1"
+}

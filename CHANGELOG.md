@@ -4,6 +4,7 @@
 
 ### Release and evidence workflow (2026-10-11)
 
+- Added a no-cost static Space template with eight precomputed engine reports from two existing synthetic incidents; no paid API, server, or model hosting is needed. The live Gradio template remains available for local use or paid hosting.
 - Added `manifest-diff` for read-only comparison of JSON artifact maps at two pinned Git commits. Default output hides values; `--include-values` shows redacted local mappings. The command does not replay artifacts or change any benchmark configuration.
 - Added a repeatable wheel/sdist content audit to CI and release builds; it checks for common credential patterns, machine-specific paths, prompt/private files, caches, weights, and datasets. A manual release workflow now builds without publishing unless `publish_testpypi` is explicitly selected.
 - Added an external incident submission guide and issue template to collect immutable good/bad states, fixed tests, hybrid feasibility, and independent cause evidence for a future separately pre-registered study. No benchmark cases or frozen method code changed.
