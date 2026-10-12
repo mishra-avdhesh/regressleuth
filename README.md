@@ -6,6 +6,8 @@ A deploy changed the model, the preprocessing, a config value, the data export a
 
 > **Status: `0.1.0a1` (alpha), not yet published.** Install from a clone. Numbers below come from benchmarks in this repository; read [What it does not claim](#what-it-does-not-claim) and [Limitations](#limitations) first.
 
+For a quick technical overview, read the [project case study](docs/CASE_STUDY.md).
+
 ## The problem it solves
 
 Testing one change at a time misses interactions:
