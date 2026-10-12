@@ -43,7 +43,7 @@
 - **HTTP service demo** with known-good and regressed releases diagnosed purely over HTTP.
 - **Negative results documented**: the frozen audit falsely verified a cause in 31 of 60 strategy-by-budget configurations on two real non-monotone controls; the new default had zero false verifications on these known controls, at higher replay cost. The frozen normal interval is too narrow with very few repeats; the Pillow default-filter change produced no material regression and became a control.
 - **Secondary release-safety evaluation**: development and holdout suites rerun with the new product defaults, separate from unchanged published frozen results; correct verification did not fall, while total replay cost rose.
-- 172 tests (95% coverage, including the optional HTTP demo integration), `ruff check`, `ruff format`, `mypy --strict`, build and `twine check` clean; sdist allowlist.
+- Test suite with 95% coverage (including the optional HTTP demo integration), `ruff check`, `ruff format`, `mypy --strict`, build and `twine check` clean; sdist allowlist.
 
 ### Earlier in 0.1.0a1
 

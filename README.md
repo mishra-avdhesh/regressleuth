@@ -29,7 +29,7 @@ With `k` changed components there are `2^k` combinations. On seven author-constr
 ## Two-minute quickstart
 
 ```bash
-git clone <this repository> && cd regressleuth
+# From a checkout of this repository:
 pip install -e .            # Python 3.10+; `pip install regressleuth` once released
 regressleuth demo           # offline, standard library only
 ```

@@ -1,2 +1,1 @@
-gradio>=6
 regressleuth==0.1.0a1
