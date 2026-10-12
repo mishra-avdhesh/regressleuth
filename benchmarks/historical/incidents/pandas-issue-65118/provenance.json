@@ -1,0 +1,105 @@
+{
+  "bad": {
+    "pandas": "3.0.2"
+  },
+  "changed_components": [
+    "pandas"
+  ],
+  "claim_vs_replay": {
+    "matches_report": true,
+    "method": "2026-10-10, after reproduce.py and before sealing: the runner's reported call re-run in both matched environments, printing the exception type/message or value",
+    "observed_bad": "3.0.2: [4.0, 9.0, 14.0, 19.0] (assignment silently dropped)",
+    "observed_good": "2.3.3: [0.04, 0.09, 0.14, 0.19]",
+    "reported": "silent no-op in 3.0.x"
+  },
+  "failure_metric": "historical_multiindex_setitem_test_pass (pass iff column ('prices', 0) equals the original values divided by 100)",
+  "fixed_test_cases": "cases.json (and runner.py): Verbatim public reproducer: df['prices'] = df['prices'] / 100 on a column MultiIndex with a mixed-dtype level.",
+  "good": {
+    "pandas": "2.3.3"
+  },
+  "historical_claim": {
+    "expected": "known-good version passes the fixed test; known-bad version fails it",
+    "root_cause_evidence": "Reporter verified the difference between 2.3.3 and 3.0.2 (silent no-op in 3.0.x).",
+    "supported_root_cause": [
+      "pandas"
+    ],
+    "title": "BUG: Regression - `df[key] = df[key] / x` silently drops assignment on MultiIndex columns with mixed-dtype level and single sub-column"
+  },
+  "hybrid_replay_feasibility": "full; one changed component, both masks executed",
+  "incident_id": "pandas-issue-65118",
+  "observed": {
+    "bad": [
+      {
+        "error_kind": null,
+        "metric": 0.0,
+        "seconds": 0.4681536667048931,
+        "status": "ok"
+      }
+    ],
+    "good": [
+      {
+        "error_kind": null,
+        "metric": 1.0,
+        "seconds": 0.4684379808604717,
+        "status": "ok"
+      }
+    ]
+  },
+  "reproduction_command": "python benchmarks/historical/reproduce.py pandas-issue-65118",
+  "reproduction_environment": {
+    "environments": {
+      "2.3.3": {
+        "name": "pandas-2.3.3",
+        "packages": {
+          "numpy": "2.2.6",
+          "pandas": "2.3.3",
+          "pyarrow": "21.0.0",
+          "python-dateutil": "2.9.0.post0",
+          "pytz": "2025.2",
+          "six": "1.17.0",
+          "tzdata": "2025.2"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "pandas==2.3.3",
+          "numpy==2.2.6",
+          "pyarrow==21.0.0",
+          "python-dateutil==2.9.0.post0",
+          "pytz==2025.2",
+          "tzdata==2025.2",
+          "six==1.17.0"
+        ]
+      },
+      "3.0.2": {
+        "name": "pandas-3.0.2",
+        "packages": {
+          "numpy": "2.2.6",
+          "pandas": "3.0.2",
+          "pyarrow": "21.0.0",
+          "python-dateutil": "2.9.0.post0",
+          "pytz": "2025.2",
+          "six": "1.17.0",
+          "tzdata": "2025.2"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "pandas==3.0.2",
+          "numpy==2.2.6",
+          "pyarrow==21.0.0",
+          "python-dateutil==2.9.0.post0",
+          "pytz==2025.2",
+          "tzdata==2025.2",
+          "six==1.17.0"
+        ]
+      }
+    },
+    "host_platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39"
+  },
+  "source_date": "2026-04-08",
+  "source_retrieved_utc": "2026-10-10",
+  "source_type": "github_issue",
+  "source_urls": [
+    "https://github.com/pandas-dev/pandas/issues/65118"
+  ],
+  "threshold": 0.5
+}

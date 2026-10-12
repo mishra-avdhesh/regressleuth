@@ -1,0 +1,1 @@
+{"pass_criterion": "from sklearn.model_selection import * succeeds", "source": "https://github.com/scikit-learn/scikit-learn/issues/35038"}

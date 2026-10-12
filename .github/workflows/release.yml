@@ -1,0 +1,124 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      publish_testpypi:
+        description: Publish the checked package to TestPyPI
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: python -m pip install -e ".[demo,dev]"
+      - name: Lint, format and strict types
+        run: |
+          ruff check .
+          ruff format --check .
+          mypy --strict
+      - name: Verify frozen method and sealed suites
+        run: |
+          python benchmarks/freeze_method.py verify
+          python benchmarks/seal.py verify benchmarks/holdout --definitions-only
+          python benchmarks/seal.py verify benchmarks/higher_order --definitions-only
+          python benchmarks/historical/verify_snapshot.py
+          python benchmarks/drift/harness.py verify
+      - name: Prepare HTTP service demo
+        run: python examples/http_service/prepare.py
+      - name: Tests with coverage
+        run: pytest --cov=regressleuth --cov-report=term-missing --cov-fail-under=90
+      - name: Bundled demo
+        run: regressleuth demo
+
+  build:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check package versions and release tag
+        run: |
+          python - <<'PY'
+          import ast
+          import os
+          import tomllib
+          from pathlib import Path
+
+          with open("pyproject.toml", "rb") as project_file:
+              version = tomllib.load(project_file)["project"]["version"]
+          package_tree = ast.parse(Path("src/regressleuth/__init__.py").read_text())
+          runtime_versions = [
+              node.value.value
+              for node in package_tree.body
+              if isinstance(node, ast.Assign)
+              and any(isinstance(target, ast.Name) and target.id == "__version__" for target in node.targets)
+              and isinstance(node.value, ast.Constant)
+          ]
+          if runtime_versions != [version]:
+              raise SystemExit(f"Runtime version {runtime_versions!r} does not match package version {version!r}")
+          if os.environ["GITHUB_EVENT_NAME"] == "push":
+              tag = os.environ["GITHUB_REF_NAME"]
+              if tag != f"v{version}":
+                  raise SystemExit(f"Tag {tag!r} does not match package version {version!r}")
+          PY
+      - run: python -m pip install build twine
+      - run: python -m build --sdist --wheel
+      - run: twine check dist/*
+      - run: python tools/audit_package.py dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish-testpypi:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.publish_testpypi
+    needs: build
+    runs-on: ubuntu-latest
+    environment: testpypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+
+  publish-pypi:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1

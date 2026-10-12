@@ -1,0 +1,101 @@
+{
+  "bad": {
+    "pandas": "2.2.1"
+  },
+  "changed_components": [
+    "pandas"
+  ],
+  "claim_vs_replay": {
+    "matches_report": true,
+    "method": "2026-10-10, after reproduce.py and before sealing: the runner's reported call re-run in both matched environments, printing the exception type/message or value",
+    "observed_bad": "2.2.1: KeyError '__deepcopy__' raised inside DataFrame.head() (attrs deep copy)",
+    "observed_good": "2.1.4: reproducer completes",
+    "reported": "__deepcopy__ error in 2.2.x"
+  },
+  "failure_metric": "historical_attrs_test_pass (pass (1) iff print(df.head()) completes without an exception; fail (0) otherwise)",
+  "fixed_test_cases": "cases.json (and runner.py): Verbatim public reproducer: a custom MutableMapping (InsensitiveDict) stored in DataFrame.attrs, then print(df.head()).",
+  "good": {
+    "pandas": "2.1.4"
+  },
+  "historical_claim": {
+    "expected": "known-good version passes the fixed test; known-bad version fails it",
+    "root_cause_evidence": "Issue reports the reproducer working in pandas 2.1 and raising a __deepcopy__ error in 2.2.x (pandas 2.2 began deep-copying attrs).",
+    "supported_root_cause": [
+      "pandas"
+    ],
+    "title": "Pandas attrs deepcopy regression"
+  },
+  "hybrid_replay_feasibility": "full; one changed component, both masks executed",
+  "incident_id": "pandas-attrs-deepcopy-57859",
+  "observed": {
+    "bad": [
+      {
+        "error_kind": null,
+        "metric": 0.0,
+        "seconds": 0.41730084270238876,
+        "status": "ok"
+      }
+    ],
+    "good": [
+      {
+        "error_kind": null,
+        "metric": 1.0,
+        "seconds": 0.41816234961152077,
+        "status": "ok"
+      }
+    ]
+  },
+  "reproduction_command": "python benchmarks/historical/reproduce.py pandas-attrs-deepcopy-57859",
+  "reproduction_environment": {
+    "environments": {
+      "2.1.4": {
+        "name": "pandas-2.1.4",
+        "packages": {
+          "numpy": "1.26.4",
+          "pandas": "2.1.4",
+          "python-dateutil": "2.9.0.post0",
+          "pytz": "2025.2",
+          "six": "1.17.0",
+          "tzdata": "2025.2"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "pandas==2.1.4",
+          "numpy==1.26.4",
+          "python-dateutil==2.9.0.post0",
+          "pytz==2025.2",
+          "tzdata==2025.2",
+          "six==1.17.0"
+        ]
+      },
+      "2.2.1": {
+        "name": "pandas-2.2.1",
+        "packages": {
+          "numpy": "1.26.4",
+          "pandas": "2.2.1",
+          "python-dateutil": "2.9.0.post0",
+          "pytz": "2025.2",
+          "six": "1.17.0",
+          "tzdata": "2025.2"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "pandas==2.2.1",
+          "numpy==1.26.4",
+          "python-dateutil==2.9.0.post0",
+          "pytz==2025.2",
+          "tzdata==2025.2",
+          "six==1.17.0"
+        ]
+      }
+    },
+    "host_platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39"
+  },
+  "source_date": "2024-03-15",
+  "source_retrieved_utc": "2026-10-10",
+  "source_type": "github_issue",
+  "source_urls": [
+    "https://github.com/pandas-dev/pandas/issues/57859"
+  ],
+  "threshold": 0.5
+}

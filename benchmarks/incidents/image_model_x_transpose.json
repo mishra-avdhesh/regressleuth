@@ -1,0 +1,30 @@
+{
+  "id": "image_model_x_transpose",
+  "good": {
+    "model": "lr_aug_transpose",
+    "preprocessing": "identity",
+    "data": "snapshot-a",
+    "policy": "abstain-0.30"
+  },
+  "bad": {
+    "model": "lr_plain",
+    "preprocessing": "transpose",
+    "data": "snapshot-b",
+    "policy": "abstain-0.10"
+  },
+  "replay": {
+    "command": [
+      "{python}",
+      "../../examples/real_image/runner.py",
+      "--state",
+      "{state}",
+      "--result",
+      "{result}"
+    ],
+    "cases": "../../examples/real_image/cases.json",
+    "metric": "accuracy",
+    "direction": "higher",
+    "regression_threshold": 0.1,
+    "timeout_seconds": 60
+  }
+}

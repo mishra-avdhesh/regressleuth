@@ -1,0 +1,14 @@
+{
+  "accepted_causes": [
+    [
+      "scikit-learn"
+    ]
+  ],
+  "discrepancy": null,
+  "established_before_evaluation": true,
+  "evidence_urls": [
+    "https://github.com/scikit-learn/scikit-learn/issues/35038"
+  ],
+  "incident_id": "sklearn-issue-35038",
+  "support": "Issue reports success in 1.7.2 and ImportError from 1.8.0, traced to PR #31847 adding the Halving classes to __all__. Controlled replay of both masks in matched environments: good=1.0, bad=0.0."
+}

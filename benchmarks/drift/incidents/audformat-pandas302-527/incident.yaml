@@ -1,0 +1,26 @@
+version: '1.0'
+id: audformat-pandas302-527
+description: "Tests for misc tables fail with pandas v3.0.2"
+good:
+  charset-normalizer: "3.4.6"
+  numpy: "2.4.3"
+  pandas: "3.0.1"
+  pygments: "2.19.2"
+  pytest: "9.0.2"
+  requests: "2.33.0"
+bad:
+  charset-normalizer: "3.4.7"
+  numpy: "2.4.4"
+  pandas: "3.0.2"
+  pygments: "2.20.0"
+  pytest: "9.0.3"
+  requests: "2.33.1"
+metric: {name: drift_tests_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1, interval: student_t}
+search: {strategy: adaptive, max_cause_size: 2, seed: 0}
+budget: {max_replays: 32, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', ../../runner.py, --state, '{state}', --result, '{result}']
+  timeout_seconds: 1800

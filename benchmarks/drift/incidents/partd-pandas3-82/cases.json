@@ -1,0 +1,27 @@
+{
+  "incident": "partd-pandas3-82",
+  "project_wheel": "partd-0+unknown-py3-none-any.whl",
+  "pytest_args": [],
+  "python": "3.11",
+  "shared_pins": [
+    "blosc==1.11.4",
+    "iniconfig==2.3.0",
+    "locket==1.0.0",
+    "numpy==2.4.2",
+    "packaging==26.0",
+    "pluggy==1.6.0",
+    "pygments==2.19.2",
+    "pytest==9.0.2",
+    "python-dateutil==2.9.0.post0",
+    "pyzmq==27.1.0",
+    "six==1.17.0",
+    "toolz==1.1.0"
+  ],
+  "test_environment": {},
+  "test_root": ".",
+  "test_timeout_seconds": 600,
+  "tests": [
+    "partd/tests/test_pandas.py::test_PandasColumns",
+    "partd/tests/test_pandas.py::test_column_selection"
+  ]
+}

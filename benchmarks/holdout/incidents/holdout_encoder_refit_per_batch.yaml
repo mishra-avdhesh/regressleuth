@@ -1,0 +1,45 @@
+version: '1.0'
+id: holdout_encoder_refit_per_batch
+description: Income predictions degrade after serving switched to small batches and the encoder started
+  being fit per batch.
+metadata:
+  provenance:
+  - title: 'Rules of Machine Learning, rule #29 (training-serving skew)'
+    url: https://developers.google.com/machine-learning/guides/rules-of-ml
+  - title: 'scikit-learn: Common pitfalls, inconsistent preprocessing'
+    url: https://scikit-learn.org/stable/common_pitfalls.html
+  reconstruction: Adult census income (real data); the skew mechanism is the documented fit-on-serving-data
+    pitfall
+  dataset: Adult census income, UCI, via scikit-learn/adult-census-income (CC0)
+  benchmark: holdout
+  preregistered: benchmarks/holdout/PREREGISTRATION.md
+good:
+  encoder_fit: training-fitted
+  batch_size: full
+  model: m1
+  policy: threshold-0.50
+  cache_ttl: '300'
+bad:
+  encoder_fit: refit-per-batch
+  batch_size: '32'
+  model: m1b
+  policy: threshold-0.48
+  cache_ttl: '600'
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.03
+budget:
+  max_replays: 16
+  audit: full
+cases: ../data/adult/encoder_cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/adult_encoder.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 300

@@ -1,0 +1,20 @@
+version: '1.0'
+id: pypet-pandas220-72
+description: "Tests fail with Pandas 2.2.0"
+good:
+  ndindex: "1.7"
+  pytest: "8.0.0"
+  tzdata: "2023.4"
+bad:
+  ndindex: "1.8"
+  pytest: "8.0.1"
+  tzdata: "2024.1"
+metric: {name: drift_tests_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1, interval: student_t}
+search: {strategy: adaptive, max_cause_size: 2, seed: 0}
+budget: {max_replays: 32, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', ../../runner.py, --state, '{state}', --result, '{result}']
+  timeout_seconds: 1800

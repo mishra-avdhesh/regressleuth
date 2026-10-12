@@ -1,0 +1,21 @@
+{
+ "incident": "sklearn-issue-35038",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 1.0,
+    "seconds": 0.8234970346093178,
+    "status": "ok"
+   }
+  ],
+  "scikit-learn": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 0.8233152441680431,
+    "status": "ok"
+   }
+  ]
+ }
+}

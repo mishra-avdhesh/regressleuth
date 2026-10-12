@@ -1,0 +1,26 @@
+version: '1.0'
+id: classeval-numpy2-pandas3-3
+description: "Tests fail with a TypeError with NumPy v2 and Pandas v3"
+good:
+  cloudpickle: "absent"
+  fonttools: "4.63.0"
+  joblib: "1.5.3"
+  matplotlib: "3.11.1"
+  narwhals: "2.25.0"
+  scikit-learn: "1.9.0"
+bad:
+  cloudpickle: "3.1.2"
+  fonttools: "4.65.0"
+  joblib: "1.6.0"
+  matplotlib: "3.11.2"
+  narwhals: "2.26.0"
+  scikit-learn: "1.9.1"
+metric: {name: drift_tests_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1, interval: student_t}
+search: {strategy: adaptive, max_cause_size: 2, seed: 0}
+budget: {max_replays: 32, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', ../../runner.py, --state, '{state}', --result, '{result}']
+  timeout_seconds: 1800

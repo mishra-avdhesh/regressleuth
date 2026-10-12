@@ -1,0 +1,35 @@
+version: '1.0'
+id: ctrl_tabular_cancelling_pair
+description: Two changes that each break the pipeline alone cancel each other (scaling moved from the model into
+  preprocessing), while a third change causes the regression.
+metadata:
+  benchmark: higher_order-control
+  designed_by: project author (not independent)
+good:
+  model: lr_v1
+  preprocessing: canonical-order
+  policy: threshold-0.50
+  data: snapshot-a
+bad:
+  model: lr_noscale
+  preprocessing: standardize-then-canonical
+  policy: threshold-0.99
+  data: snapshot-b
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.1
+budget:
+  max_replays: 16
+  audit: full
+cases: ../../../examples/real_tabular/cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../../../examples/real_tabular/runner.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 900

@@ -1,0 +1,30 @@
+{
+  "id": "tabular_calibration_x_abstain",
+  "good": {
+    "model": "lr_v1",
+    "preprocessing": "canonical-order",
+    "policy": "abstain-0.50",
+    "data": "snapshot-a"
+  },
+  "bad": {
+    "model": "lr_underconf",
+    "preprocessing": "canonical-order",
+    "policy": "abstain-0.70",
+    "data": "snapshot-b"
+  },
+  "replay": {
+    "command": [
+      "{python}",
+      "../../examples/real_tabular/runner.py",
+      "--state",
+      "{state}",
+      "--result",
+      "{result}"
+    ],
+    "cases": "../../examples/real_tabular/cases.json",
+    "metric": "accuracy",
+    "direction": "higher",
+    "regression_threshold": 0.1,
+    "timeout_seconds": 60
+  }
+}

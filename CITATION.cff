@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use Regressleuth in research, please cite it as below."
+title: "Regressleuth: budgeted counterfactual replay for ML regression diagnosis"
+type: software
+version: 0.1.0a1
+license: Apache-2.0
+authors:
+  - family-names: Mishra
+    given-names: Avdhesh
+abstract: >-
+  Regressleuth isolates which versioned ML pipeline components, singly or as a pair
+  interaction, reproduce a measured regression, using budgeted adaptive counterfactual
+  replay with noise-aware judgement and a monotonicity audit.
+keywords:
+  - machine learning
+  - debugging
+  - root cause analysis
+  - delta debugging
+  - MLOps

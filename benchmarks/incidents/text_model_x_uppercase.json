@@ -1,0 +1,32 @@
+{
+  "id": "text_model_x_uppercase",
+  "good": {
+    "model": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+    "preprocessing": "identity",
+    "max_length": "128",
+    "policy": "threshold-0.50",
+    "tokenizer": "lowercasing"
+  },
+  "bad": {
+    "model": "gchhablani/bert-base-cased-finetuned-sst2",
+    "preprocessing": "uppercase",
+    "max_length": "64",
+    "policy": "threshold-0.60",
+    "tokenizer": "lowercasing"
+  },
+  "replay": {
+    "command": [
+      "{python}",
+      "../../examples/real_text/runner.py",
+      "--state",
+      "{state}",
+      "--result",
+      "{result}"
+    ],
+    "cases": "../../examples/real_text/cases.json",
+    "metric": "accuracy",
+    "direction": "higher",
+    "regression_threshold": 0.1,
+    "timeout_seconds": 600
+  }
+}

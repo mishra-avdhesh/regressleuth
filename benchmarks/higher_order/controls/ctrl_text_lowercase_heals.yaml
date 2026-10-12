@@ -1,0 +1,39 @@
+version: '1.0'
+id: ctrl_text_lowercase_heals
+description: A cased model fails on upper-cased text, but adding the lowercase step (another change in the same
+  release) heals it; truncation causes the actual regression.
+metadata:
+  benchmark: higher_order-control
+  designed_by: project author (not independent)
+good:
+  model: distilbert/distilbert-base-uncased-finetuned-sst-2-english
+  normalizer: identity
+  tokenizer: lowercasing
+  lowercase_step: 'off'
+  max_length: '128'
+  policy: threshold-0.50
+bad:
+  model: gchhablani/bert-base-cased-finetuned-sst2
+  normalizer: uppercase
+  tokenizer: lowercasing
+  lowercase_step: 'on'
+  max_length: '6'
+  policy: threshold-0.60
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.1
+budget:
+  max_replays: 16
+  audit: full
+cases: ../../../examples/real_text/cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/text_triple.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 900

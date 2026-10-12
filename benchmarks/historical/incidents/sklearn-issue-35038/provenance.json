@@ -1,0 +1,101 @@
+{
+  "bad": {
+    "scikit-learn": "1.8.0"
+  },
+  "changed_components": [
+    "scikit-learn"
+  ],
+  "claim_vs_replay": {
+    "matches_report": true,
+    "method": "2026-10-10, after reproduce.py and before sealing: the runner's reported call re-run in both matched environments, printing the exception type/message or value",
+    "observed_bad": "1.8.0: ImportError asking to import sklearn.experimental.enable_halving_search_cv",
+    "observed_good": "1.7.2: import succeeds",
+    "reported": "ImportError from 1.8.0"
+  },
+  "failure_metric": "historical_star_import_test_pass (pass iff the star import completes without an exception)",
+  "fixed_test_cases": "cases.json (and runner.py): Verbatim public reproducer: from sklearn.model_selection import *",
+  "good": {
+    "scikit-learn": "1.7.2"
+  },
+  "historical_claim": {
+    "expected": "known-good version passes the fixed test; known-bad version fails it",
+    "root_cause_evidence": "Issue reports success in 1.7.2 and ImportError from 1.8.0, traced to PR #31847 adding the Halving classes to __all__.",
+    "supported_root_cause": [
+      "scikit-learn"
+    ],
+    "title": "`from sklearn.model_selection import *` raises ImportError since 1.8.0"
+  },
+  "hybrid_replay_feasibility": "full; one changed component, both masks executed",
+  "incident_id": "sklearn-issue-35038",
+  "observed": {
+    "bad": [
+      {
+        "error_kind": null,
+        "metric": 0.0,
+        "seconds": 0.8233152441680431,
+        "status": "ok"
+      }
+    ],
+    "good": [
+      {
+        "error_kind": null,
+        "metric": 1.0,
+        "seconds": 0.8234970346093178,
+        "status": "ok"
+      }
+    ]
+  },
+  "reproduction_command": "python benchmarks/historical/reproduce.py sklearn-issue-35038",
+  "reproduction_environment": {
+    "environments": {
+      "1.7.2": {
+        "name": "sklearn-1.7.2",
+        "packages": {
+          "joblib": "1.5.2",
+          "narwhals": "2.27.1",
+          "numpy": "2.3.4",
+          "scikit-learn": "1.7.2",
+          "scipy": "1.16.2",
+          "threadpoolctl": "3.6.0"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "scikit-learn==1.7.2",
+          "numpy==2.3.4",
+          "scipy==1.16.2",
+          "joblib==1.5.2",
+          "threadpoolctl==3.6.0",
+          "narwhals==2.27.1"
+        ]
+      },
+      "1.8.0": {
+        "name": "sklearn-1.8.0",
+        "packages": {
+          "joblib": "1.5.2",
+          "narwhals": "2.27.1",
+          "numpy": "2.3.4",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.16.2",
+          "threadpoolctl": "3.6.0"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "scikit-learn==1.8.0",
+          "numpy==2.3.4",
+          "scipy==1.16.2",
+          "joblib==1.5.2",
+          "threadpoolctl==3.6.0",
+          "narwhals==2.27.1"
+        ]
+      }
+    },
+    "host_platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39"
+  },
+  "source_date": "2026-09-28",
+  "source_retrieved_utc": "2026-10-10",
+  "source_type": "github_issue",
+  "source_urls": [
+    "https://github.com/scikit-learn/scikit-learn/issues/35038"
+  ],
+  "threshold": 0.5
+}

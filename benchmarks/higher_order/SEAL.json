@@ -1,0 +1,26 @@
+{
+  "files": {
+    "controls/ctrl_tabular_cancelling_pair.yaml": "74a436d5634adf57f4197e7bcead5fe82da7afeb6eba86d67310950e10b0a586",
+    "controls/ctrl_text_lowercase_heals.yaml": "7ce9a95f42af548be097cb80570d4a66271c63a0d35d327dc6d7211e025bc8f0",
+    "controls/expected_status.json": "3e1147b89c4503c8e8e801330a314cfca2d48593cb28d80153184cc66ff739c7",
+    "ground_truth.json": "cdcc073144d80ec6169f72e5c8abd1e7d51afbc0d874c3c3f766fae6b7200229",
+    "incidents/triple_env_defense_in_depth.yaml": "f9f1ada5f33e1584858f6f967e268f75969ac4b0ee1edbbc536fa8e6b545eedb",
+    "incidents/triple_image_orientation.yaml": "c9d2ae7b4bb8584a56f0ce6b4a49ff32ddbe18be2c4280b421edae5292993ec6",
+    "incidents/triple_tabular_schema_guard.yaml": "b5cd7402831c4d7ed170901605f435092dfc0d3de0c112b1e91929f41152f133",
+    "incidents/triple_text_lowercase_safeguards.yaml": "ba20c088e8b2a3f3c50adc2c245db077bfafe2458c071ecd06cbc565eeee05ae",
+    "results/ground_truth_proofs.json": "ebcf9e8639306318e63f33bd1c70031ac4883f6cc223acf5e8599408fe54d377",
+    "results/tables/ctrl_tabular_cancelling_pair.json": "09d91d1e2bd7cf13c8ba9c873ae65f3fac8d34486edc3d192be87e4b1cd3abfd",
+    "results/tables/ctrl_text_lowercase_heals.json": "78491a3c1a14e9b6220f1e71bfeac743ef9d6ad6b2e918d17f9b7800461b7ce6",
+    "results/tables/triple_env_defense_in_depth.json": "5a10a2a17d2adc68390da6af0bc532c6890ed43f06dea3dca6a435307b3c498d",
+    "results/tables/triple_image_orientation.json": "65a2fb58256ba7857094f67db475a903ee633f65bb2eafbac5f471e9924e7a69",
+    "results/tables/triple_tabular_schema_guard.json": "194de9d783058132ee1a3ea6854a0865abc844f4dddbf5516c11a30f280c7be2",
+    "results/tables/triple_text_lowercase_safeguards.json": "a52965276ce085a0eb0263ba0c18ef25f7c7307aa8e69bfc9294682af05c67e7",
+    "runners/env_triple.py": "1c83d91447302546362c56f50b593a18bd66883571b6bc4663488bd014627bb5",
+    "runners/ho_common.py": "11475b239a4a68348dd2455942df163f06b0298821805ceefb6bb9db928f9cd8",
+    "runners/image_triple.py": "f9965e09a5629c26132ba15d07c01c9c732c2ce181d663daf1e634b5987c58b6",
+    "runners/tabular_triple.py": "d5ae18337a0faaa57ca86c43c178e897fab8dfdb68b063825db324d0493fb818",
+    "runners/text_triple.py": "db2e0fb80e7e6af8fe5bcdafe155b7b651e8cfcb834cf234e82f43c78585a5dc"
+  },
+  "frozen_method_tree_sha256": "55cedbdfffe61ac8078861b5f2888a60a56ddba4946e465b1221cf2b2a0e9b9e",
+  "sealed_on": "2026-10-08"
+}

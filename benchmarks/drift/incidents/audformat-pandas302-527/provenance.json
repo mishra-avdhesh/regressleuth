@@ -1,0 +1,61 @@
+{
+  "blamed_in_report": [
+    "pandas"
+  ],
+  "changed_components": [
+    "charset-normalizer",
+    "numpy",
+    "pandas",
+    "pygments",
+    "pytest",
+    "requests"
+  ],
+  "coupled_minimal_sets": [],
+  "d_bad": "2026-04-09",
+  "d_good": "2026-03-26",
+  "endpoint_rerun_identical": true,
+  "fixed_commit": "1f977e5c5d2d5d8bf56bb85edc857ad032a7f28f",
+  "host": {
+    "platform": "linux",
+    "uv": "uv 0.13.0 (x86_64-unknown-linux-gnu)"
+  },
+  "host_time_zone_database": "tzdata==2025.2",
+  "incident_id": "audformat-pandas302-527",
+  "mask_statuses": {
+    "ok": 2
+  },
+  "minimal_failing_sets": [],
+  "project": "audeering/audformat",
+  "python": "3.11",
+  "replayed_utc": "2026-10-10T20:49:58+00:00",
+  "requirements": {
+    "extra_requirements": [
+      "audb",
+      "audiofile >=1.1.0",
+      "graphviz",
+      "pandas >=2.0.0",
+      "pyarrow",
+      "pytest",
+      "pytest-console-scripts",
+      "pytest-cov",
+      "sphinx",
+      "sphinx-apipages >=0.1.2",
+      "sphinx-audeering-theme >=1.4.1",
+      "sphinx-autodoc-typehints",
+      "sphinx-copybutton",
+      "sphinxcontrib-katex",
+      "sybil",
+      "toml"
+    ]
+  },
+  "search_space": 64,
+  "source": {
+    "sha256": "dbab4bb116b8004d17de76921ae44336aa7c69d5fd58227c813bae0eac7938f5",
+    "url": "https://codeload.github.com/audeering/audformat/tar.gz/1f977e5c5d2d5d8bf56bb85edc857ad032a7f28f",
+    "wheel": "audformat-1.4.1.dev5+g1f977e5-py3-none-any.whl"
+  },
+  "source_date": "2026-04-09",
+  "source_urls": [
+    "https://github.com/audeering/audformat/issues/527"
+  ]
+}

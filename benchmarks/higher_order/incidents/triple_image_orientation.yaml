@@ -1,0 +1,37 @@
+version: '1.0'
+id: triple_image_orientation
+description: A sensor starts delivering transposed images, the orientation-fix step is disabled, and a model without
+  transposed augmentation ships.
+metadata:
+  benchmark: higher_order
+  designed_by: project author (not independent)
+good:
+  sensor_orientation: upright
+  orientation_fix: 'on'
+  model: lr_aug_transpose
+  data: snapshot-a
+  policy: abstain-0.30
+bad:
+  sensor_orientation: transposed
+  orientation_fix: 'off'
+  model: lr_plain
+  data: snapshot-b
+  policy: abstain-0.10
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.1
+budget:
+  max_replays: 16
+  audit: full
+cases: ../../../examples/real_image/cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/image_triple.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 900

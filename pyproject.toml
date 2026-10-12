@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "regressleuth"
+version = "0.1.0a1"
+description = "Counterfactual replay for ML regression diagnosis"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0"]
+license = "Apache-2.0"
+keywords = ["machine-learning", "debugging", "root-cause-analysis", "mlops"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Debuggers",
+]
+
+[project.optional-dependencies]
+demo = ["scikit-learn>=1.3", "joblib>=1.3", "numpy>=1.24"]
+text-demo = ["transformers>=4.40", "datasets>=2.19", "torch>=2.2"]
+dev = ["pytest>=8", "pytest-cov>=5", "jsonschema>=4.20", "ruff>=0.6", "mypy>=1.11", "build>=1.2", "twine>=5", "types-PyYAML"]
+
+[project.scripts]
+regressleuth = "regressleuth.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+regressleuth = ["_demo/*.py", "_demo/*.json", "_demo/*.yaml", "schemas/*.json", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 110
+# Sealed benchmark suites are excluded: reformatting them would break their SHA-256 seals.
+extend-exclude = [
+  "examples/*/envs", "examples/*/artifacts", "benchmarks/holdout", "benchmarks/higher_order",
+  # third-party sources, caches and environments used by replays must never be rewritten
+  "benchmarks/historical/envs", "benchmarks/drift/work",
+  "build", "dist",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "RUF", "BLE", "ISC", "PERF", "S", "N"]
+# N818: public exception names predate the rule; ISC004/PERF401: readability choices
+ignore = ["E501", "S101", "S603", "S607", "S311", "RUF001", "ISC001", "ISC004", "N818", "PERF401", "PERF203"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S", "BLE", "PERF", "N802"]
+"benchmarks/*" = ["S", "BLE", "E402"]
+"examples/*" = ["S", "BLE", "N802"]
+"space/*" = ["S"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+packages = ["regressleuth"]

@@ -1,0 +1,86 @@
+{
+  "holdout_csv_na_country_code": {
+    "baseline": 0.9333,
+    "closest_combination": "(none)",
+    "closest_margin_to_threshold": 0.03,
+    "combinations": 32,
+    "endpoint_drop": 0.1427,
+    "max_run_sd": 0.0,
+    "proved": true,
+    "runs_per_combination": 1,
+    "seconds": 1.2,
+    "violations": []
+  },
+  "holdout_encoder_refit_per_batch": {
+    "baseline": 0.8462,
+    "closest_combination": "(none)",
+    "closest_margin_to_threshold": 0.03,
+    "combinations": 32,
+    "endpoint_drop": 0.0641,
+    "max_run_sd": 0.0,
+    "proved": true,
+    "runs_per_combination": 1,
+    "seconds": 0.9,
+    "violations": []
+  },
+  "holdout_numpy2_float32_time": {
+    "baseline": 0.9747,
+    "closest_combination": "(none)",
+    "closest_margin_to_threshold": 0.03,
+    "combinations": 32,
+    "endpoint_drop": 0.0847,
+    "max_run_sd": 0.0,
+    "proved": true,
+    "runs_per_combination": 1,
+    "seconds": 0.5,
+    "violations": []
+  },
+  "holdout_pandas3_datetime_epoch": {
+    "baseline": 0.96,
+    "closest_combination": "policy",
+    "closest_margin_to_threshold": 0.0287,
+    "combinations": 32,
+    "endpoint_drop": 0.238,
+    "max_run_sd": 0.0,
+    "proved": true,
+    "runs_per_combination": 1,
+    "seconds": 1.3,
+    "violations": []
+  },
+  "holdout_proba_column_order": {
+    "baseline": 0.8503,
+    "closest_combination": "(none)",
+    "closest_margin_to_threshold": 0.03,
+    "combinations": 32,
+    "endpoint_drop": 0.7013,
+    "max_run_sd": 0.0,
+    "proved": true,
+    "runs_per_combination": 1,
+    "seconds": 0.6,
+    "violations": []
+  },
+  "holdout_pythonhashseed_hashing": {
+    "baseline": 0.851,
+    "closest_combination": "model",
+    "closest_margin_to_threshold": 0.0297,
+    "combinations": 32,
+    "endpoint_drop": 0.0843,
+    "max_run_sd": 0.0191,
+    "proved": true,
+    "runs_per_combination": 9,
+    "seconds": 7.5,
+    "violations": []
+  },
+  "holdout_timezone_hour_feature": {
+    "baseline": 0.9027,
+    "closest_combination": "(none)",
+    "closest_margin_to_threshold": 0.03,
+    "combinations": 32,
+    "endpoint_drop": 0.26,
+    "max_run_sd": 0.0,
+    "proved": true,
+    "runs_per_combination": 1,
+    "seconds": 1.4,
+    "violations": []
+  }
+}

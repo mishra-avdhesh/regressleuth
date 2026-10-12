@@ -1,0 +1,12 @@
+{
+  "profile": "historical frozen method",
+  "suites": ["development", "holdout"],
+  "audit": "full",
+  "interval": "normal",
+  "max_cause_size": 2,
+  "budgets": [4, 6, 8, 12, "full"],
+  "strategies": ["adaptive", "exhaustive", "random", "one_factor", "greedy", "ddmin"],
+  "random_seeds": 10,
+  "published_results": "benchmarks/results/evaluation/",
+  "frozen_manifest": "benchmarks/frozen/frozen_method.json"
+}

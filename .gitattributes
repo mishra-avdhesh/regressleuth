@@ -1,0 +1,6 @@
+# These files are immutable reproduced evidence or generated figures. Their original bytes
+# contain whitespace Git would otherwise flag during the initial public commit.
+benchmarks/historical/incidents/*/reproducer_verbatim.py -whitespace
+benchmarks/results/evaluation/EVALUATION.md -whitespace
+benchmarks/results/historical/EVALUATION.md -whitespace
+docs/figures/*.svg -whitespace

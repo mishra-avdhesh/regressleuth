@@ -1,0 +1,32 @@
+# Regressleuth Incident Specification 1.0 - the bundled offline demo.
+version: "1.0"
+id: demo_keyword_sentiment
+description: >
+  A keyword sentiment classifier regressed after four changes shipped together.
+  Find which change, or which pair of changes, is responsible.
+
+good:
+  tokenizer: lowercase
+  normalizer: identity
+  lexicon: v1
+  threshold: strict
+bad:
+  tokenizer: keep-case
+  normalizer: shout
+  lexicon: v2
+  threshold: lenient
+
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.1
+
+budget:
+  max_replays: 16
+
+cases: cases.json
+
+adapter:
+  type: command
+  command: ["{python}", "runner.py", "--state", "{state}", "--result", "{result}"]
+  timeout_seconds: 30

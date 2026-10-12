@@ -1,0 +1,14 @@
+{
+  "accepted_causes": [
+    [
+      "pandas"
+    ]
+  ],
+  "discrepancy": null,
+  "established_before_evaluation": true,
+  "evidence_urls": [
+    "https://github.com/pandas-dev/pandas/issues/63304"
+  ],
+  "incident_id": "pandas-issue-63304",
+  "support": "Issue reports the error in pandas 3.0.0rc0 and correct behavior in 2.3.3. Controlled replay of both masks in matched environments: good=1.0, bad=0.0."
+}

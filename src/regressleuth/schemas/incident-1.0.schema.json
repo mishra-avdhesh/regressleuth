@@ -1,0 +1,403 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:regressleuth:schema:incident:1.0",
+  "title": "Regressleuth Incident Specification 1.0",
+  "description": "A known-good and a known-bad version of each pipeline component, a metric, and how to replay hybrids. Semantic checks that JSON Schema cannot express (good/bad share keys, at least one change, interpreter maps cover the used versions, at most 12 changed components) are enforced by `regressleuth validate`.",
+  "type": "object",
+  "required": [
+    "version",
+    "id",
+    "good",
+    "bad",
+    "metric",
+    "adapter"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "description": {
+      "type": "string"
+    },
+    "good": {
+      "$ref": "#/$defs/state"
+    },
+    "bad": {
+      "$ref": "#/$defs/state"
+    },
+    "metric": {
+      "type": "object",
+      "required": [
+        "name",
+        "direction",
+        "regression_threshold"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "direction": {
+          "enum": [
+            "higher_is_better",
+            "lower_is_better"
+          ]
+        },
+        "regression_threshold": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "repeats": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "max_repeats": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.5,
+          "exclusiveMaximum": 1
+        },
+        "interval": {
+          "default": "student_t",
+          "enum": [
+            "normal",
+            "student_t",
+            "anytime"
+          ]
+        },
+        "noise_scale": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Upper bound on the sub-Gaussian scale of one run's metric noise; required by interval: anytime."
+        }
+      }
+    },
+    "search": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "strategy": {
+          "enum": [
+            "adaptive",
+            "exhaustive",
+            "random",
+            "one_factor",
+            "greedy",
+            "ddmin"
+          ]
+        },
+        "max_cause_size": {
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_replays": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 4096
+        },
+        "audit": {
+          "default": "extended",
+          "oneOf": [
+            {
+              "enum": [
+                "full",
+                "extended"
+              ]
+            },
+            {
+              "type": "integer",
+              "minimum": 0
+            }
+          ]
+        }
+      }
+    },
+    "cases": {
+      "type": "string",
+      "minLength": 1
+    },
+    "report": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "values": {
+          "default": "omit",
+          "enum": [
+            "redacted",
+            "hashed",
+            "omit"
+          ]
+        }
+      }
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "adapter": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/command"
+        },
+        {
+          "$ref": "#/$defs/python"
+        },
+        {
+          "$ref": "#/$defs/http"
+        },
+        {
+          "$ref": "#/$defs/docker"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "state": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[A-Za-z_][A-Za-z0-9_.-]{0,63}$"
+      }
+    },
+    "command": {
+      "type": "object",
+      "required": [
+        "type",
+        "command"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "command"
+        },
+        "command": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "cwd": {
+          "type": "string"
+        },
+        "timeout_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "env": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "inherit_env": {
+          "type": "boolean"
+        },
+        "interpreters": {
+          "type": "object",
+          "required": [
+            "component",
+            "map"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "component": {
+              "type": "string"
+            },
+            "map": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "capture_bytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "python": {
+      "type": "object",
+      "required": [
+        "type",
+        "callable"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "python"
+        },
+        "callable": {
+          "type": "string",
+          "pattern": "^[^:]+:.+$"
+        },
+        "path": {
+          "type": "string"
+        },
+        "timeout_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "http": {
+      "type": "object",
+      "required": [
+        "type",
+        "base_url"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "http"
+        },
+        "base_url": {
+          "type": "string",
+          "pattern": "^(https?://|\\$\\{)"
+        },
+        "mode": {
+          "enum": [
+            "predict",
+            "evaluate"
+          ]
+        },
+        "path": {
+          "type": "string"
+        },
+        "components_via": {
+          "enum": [
+            "header",
+            "body"
+          ]
+        },
+        "header_name": {
+          "type": "string"
+        },
+        "timeout_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "batch_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "headers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "input_field": {
+          "type": "string"
+        },
+        "label_field": {
+          "type": "string"
+        },
+        "prediction_field": {
+          "type": "string"
+        }
+      }
+    },
+    "docker": {
+      "type": "object",
+      "required": [
+        "type",
+        "command"
+      ],
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "image"
+          ]
+        },
+        {
+          "required": [
+            "images"
+          ]
+        }
+      ],
+      "properties": {
+        "type": {
+          "const": "docker"
+        },
+        "command": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "image": {
+          "type": "string"
+        },
+        "images": {
+          "type": "object",
+          "required": [
+            "component",
+            "map"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "component": {
+              "type": "string"
+            },
+            "map": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "timeout_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "network": {
+          "type": "string"
+        },
+        "docker": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

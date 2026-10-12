@@ -1,0 +1,48 @@
+version: '1.0'
+id: holdout_timezone_hour_feature
+description: A night-time fraud signal disappears after an export switches to UTC timestamps and a refactor
+  drops the time zone conversion.
+metadata:
+  provenance:
+  - title: 'pandas user guide: time series, time zone handling'
+    url: https://pandas.pydata.org/docs/user_guide/timeseries.html
+  reconstruction: seeded synthetic transactions in America/New_York; pandas time zone behavior is real
+  dataset: synthetic (seed 14)
+  benchmark: holdout
+  preregistered: benchmarks/holdout/PREREGISTRATION.md
+good:
+  export_format: local-naive
+  preprocessing: tz-aware
+  model: m1
+  policy: threshold-0.50
+  log_level: info
+  runtime: py312-pandas2
+bad:
+  export_format: utc-iso
+  preprocessing: naive-hour
+  model: m1b
+  policy: threshold-0.48
+  log_level: debug
+  runtime: py312-pandas2
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.03
+budget:
+  max_replays: 16
+  audit: full
+cases: ../data/timezone/cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/timezone_hour.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 300
+  interpreters:
+    component: runtime
+    map:
+      py312-pandas2: ../envs/np2/bin/python

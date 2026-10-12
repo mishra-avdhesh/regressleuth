@@ -1,0 +1,30 @@
+{
+  "id": "tabular_upstream_zero_fill",
+  "good": {
+    "model": "lr_v1",
+    "preprocessing": "canonical-order",
+    "policy": "threshold-0.50",
+    "data": "snapshot-a"
+  },
+  "bad": {
+    "model": "lr_v1b",
+    "preprocessing": "canonical-order",
+    "policy": "threshold-0.45",
+    "data": "snapshot-c"
+  },
+  "replay": {
+    "command": [
+      "{python}",
+      "../../examples/real_tabular/runner.py",
+      "--state",
+      "{state}",
+      "--result",
+      "{result}"
+    ],
+    "cases": "../../examples/real_tabular/cases.json",
+    "metric": "accuracy",
+    "direction": "higher",
+    "regression_threshold": 0.1,
+    "timeout_seconds": 60
+  }
+}

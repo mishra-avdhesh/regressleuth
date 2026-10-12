@@ -1,0 +1,50 @@
+{
+  "audit": "extended",
+  "budgets": [
+    4,
+    6,
+    8,
+    12,
+    "full"
+  ],
+  "evaluated_utc": "2026-10-10T18:54:56+00:00",
+  "funnel": {
+    "disputed": [],
+    "excluded": 21,
+    "excluded_by_reason": {
+      "duplicate_transition": 4,
+      "infeasible_hybrids": 2,
+      "no_bad_state": 2,
+      "no_dated_public_regression": 1,
+      "no_good_state": 6,
+      "unfixed_test": 3,
+      "uninstallable_dependency": 3
+    },
+    "included": [
+      "pandas-attrs-deepcopy-57859",
+      "pandas-groupby-nan-63920",
+      "sklearn-linear-float32-33032",
+      "moneyprinter-pillow-antialias-70",
+      "pandas-issue-63304",
+      "pandas-issue-65118",
+      "pandas-issue-66341",
+      "sklearn-issue-34883",
+      "sklearn-issue-35038"
+    ],
+    "logged": 30,
+    "sent_to_reproduction": 9,
+    "unscreened": []
+  },
+  "interval": "student_t",
+  "random_seeds": 10,
+  "seal_sha256": "c05aa342795636b00d187cdf7f5208e05245c06b759a1db8db04129c97d8e507",
+  "source_tree_sha256": "4c52dcab739b2c0eab5873c8871fab5569e518b78b88d2b9146a55a8964761df",
+  "strategies": [
+    "adaptive",
+    "exhaustive",
+    "random",
+    "one_factor",
+    "greedy",
+    "ddmin"
+  ]
+}

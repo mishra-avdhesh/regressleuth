@@ -1,0 +1,22 @@
+{
+ "complete": false,
+ "incident": "partd-pandas3-82",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 1.8749945722520351,
+    "status": "ok"
+   }
+  ],
+  "pandas|pyarrow": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 1.875260017812252,
+    "status": "ok"
+   }
+  ]
+ }
+}

@@ -1,0 +1,43 @@
+{
+  "blamed_in_report": [
+    "pandas"
+  ],
+  "changed_components": [
+    "ndindex",
+    "pytest",
+    "tzdata"
+  ],
+  "coupled_minimal_sets": [],
+  "d_bad": "2024-02-21",
+  "d_good": "2024-02-07",
+  "endpoint_rerun_identical": true,
+  "fixed_commit": "3d454ac65f89e7833baaf89510f73c546e90d8f6",
+  "host": {
+    "platform": "linux",
+    "uv": "uv 0.13.0 (x86_64-unknown-linux-gnu)"
+  },
+  "host_time_zone_database": "tzdata==2025.2",
+  "incident_id": "pypet-pandas220-72",
+  "mask_statuses": {
+    "ok": 2
+  },
+  "minimal_failing_sets": [],
+  "project": "SmokinCaterpillar/pypet",
+  "python": "3.11",
+  "replayed_utc": "2026-10-10T20:50:07+00:00",
+  "requirements": {
+    "extra_requirements": [
+      "pytest"
+    ]
+  },
+  "search_space": 8,
+  "source": {
+    "sha256": "5076881656a16d6dd1554b5810ca66b3868e041c3ac946eddb18026b7d9d2121",
+    "url": "https://codeload.github.com/SmokinCaterpillar/pypet/tar.gz/3d454ac65f89e7833baaf89510f73c546e90d8f6",
+    "wheel": "pypet-0.6.1-py3-none-any.whl"
+  },
+  "source_date": "2024-02-21",
+  "source_urls": [
+    "https://github.com/SmokinCaterpillar/pypet/issues/72"
+  ]
+}

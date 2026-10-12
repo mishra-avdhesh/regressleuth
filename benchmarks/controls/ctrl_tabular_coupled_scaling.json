@@ -1,0 +1,30 @@
+{
+  "id": "ctrl_tabular_coupled_scaling",
+  "good": {
+    "model": "lr_v1",
+    "preprocessing": "canonical-order",
+    "policy": "threshold-0.50",
+    "data": "snapshot-a"
+  },
+  "bad": {
+    "model": "lr_noscale",
+    "preprocessing": "standardize-then-canonical",
+    "policy": "threshold-0.50",
+    "data": "snapshot-a"
+  },
+  "replay": {
+    "command": [
+      "{python}",
+      "../../examples/real_tabular/runner.py",
+      "--state",
+      "{state}",
+      "--result",
+      "{result}"
+    ],
+    "cases": "../../examples/real_tabular/cases.json",
+    "metric": "accuracy",
+    "direction": "higher",
+    "regression_threshold": 0.1,
+    "timeout_seconds": 60
+  }
+}

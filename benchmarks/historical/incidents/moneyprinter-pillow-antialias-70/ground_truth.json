@@ -1,0 +1,15 @@
+{
+  "accepted_causes": [
+    [
+      "pillow"
+    ]
+  ],
+  "discrepancy": null,
+  "established_before_evaluation": true,
+  "evidence_urls": [
+    "https://github.com/harry0703/MoneyPrinterTurbo/issues/70",
+    "https://pillow.readthedocs.io/en/stable/deprecations.html"
+  ],
+  "incident_id": "moneyprinter-pillow-antialias-70",
+  "support": "Upstream report and Pillow removal documentation agree; exhaustive two-state replay is good=1.0, bad=0.0."
+}

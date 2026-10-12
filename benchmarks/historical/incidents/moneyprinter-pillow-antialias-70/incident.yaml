@@ -1,0 +1,19 @@
+version: '1.0'
+id: moneyprinter-pillow-antialias-70
+description: Pillow 10 removed Image.ANTIALIAS used by a public image preprocessing path.
+good: {pillow: '9.5.0'}
+bad: {pillow: '10.0.0'}
+metric: {name: historical_resize_test_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1, confidence: 0.95, interval: student_t}
+search: {strategy: adaptive, max_cause_size: 2, seed: 0}
+budget: {max_replays: 16, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', runner.py, --state, '{state}', --result, '{result}']
+  timeout_seconds: 60
+  interpreters:
+    component: pillow
+    map:
+      '9.5.0': ../../envs/pillow9/bin/python
+      '10.0.0': ../../envs/pillow10/bin/python

@@ -1,0 +1,6 @@
+{
+  "input_rgb_size": [8, 8],
+  "output_height": 64,
+  "expected_output_size": [64, 64],
+  "expected_output_mode": "L"
+}

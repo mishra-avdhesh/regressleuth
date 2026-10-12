@@ -1,0 +1,47 @@
+{
+  "blamed_in_report": [
+    "numpy",
+    "pandas"
+  ],
+  "changed_components": [
+    "cloudpickle",
+    "fonttools",
+    "joblib",
+    "matplotlib",
+    "narwhals",
+    "scikit-learn"
+  ],
+  "coupled_minimal_sets": [],
+  "d_bad": "2026-09-11",
+  "d_good": "2026-08-28",
+  "endpoint_rerun_identical": true,
+  "fixed_commit": "ef172e3a13075a176a3e57d01a09ebfa9afa348d",
+  "host": {
+    "platform": "linux",
+    "uv": "uv 0.13.0 (x86_64-unknown-linux-gnu)"
+  },
+  "host_time_zone_database": "tzdata==2025.2",
+  "incident_id": "classeval-numpy2-pandas3-3",
+  "mask_statuses": {
+    "ok": 2
+  },
+  "minimal_failing_sets": [],
+  "project": "erdogant/classeval",
+  "python": "3.11",
+  "replayed_utc": "2026-10-10T20:36:03+00:00",
+  "requirements": {
+    "extra_requirements": [
+      "pytest"
+    ]
+  },
+  "search_space": 64,
+  "source": {
+    "sha256": "fc2f73d4ee8296d5bb1e0ac920b1c27b4330561792db6f5ac6ad8fd38f33f3dd",
+    "url": "https://codeload.github.com/erdogant/classeval/tar.gz/ef172e3a13075a176a3e57d01a09ebfa9afa348d",
+    "wheel": "classeval-0.2.2-py3-none-any.whl"
+  },
+  "source_date": "2026-09-11",
+  "source_urls": [
+    "https://github.com/erdogant/classeval/issues/3"
+  ]
+}

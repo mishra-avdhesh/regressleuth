@@ -1,0 +1,49 @@
+{
+  "blamed_in_report": [
+    "pandas"
+  ],
+  "changed_components": [
+    "pandas",
+    "pyarrow"
+  ],
+  "coupled_minimal_sets": [],
+  "d_bad": "2026-02-20",
+  "d_good": "2026-02-06",
+  "endpoint_rerun_identical": true,
+  "fixed_commit": "e832b655606342dc742ec1c564b07abf1ad58383",
+  "host": {
+    "platform": "linux",
+    "uv": "uv 0.13.0 (x86_64-unknown-linux-gnu)"
+  },
+  "host_time_zone_database": "tzdata==2025.2",
+  "incident_id": "partd-pandas3-82",
+  "mask_statuses": {
+    "ok": 2
+  },
+  "minimal_failing_sets": [],
+  "project": "dask/partd",
+  "python": "3.11",
+  "replayed_utc": "2026-10-10T20:27:19+00:00",
+  "requirements": {
+    "extra_requirements": [
+      "pytest",
+      "locket",
+      "numpy",
+      "toolz",
+      "pandas",
+      "blosc",
+      "pyzmq",
+      "pyarrow"
+    ]
+  },
+  "search_space": 4,
+  "source": {
+    "sha256": "95138f10462873ddb6502db5475017e2d377d92c7d3cd9eb53a472d8bdd9d402",
+    "url": "https://codeload.github.com/dask/partd/tar.gz/e832b655606342dc742ec1c564b07abf1ad58383",
+    "wheel": "partd-0+unknown-py3-none-any.whl"
+  },
+  "source_date": "2026-02-20",
+  "source_urls": [
+    "https://github.com/dask/partd/issues/82"
+  ]
+}

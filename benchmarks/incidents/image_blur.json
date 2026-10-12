@@ -1,0 +1,30 @@
+{
+  "id": "image_blur",
+  "good": {
+    "model": "mlp",
+    "preprocessing": "identity",
+    "data": "snapshot-a",
+    "policy": "abstain-0.30"
+  },
+  "bad": {
+    "model": "mlp",
+    "preprocessing": "blur",
+    "data": "snapshot-b",
+    "policy": "abstain-0.10"
+  },
+  "replay": {
+    "command": [
+      "{python}",
+      "../../examples/real_image/runner.py",
+      "--state",
+      "{state}",
+      "--result",
+      "{result}"
+    ],
+    "cases": "../../examples/real_image/cases.json",
+    "metric": "accuracy",
+    "direction": "higher",
+    "regression_threshold": 0.1,
+    "timeout_seconds": 60
+  }
+}

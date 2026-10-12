@@ -1,0 +1,14 @@
+blosc==1.11.4
+iniconfig==2.3.0
+locket==1.0.0
+numpy==2.4.2
+packaging==26.0
+pandas==3.0.0
+pluggy==1.6.0
+pyarrow==23.0.0
+pygments==2.19.2
+pytest==9.0.2
+python-dateutil==2.9.0.post0
+pyzmq==27.1.0
+six==1.17.0
+toolz==1.1.0

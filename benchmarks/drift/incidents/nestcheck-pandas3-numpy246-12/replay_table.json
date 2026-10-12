@@ -1,0 +1,22 @@
+{
+ "complete": false,
+ "incident": "nestcheck-pandas3-numpy246-12",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 158.25433454290032,
+    "status": "ok"
+   }
+  ],
+  "pillow|tqdm": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 15.465360183268785,
+    "status": "ok"
+   }
+  ]
+ }
+}

@@ -1,0 +1,202 @@
+[
+ {
+  "case_id": 0,
+  "text": "this film is great and the cast is excellent",
+  "label": 1
+ },
+ {
+  "case_id": 1,
+  "text": "i love the nice soundtrack",
+  "label": 1
+ },
+ {
+  "case_id": 2,
+  "text": "such a fun and happy ending",
+  "label": 1
+ },
+ {
+  "case_id": 3,
+  "text": "brilliant writing and good pacing",
+  "label": 1
+ },
+ {
+  "case_id": 4,
+  "text": "a good story with great acting",
+  "label": 1
+ },
+ {
+  "case_id": 5,
+  "text": "happy to say it was excellent",
+  "label": 1
+ },
+ {
+  "case_id": 6,
+  "text": "nice visuals and a brilliant score",
+  "label": 1
+ },
+ {
+  "case_id": 7,
+  "text": "i love how fun it was",
+  "label": 1
+ },
+ {
+  "case_id": 8,
+  "text": "great music and a nice plot",
+  "label": 1
+ },
+ {
+  "case_id": 9,
+  "text": "excellent direction made it good",
+  "label": 1
+ },
+ {
+  "case_id": 10,
+  "text": "a wonderful and happy surprise",
+  "label": 1
+ },
+ {
+  "case_id": 11,
+  "text": "fun scenes and brilliant jokes",
+  "label": 1
+ },
+ {
+  "case_id": 12,
+  "text": "good and great and nice",
+  "label": 1
+ },
+ {
+  "case_id": 13,
+  "text": "what a brilliant and happy film",
+  "label": 1
+ },
+ {
+  "case_id": 14,
+  "text": "i love this excellent show",
+  "label": 1
+ },
+ {
+  "case_id": 15,
+  "text": "nice cast and a good script",
+  "label": 1
+ },
+ {
+  "case_id": 16,
+  "text": "great fun for everyone",
+  "label": 1
+ },
+ {
+  "case_id": 17,
+  "text": "happy with the excellent finish",
+  "label": 1
+ },
+ {
+  "case_id": 18,
+  "text": "not bad at all and really good fun",
+  "label": 1
+ },
+ {
+  "case_id": 19,
+  "text": "a dull start but a great and brilliant finish",
+  "label": 1
+ },
+ {
+  "case_id": 20,
+  "text": "this film is bad and the cast is poor",
+  "label": 0
+ },
+ {
+  "case_id": 21,
+  "text": "i hate the boring soundtrack",
+  "label": 0
+ },
+ {
+  "case_id": 22,
+  "text": "such a sad and dull ending",
+  "label": 0
+ },
+ {
+  "case_id": 23,
+  "text": "awful writing and terrible pacing",
+  "label": 0
+ },
+ {
+  "case_id": 24,
+  "text": "a bad story with poor acting",
+  "label": 0
+ },
+ {
+  "case_id": 25,
+  "text": "sad to say it was awful",
+  "label": 0
+ },
+ {
+  "case_id": 26,
+  "text": "boring visuals and a dull score",
+  "label": 0
+ },
+ {
+  "case_id": 27,
+  "text": "i hate how bad it was",
+  "label": 0
+ },
+ {
+  "case_id": 28,
+  "text": "terrible music and a poor plot",
+  "label": 0
+ },
+ {
+  "case_id": 29,
+  "text": "awful direction made it boring",
+  "label": 0
+ },
+ {
+  "case_id": 30,
+  "text": "a horrible and sad surprise",
+  "label": 0
+ },
+ {
+  "case_id": 31,
+  "text": "dull scenes and terrible jokes",
+  "label": 0
+ },
+ {
+  "case_id": 32,
+  "text": "bad and awful and poor",
+  "label": 0
+ },
+ {
+  "case_id": 33,
+  "text": "what a boring and sad film",
+  "label": 0
+ },
+ {
+  "case_id": 34,
+  "text": "i hate this terrible show",
+  "label": 0
+ },
+ {
+  "case_id": 35,
+  "text": "poor cast and a bad script",
+  "label": 0
+ },
+ {
+  "case_id": 36,
+  "text": "awful waste for everyone",
+  "label": 0
+ },
+ {
+  "case_id": 37,
+  "text": "sad with the dull finish",
+  "label": 0
+ },
+ {
+  "case_id": 38,
+  "text": "a great start but a boring and awful finish",
+  "label": 0
+ },
+ {
+  "case_id": 39,
+  "text": "good effort but terrible and dull overall",
+  "label": 0
+ }
+]

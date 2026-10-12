@@ -1,0 +1,31 @@
+{
+  "incident": "classeval-numpy2-pandas3-3",
+  "project_wheel": "classeval-0.2.2-py3-none-any.whl",
+  "pytest_args": [],
+  "python": "3.11",
+  "shared_pins": [
+    "colourmap==1.2.1",
+    "contourpy==1.3.3",
+    "cycler==0.12.1",
+    "funcsigs==1.0.2",
+    "iniconfig==2.3.0",
+    "kiwisolver==1.5.1",
+    "numpy==2.4.6",
+    "packaging==26.3",
+    "pillow==12.3.0",
+    "pluggy==1.6.0",
+    "pygments==2.21.0",
+    "pyparsing==3.3.2",
+    "pytest==9.1.1",
+    "python-dateutil==2.9.0.post0",
+    "scipy==1.17.1",
+    "six==1.17.0",
+    "threadpoolctl==3.6.0"
+  ],
+  "test_environment": {},
+  "test_root": ".",
+  "test_timeout_seconds": 600,
+  "tests": [
+    "tests/test_classeval.py::test_summary"
+  ]
+}

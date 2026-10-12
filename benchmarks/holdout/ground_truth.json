@@ -1,0 +1,28 @@
+{
+  "holdout_csv_na_country_code": [
+    "csv_parser",
+    "export_format"
+  ],
+  "holdout_encoder_refit_per_batch": [
+    "batch_size",
+    "encoder_fit"
+  ],
+  "holdout_numpy2_float32_time": [
+    "config_store",
+    "environment"
+  ],
+  "holdout_pandas3_datetime_epoch": [
+    "environment"
+  ],
+  "holdout_proba_column_order": [
+    "model",
+    "postprocessing"
+  ],
+  "holdout_pythonhashseed_hashing": [
+    "runtime_env"
+  ],
+  "holdout_timezone_hour_feature": [
+    "export_format",
+    "preprocessing"
+  ]
+}

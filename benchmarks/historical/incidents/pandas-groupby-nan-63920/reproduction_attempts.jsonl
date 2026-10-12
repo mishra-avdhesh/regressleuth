@@ -1,0 +1,1 @@
+{"bad": [{"error_kind": null, "metric": 0.0, "seconds": 0.46814851835370064, "status": "ok"}], "good": [{"error_kind": null, "metric": 1.0, "seconds": 0.47030865773558617, "status": "ok"}], "utc": "2026-10-10T18:50:13+00:00"}

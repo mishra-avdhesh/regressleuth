@@ -1,0 +1,14 @@
+{
+  "accepted_causes": [
+    [
+      "pandas"
+    ]
+  ],
+  "discrepancy": null,
+  "established_before_evaluation": true,
+  "evidence_urls": [
+    "https://github.com/pandas-dev/pandas/issues/63920"
+  ],
+  "incident_id": "pandas-groupby-nan-63920",
+  "support": "Issue shows correct output in 2.3.3 and the wrong group assignment in 3.0.0. Controlled replay of both masks in matched environments: good=1.0, bad=0.0."
+}

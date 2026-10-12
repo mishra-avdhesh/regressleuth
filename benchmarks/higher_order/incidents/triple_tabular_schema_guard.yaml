@@ -1,0 +1,36 @@
+version: '1.0'
+id: triple_tabular_schema_guard
+description: Reordered columns break a positional model only when the name-based schema guard is also disabled.
+metadata:
+  benchmark: higher_order
+  designed_by: project author (not independent)
+good:
+  column_order: canonical
+  model: lr_v1
+  schema_guard: 'on'
+  data: snapshot-a
+  policy: threshold-0.50
+bad:
+  column_order: alphabetical
+  model: gbm_v2
+  schema_guard: 'off'
+  data: snapshot-b
+  policy: threshold-0.45
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.1
+budget:
+  max_replays: 16
+  audit: full
+cases: ../../../examples/real_tabular/cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/tabular_triple.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 900

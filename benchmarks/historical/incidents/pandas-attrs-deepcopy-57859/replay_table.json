@@ -1,0 +1,21 @@
+{
+ "incident": "pandas-attrs-deepcopy-57859",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 1.0,
+    "seconds": 0.41816234961152077,
+    "status": "ok"
+   }
+  ],
+  "pandas": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 0.41730084270238876,
+    "status": "ok"
+   }
+  ]
+ }
+}

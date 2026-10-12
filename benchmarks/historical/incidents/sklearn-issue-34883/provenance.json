@@ -1,0 +1,101 @@
+{
+  "bad": {
+    "scikit-learn": "1.9.0"
+  },
+  "changed_components": [
+    "scikit-learn"
+  ],
+  "claim_vs_replay": {
+    "matches_report": true,
+    "method": "2026-10-10, after reproduce.py and before sealing: the runner's reported call re-run in both matched environments, printing the exception type/message or value",
+    "observed_bad": "1.9.0: ValueError 'The classes, [1, 2], are not in class_weight'",
+    "observed_good": "1.8.0: fit succeeds",
+    "reported": "string labels coerced to int, dict lookup fails"
+  },
+  "failure_metric": "historical_class_weight_test_pass (pass iff fit completes without an exception)",
+  "fixed_test_cases": "cases.json (and runner.py): Verbatim public reproducer: RandomForestClassifier(n_estimators=5, class_weight='balanced').fit on string labels '1'/'2'.",
+  "good": {
+    "scikit-learn": "1.8.0"
+  },
+  "historical_claim": {
+    "expected": "known-good version passes the fixed test; known-bad version fails it",
+    "root_cause_evidence": "Issue reports the failure in 1.9 and success in 1.8, and traces it to the int() coercion added in PR #32644.",
+    "supported_root_cause": [
+      "scikit-learn"
+    ],
+    "title": "[BUG] `compute_class_weight` coerces class labels to int in 1.9, breaking dict lookup for string labels"
+  },
+  "hybrid_replay_feasibility": "full; one changed component, both masks executed",
+  "incident_id": "sklearn-issue-34883",
+  "observed": {
+    "bad": [
+      {
+        "error_kind": null,
+        "metric": 0.0,
+        "seconds": 0.9222687929868698,
+        "status": "ok"
+      }
+    ],
+    "good": [
+      {
+        "error_kind": null,
+        "metric": 1.0,
+        "seconds": 0.8737079203128815,
+        "status": "ok"
+      }
+    ]
+  },
+  "reproduction_command": "python benchmarks/historical/reproduce.py sklearn-issue-34883",
+  "reproduction_environment": {
+    "environments": {
+      "1.8.0": {
+        "name": "sklearn-1.8.0",
+        "packages": {
+          "joblib": "1.5.2",
+          "narwhals": "2.27.1",
+          "numpy": "2.3.4",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.16.2",
+          "threadpoolctl": "3.6.0"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "scikit-learn==1.8.0",
+          "numpy==2.3.4",
+          "scipy==1.16.2",
+          "joblib==1.5.2",
+          "threadpoolctl==3.6.0",
+          "narwhals==2.27.1"
+        ]
+      },
+      "1.9.0": {
+        "name": "sklearn-1.9.0",
+        "packages": {
+          "joblib": "1.5.2",
+          "narwhals": "2.27.1",
+          "numpy": "2.3.4",
+          "scikit-learn": "1.9.0",
+          "scipy": "1.16.2",
+          "threadpoolctl": "3.6.0"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "scikit-learn==1.9.0",
+          "numpy==2.3.4",
+          "scipy==1.16.2",
+          "joblib==1.5.2",
+          "threadpoolctl==3.6.0",
+          "narwhals==2.27.1"
+        ]
+      }
+    },
+    "host_platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39"
+  },
+  "source_date": "2026-09-04",
+  "source_retrieved_utc": "2026-10-10",
+  "source_type": "github_issue",
+  "source_urls": [
+    "https://github.com/scikit-learn/scikit-learn/issues/34883"
+  ],
+  "threshold": 0.5
+}

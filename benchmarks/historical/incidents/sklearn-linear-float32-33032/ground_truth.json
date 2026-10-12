@@ -1,0 +1,14 @@
+{
+  "accepted_causes": [
+    [
+      "scikit-learn"
+    ]
+  ],
+  "discrepancy": null,
+  "established_before_evaluation": true,
+  "evidence_urls": [
+    "https://github.com/scikit-learn/scikit-learn/issues/33032"
+  ],
+  "incident_id": "sklearn-linear-float32-33032",
+  "support": "Issue bisects the change to scikit-learn PR #30040 (commit bef9d18, first released in 1.6.0) and shows correct results before it. Controlled replay of both masks in matched environments: good=1.0, bad=0.0."
+}

@@ -1,0 +1,378 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:regressleuth:schema:result:1.0",
+  "title": "Regressleuth Result 1.0",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_version",
+    "tool",
+    "incident",
+    "search",
+    "status",
+    "diagnosis",
+    "suspected_cause",
+    "reason",
+    "alternatives",
+    "replays",
+    "confidence",
+    "verification",
+    "assumptions",
+    "audit",
+    "experiments",
+    "errors",
+    "runtime_seconds",
+    "adapter"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "regressleuth.result"
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "tool": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "const": "regressleuth"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "incident": {
+      "type": "object",
+      "required": [
+        "id",
+        "changed_components"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "changed_components": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unchanged_components": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "spec_version": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "states": {
+          "type": "object"
+        },
+        "metric": {
+          "type": "object"
+        }
+      }
+    },
+    "search": {
+      "type": "object",
+      "required": [
+        "strategy"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string"
+        },
+        "seed": {
+          "type": "integer"
+        },
+        "max_cause_size": {
+          "type": "integer"
+        },
+        "hypothesis_count": {
+          "type": "integer"
+        },
+        "search_space": {
+          "type": "integer"
+        },
+        "audit": {
+          "type": [
+            "string",
+            "integer"
+          ]
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "verified",
+        "inferred",
+        "inconclusive",
+        "unresolved",
+        "assumption_violated",
+        "invalid_baseline",
+        "evaluation_error"
+      ]
+    },
+    "diagnosis": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "suspected_cause": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "replays": {
+      "type": "object",
+      "required": [
+        "budget",
+        "isolation_used",
+        "audit_used",
+        "total",
+        "runner_runs"
+      ],
+      "properties": {
+        "budget": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "isolation_used": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "audit_used": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "runner_runs": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "confidence": {
+      "type": "object"
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "audit_mode",
+        "interval_method",
+        "interval_applied",
+        "confidence",
+        "repeats",
+        "max_repeats",
+        "assumption_checks",
+        "scope"
+      ],
+      "properties": {
+        "audit_mode": {
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "interval_method": {
+          "enum": [
+            "student_t",
+            "normal",
+            "anytime"
+          ]
+        },
+        "interval_applied": {
+          "type": "boolean"
+        },
+        "confidence": {
+          "type": "number"
+        },
+        "repeats": {
+          "type": "integer"
+        },
+        "max_repeats": {
+          "type": "integer"
+        },
+        "assumption_checks": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "scope": {
+          "type": "string"
+        },
+        "noise_scale": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "diagnosis_error_bound": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement",
+          "status",
+          "detail"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "assumed",
+              "checked",
+              "partially_checked",
+              "not_checked",
+              "violated",
+              "handled"
+            ]
+          }
+        }
+      }
+    },
+    "audit": {
+      "type": "object"
+    },
+    "experiments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "changed",
+          "outcome",
+          "metric",
+          "metric_sd",
+          "runs",
+          "duration_seconds",
+          "role",
+          "hypotheses_remaining",
+          "error_kind"
+        ],
+        "properties": {
+          "changed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "outcome": {
+            "enum": [
+              "pass",
+              "fail",
+              "inconclusive",
+              "incompatible",
+              "error"
+            ]
+          },
+          "metric": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "metric_sd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "runs": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "duration_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "role": {
+            "enum": [
+              "baseline",
+              "search",
+              "verification",
+              "audit"
+            ]
+          },
+          "hypotheses_remaining": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "error_kind": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "errors": {
+      "type": "object",
+      "required": [
+        "incompatible",
+        "error",
+        "inconclusive",
+        "kinds"
+      ]
+    },
+    "runtime_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "adapter": {
+      "type": "object"
+    }
+  }
+}

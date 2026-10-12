@@ -1,0 +1,14 @@
+{
+  "accepted_causes": [
+    [
+      "pandas"
+    ]
+  ],
+  "discrepancy": null,
+  "established_before_evaluation": true,
+  "evidence_urls": [
+    "https://github.com/pandas-dev/pandas/issues/57859"
+  ],
+  "incident_id": "pandas-attrs-deepcopy-57859",
+  "support": "Issue reports the reproducer working in pandas 2.1 and raising a __deepcopy__ error in 2.2.x (pandas 2.2 began deep-copying attrs). Controlled replay of both masks in matched environments: good=1.0, bad=0.0."
+}

@@ -1,0 +1,49 @@
+{
+  "blamed_in_report": [
+    "numpy"
+  ],
+  "changed_components": [
+    "coverage",
+    "fonttools",
+    "librt",
+    "matplotlib",
+    "pandas-stubs",
+    "platformdirs",
+    "pytest",
+    "tzdata",
+    "urllib3"
+  ],
+  "coupled_minimal_sets": [],
+  "d_bad": "2025-12-14",
+  "d_good": "2025-11-30",
+  "endpoint_rerun_identical": true,
+  "fixed_commit": "9521ea1f29b5ce1df1aa2ed6f65f3bd1c63884bb",
+  "host": {
+    "platform": "linux",
+    "uv": "uv 0.13.0 (x86_64-unknown-linux-gnu)"
+  },
+  "host_time_zone_database": "tzdata==2025.2",
+  "incident_id": "seaborn-numpy231-3892",
+  "mask_statuses": {
+    "ok": 2
+  },
+  "minimal_failing_sets": [],
+  "project": "mwaskom/seaborn",
+  "python": "3.11",
+  "replayed_utc": "2026-10-10T20:32:46+00:00",
+  "requirements": {
+    "project_extras": [
+      "dev"
+    ]
+  },
+  "search_space": 512,
+  "source": {
+    "sha256": "e17996fa187015d62c6232f4647080c69a44ceb68ab9d9915f4f7fd7f43ddd54",
+    "url": "https://codeload.github.com/mwaskom/seaborn/tar.gz/9521ea1f29b5ce1df1aa2ed6f65f3bd1c63884bb",
+    "wheel": "seaborn-0.13.2-py3-none-any.whl"
+  },
+  "source_date": "2025-12-14",
+  "source_urls": [
+    "https://github.com/mwaskom/seaborn/issues/3892"
+  ]
+}

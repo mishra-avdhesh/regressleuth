@@ -1,0 +1,9 @@
+# The sdist is an allowlist: the package, its tests, the package auditor and user-facing docs.
+# Benchmarks, examples, generated data, models and environments live in the repository.
+prune *
+graft src/regressleuth
+graft tests
+include README.md LICENSE CHANGELOG.md CITATION.cff SECURITY.md CONTRIBUTING.md pyproject.toml
+include tools/audit_package.py
+include docs/*.md docs/experiments/*.md
+global-exclude __pycache__ *.py[cod] *.so .DS_Store

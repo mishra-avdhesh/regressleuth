@@ -1,0 +1,17 @@
+blosc2==2.5.1
+iniconfig==2.0.0
+msgpack==1.0.7
+ndindex==1.7
+numexpr==2.9.0
+numpy==1.26.4
+packaging==23.2
+pandas==2.2.0
+pluggy==1.4.0
+py-cpuinfo==9.0.0
+pytest==8.0.0
+python-dateutil==2.8.2
+pytz==2024.1
+scipy==1.12.0
+six==1.16.0
+tables==3.9.2
+tzdata==2023.4

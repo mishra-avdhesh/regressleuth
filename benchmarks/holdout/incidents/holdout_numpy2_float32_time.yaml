@@ -1,0 +1,49 @@
+version: '1.0'
+id: holdout_numpy2_float32_time
+description: A fraud model's seconds-since-password-reset feature degrades after a NumPy upgrade and a
+  config-store migration.
+metadata:
+  provenance:
+  - title: NumPy 2.0 migration guide (NEP 50 promotion changes)
+    url: https://numpy.org/doc/2.0/numpy_2_0_migration_guide.html
+  - title: 'NEP 50: Promotion rules for Python scalars'
+    url: https://numpy.org/neps/nep-0050-scalar-promotion.html
+  reconstruction: seeded synthetic events; the NumPy 1.26.4 versus 2.x promotion behavior is real
+  dataset: synthetic (seed 11)
+  benchmark: holdout
+  preregistered: benchmarks/holdout/PREREGISTRATION.md
+good:
+  environment: numpy1
+  config_store: float64-json
+  model: m1
+  policy: threshold-0.50
+  log_level: info
+bad:
+  environment: numpy2
+  config_store: float32-parquet
+  model: m1b
+  policy: threshold-0.48
+  log_level: debug
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.03
+budget:
+  max_replays: 16
+  audit: full
+cases: ../data/numpy_time/cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/numpy_time.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 300
+  interpreters:
+    component: environment
+    map:
+      numpy1: ../envs/np1/bin/python
+      numpy2: ../envs/np2/bin/python

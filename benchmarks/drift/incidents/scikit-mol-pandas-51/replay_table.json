@@ -1,0 +1,22 @@
+{
+ "complete": false,
+ "incident": "scikit-mol-pandas-51",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 1.0,
+    "seconds": 9.494798995554447,
+    "status": "ok"
+   }
+  ],
+  "pandas|platformdirs|tzdata": [
+   {
+    "error_kind": null,
+    "metric": 1.0,
+    "seconds": 3.128877155482769,
+    "status": "ok"
+   }
+  ]
+ }
+}

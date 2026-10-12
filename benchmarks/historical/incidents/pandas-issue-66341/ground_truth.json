@@ -1,0 +1,14 @@
+{
+  "accepted_causes": [
+    [
+      "pandas"
+    ]
+  ],
+  "discrepancy": null,
+  "established_before_evaluation": true,
+  "evidence_urls": [
+    "https://github.com/pandas-dev/pandas/issues/66341"
+  ],
+  "incident_id": "pandas-issue-66341",
+  "support": "Issue reports 2.3.1 correct and 3.0/3.0.3/3.0.4 returning a string-formatted list. Controlled replay of both masks in matched environments: good=1.0, bad=0.0."
+}

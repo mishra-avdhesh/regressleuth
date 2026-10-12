@@ -1,0 +1,21 @@
+{
+ "incident": "sklearn-linear-float32-33032",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 1.0,
+    "seconds": 0.8258741311728954,
+    "status": "ok"
+   }
+  ],
+  "scikit-learn": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 0.8254962973296642,
+    "status": "ok"
+   }
+  ]
+ }
+}

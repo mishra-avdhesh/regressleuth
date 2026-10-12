@@ -1,0 +1,14 @@
+{
+  "accepted_causes": [
+    [
+      "scikit-learn"
+    ]
+  ],
+  "discrepancy": null,
+  "established_before_evaluation": true,
+  "evidence_urls": [
+    "https://github.com/scikit-learn/scikit-learn/issues/34883"
+  ],
+  "incident_id": "sklearn-issue-34883",
+  "support": "Issue reports the failure in 1.9 and success in 1.8, and traces it to the int() coercion added in PR #32644. Controlled replay of both masks in matched environments: good=1.0, bad=0.0."
+}

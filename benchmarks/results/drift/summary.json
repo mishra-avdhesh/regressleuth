@@ -1,0 +1,11 @@
+{
+ "decisions": {
+  "interaction": {
+   "detail": "incidents with a minimal cause of two or more components: none; verified correctly at full budget by at least one strategy: none",
+   "established": false
+  },
+  "large_space": "0 incident(s) with k >= 8 (none); described per incident, not summarized as a rate",
+  "search_advantage": {}
+ },
+ "summary": []
+}

@@ -1,0 +1,22 @@
+{
+ "complete": false,
+ "incident": "classeval-numpy2-pandas3-3",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 36.7203097268939,
+    "status": "ok"
+   }
+  ],
+  "cloudpickle|fonttools|joblib|matplotlib|narwhals|scikit-learn": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 26.38966292887926,
+    "status": "ok"
+   }
+  ]
+ }
+}

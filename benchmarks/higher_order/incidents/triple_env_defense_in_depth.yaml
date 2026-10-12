@@ -1,0 +1,42 @@
+version: '1.0'
+id: triple_env_defense_in_depth
+description: Sentinel values survive only if pandas 3 silently ignores the chained assignment AND the downstream
+  validator is off.
+metadata:
+  benchmark: higher_order
+  designed_by: project author (not independent)
+good:
+  environment: pandas2
+  imputation_code: impute-loc
+  validator: 'on'
+  model: m1
+  policy: threshold-0.50
+bad:
+  environment: pandas3
+  imputation_code: impute-chained
+  validator: 'off'
+  model: m2
+  policy: threshold-0.45
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.1
+budget:
+  max_replays: 16
+  audit: full
+cases: ../../../examples/real_env/cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/env_triple.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 900
+  interpreters:
+    component: environment
+    map:
+      pandas2: ../../../examples/real_env/envs/pandas2/bin/python
+      pandas3: ../../../examples/real_env/envs/pandas3/bin/python

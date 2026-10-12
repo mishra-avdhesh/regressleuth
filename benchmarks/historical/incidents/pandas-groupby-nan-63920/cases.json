@@ -1,0 +1,9 @@
+{
+  "metric": [10.0, 5.0, 12.0, 20.0, 8.0],
+  "sector": [1, 2, 1, 2, null],
+  "dates": ["2026-01-01", "2026-01-01", "2026-02-01", "2026-02-01", "2026-02-01"],
+  "companies": ["A", "B", "A", "B", "C"],
+  "categories": [1, 2],
+  "expected_january_sector_2_sum": 5.0,
+  "source": "https://github.com/pandas-dev/pandas/issues/63920 (verbatim data and expected value)"
+}

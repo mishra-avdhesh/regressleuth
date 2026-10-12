@@ -1,0 +1,39 @@
+# A regressed scoring service diagnosed only through HTTP calls.
+version: "1.0"
+id: http_risk_service_regression
+description: >
+  Release "bad" of the risk-scoring service lost accuracy against release "good".
+  Five components changed in the release; which one, or which pair, broke it?
+
+good:
+  model: "risk-model:v1"
+  feature_assembler: fa-1.4
+  threshold_config: t-0.50
+  cache: lru-on
+  log_format: json
+bad:
+  model: "risk-model:v2"
+  feature_assembler: fa-2.0
+  threshold_config: t-0.45
+  cache: lru-off
+  log_format: text
+
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.05
+
+budget:
+  max_replays: 16
+  audit: extended
+
+cases: cases.jsonl
+
+adapter:
+  type: http
+  base_url: ${REGRESSLEUTH_SERVICE_URL}     # the regressed deployment, e.g. http://127.0.0.1:8702
+  mode: predict
+  path: /predict
+  components_via: header
+  batch_size: 64
+  timeout_seconds: 20

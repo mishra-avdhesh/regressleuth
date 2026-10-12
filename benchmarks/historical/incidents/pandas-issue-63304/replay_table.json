@@ -1,0 +1,21 @@
+{
+ "incident": "pandas-issue-63304",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 1.0,
+    "seconds": 0.5196320004761219,
+    "status": "ok"
+   }
+  ],
+  "pandas": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 0.46861034259200096,
+    "status": "ok"
+   }
+  ]
+ }
+}

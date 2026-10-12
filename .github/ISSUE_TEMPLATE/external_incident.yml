@@ -1,0 +1,61 @@
+name: Reproducible external incident
+description: Propose a public ML regression with fixed good/bad states and replay evidence
+title: "External incident: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read docs/EXTERNAL_INCIDENTS.md before submitting. Do not upload secrets, private data, or proprietary weights. Submission does not add a case to a sealed benchmark.
+  - type: input
+    id: source
+    attributes:
+      label: Original public report
+      description: Link to the dated issue, outage report, or failing pull request.
+      placeholder: https://github.com/owner/project/issues/123
+    validations:
+      required: true
+  - type: textarea
+    id: versions
+    attributes:
+      label: Exact good and bad states
+      description: List each changed component, both immutable versions or digests, and the shared runtime/dependency lock.
+    validations:
+      required: true
+  - type: textarea
+    id: test
+    attributes:
+      label: Fixed test and metric
+      description: Give the public case IDs or fixture, metric code, threshold, and exact commands for the good and bad endpoints.
+    validations:
+      required: true
+  - type: textarea
+    id: observations
+    attributes:
+      label: Endpoint observations and original failure
+      description: Include pass/fail outputs, runtime, and the failure signature from the original report.
+    validations:
+      required: true
+  - type: textarea
+    id: hybrids
+    attributes:
+      label: Hybrid replay feasibility
+      description: Explain which old/new component mixes can be built, including known incompatibilities.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Independent cause evidence and artifact access
+      description: Link the fix or maintainer analysis, public artifacts, and their license. State if the true cause is still uncertain.
+    validations:
+      required: true
+  - type: dropdown
+    id: independent
+    attributes:
+      label: Were you independent of the Regressleuth search design?
+      options:
+        - "Yes"
+        - "No"
+        - "Unsure"
+    validations:
+      required: true

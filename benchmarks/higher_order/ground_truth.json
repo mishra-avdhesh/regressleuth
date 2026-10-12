@@ -1,0 +1,22 @@
+{
+  "triple_env_defense_in_depth": [
+    "environment",
+    "imputation_code",
+    "validator"
+  ],
+  "triple_image_orientation": [
+    "model",
+    "orientation_fix",
+    "sensor_orientation"
+  ],
+  "triple_tabular_schema_guard": [
+    "column_order",
+    "model",
+    "schema_guard"
+  ],
+  "triple_text_lowercase_safeguards": [
+    "lowercase_step",
+    "normalizer",
+    "tokenizer"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "accepted_causes": [
+    [
+      "pandas"
+    ]
+  ],
+  "discrepancy": null,
+  "established_before_evaluation": true,
+  "evidence_urls": [
+    "https://github.com/pandas-dev/pandas/issues/65118"
+  ],
+  "incident_id": "pandas-issue-65118",
+  "support": "Reporter verified the difference between 2.3.3 and 3.0.2 (silent no-op in 3.0.x). Controlled replay of both masks in matched environments: good=1.0, bad=0.0."
+}

@@ -1,0 +1,41 @@
+{
+  "bad": {
+    "pillow": "10.0.0"
+  },
+  "changed_components": [
+    "pillow"
+  ],
+  "failure_metric": "historical_resize_test_pass (1.0 or 0.0)",
+  "fixed_test_cases": "cases.json: a fixed 8x8 RGB image exercises the exact historical resize call; pixel content is irrelevant to the missing constant",
+  "good": {
+    "pillow": "9.5.0"
+  },
+  "hybrid_replay_feasibility": "full; one changed component, both endpoint masks executed",
+  "incident_id": "moneyprinter-pillow-antialias-70",
+  "reconstruction_level": "minimal public code path, not the entire MoneyPrinterTurbo application",
+  "reproduction_command": ".venv/bin/python -c \"from regressleuth import Incident; from benchmarks.prove_ground_truth import table_for; print(table_for(Incident.from_file(\"benchmarks/historical/incidents/moneyprinter-pillow-antialias-70/incident.yaml\"), workers=1))\"",
+  "reproduction_environment": {
+    "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+    "python": "3.11.16",
+    "wheels": {
+      "10.0.0": {
+        "filename": "Pillow-10.0.0-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "sha256": "cd25d2a9d2b36fcb318882481367956d2cf91329f6892fe5d385c346c0649629"
+      },
+      "9.5.0": {
+        "filename": "Pillow-9.5.0-cp311-cp311-manylinux_2_28_x86_64.whl",
+        "sha256": "8d935f924bbab8f0a9a28404422da8af4904e36d5c33fc6f677e4c4485515625"
+      }
+    }
+  },
+  "root_cause_evidence": "The public report names the removed Image.ANTIALIAS constant, reports Pillow 9.5.0 working and 10.0.0 failing, and gives the same resize call; Pillow documents the removal.",
+  "source_date": "2024-03-27",
+  "source_retrieved_utc": "2026-10-10",
+  "source_type": "github_issue",
+  "source_urls": [
+    "https://github.com/harry0703/MoneyPrinterTurbo/issues/70",
+    "https://pillow.readthedocs.io/en/stable/deprecations.html"
+  ],
+  "threshold": 0.5,
+  "title": "MoneyPrinterTurbo resize fails when Pillow removes Image.ANTIALIAS"
+}

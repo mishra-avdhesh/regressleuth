@@ -1,0 +1,30 @@
+{
+  "id": "image_model_x_shift",
+  "good": {
+    "model": "lr_aug_shift",
+    "preprocessing": "identity",
+    "data": "snapshot-a",
+    "policy": "abstain-0.30"
+  },
+  "bad": {
+    "model": "mlp",
+    "preprocessing": "shift-1",
+    "data": "snapshot-b",
+    "policy": "abstain-0.10"
+  },
+  "replay": {
+    "command": [
+      "{python}",
+      "../../examples/real_image/runner.py",
+      "--state",
+      "{state}",
+      "--result",
+      "{result}"
+    ],
+    "cases": "../../examples/real_image/cases.json",
+    "metric": "accuracy",
+    "direction": "higher",
+    "regression_threshold": 0.1,
+    "timeout_seconds": 60
+  }
+}

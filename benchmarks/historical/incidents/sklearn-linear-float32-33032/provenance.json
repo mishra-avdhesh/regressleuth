@@ -1,0 +1,97 @@
+{
+  "bad": {
+    "scikit-learn": "1.6.0"
+  },
+  "changed_components": [
+    "scikit-learn"
+  ],
+  "claim_vs_replay": {
+    "matches_report": true,
+    "method": "2026-10-10, after reproduce.py and before sealing: the runner's reported call re-run in both matched environments, printing the exception type/message or value",
+    "observed_bad": "1.6.0: residual 59.06 (scipy 24.40), ratio 2.42",
+    "observed_good": "1.5.2: residual 24.40 (scipy 24.40)",
+    "reported": "24.40 expected vs 59.06 in the issue"
+  },
+  "failure_metric": "historical_float32_lstsq_test_pass (pass iff sklearn's float32 residual norm <= 1.01 x scipy's float32 residual norm (issue: 24.40 vs 24.40 expected, 59.06 actual))",
+  "fixed_test_cases": "cases.json (and runner.py): Verbatim public reproducer: LinearRegression(fit_intercept=False) on 500,000 float32 rows (seed 1337) versus scipy.linalg.lstsq.",
+  "good": {
+    "scikit-learn": "1.5.2"
+  },
+  "historical_claim": {
+    "expected": "known-good version passes the fixed test; known-bad version fails it",
+    "root_cause_evidence": "Issue bisects the change to scikit-learn PR #30040 (commit bef9d18, first released in 1.6.0) and shows correct results before it.",
+    "supported_root_cause": [
+      "scikit-learn"
+    ],
+    "title": "Scikit-learn LinearRegression float32 residual regression"
+  },
+  "hybrid_replay_feasibility": "full; one changed component, both masks executed",
+  "incident_id": "sklearn-linear-float32-33032",
+  "observed": {
+    "bad": [
+      {
+        "error_kind": null,
+        "metric": 0.0,
+        "seconds": 0.8254962973296642,
+        "status": "ok"
+      }
+    ],
+    "good": [
+      {
+        "error_kind": null,
+        "metric": 1.0,
+        "seconds": 0.8258741311728954,
+        "status": "ok"
+      }
+    ]
+  },
+  "reproduction_command": "python benchmarks/historical/reproduce.py sklearn-linear-float32-33032",
+  "reproduction_environment": {
+    "environments": {
+      "1.5.2": {
+        "name": "sklearn-1.5.2",
+        "packages": {
+          "joblib": "1.4.2",
+          "numpy": "2.1.3",
+          "scikit-learn": "1.5.2",
+          "scipy": "1.14.1",
+          "threadpoolctl": "3.5.0"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "scikit-learn==1.5.2",
+          "numpy==2.1.3",
+          "scipy==1.14.1",
+          "joblib==1.4.2",
+          "threadpoolctl==3.5.0"
+        ]
+      },
+      "1.6.0": {
+        "name": "sklearn-1.6.0",
+        "packages": {
+          "joblib": "1.4.2",
+          "numpy": "2.1.3",
+          "scikit-learn": "1.6.0",
+          "scipy": "1.14.1",
+          "threadpoolctl": "3.5.0"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "scikit-learn==1.6.0",
+          "numpy==2.1.3",
+          "scipy==1.14.1",
+          "joblib==1.4.2",
+          "threadpoolctl==3.5.0"
+        ]
+      }
+    },
+    "host_platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39"
+  },
+  "source_date": "2026-01-09",
+  "source_retrieved_utc": "2026-10-10",
+  "source_type": "github_issue",
+  "source_urls": [
+    "https://github.com/scikit-learn/scikit-learn/issues/33032"
+  ],
+  "threshold": 0.5
+}

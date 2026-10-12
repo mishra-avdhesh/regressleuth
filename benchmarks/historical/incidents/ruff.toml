@@ -1,0 +1,7 @@
+# Incident runners keep issue reproducers as written (names such as `X`, `l`, old-style
+# `super()`), and `reproducer_verbatim.py` is a byte-for-byte copy of the issue's code.
+extend = "../../../pyproject.toml"
+extend-exclude = ["*/reproducer_verbatim.py"]
+
+[lint]
+extend-per-file-ignores = { "*" = ["N806", "E741", "UP008", "RUF100"] }

@@ -1,0 +1,45 @@
+version: '1.0'
+id: holdout_pythonhashseed_hashing
+description: A hashing-trick model breaks after a new deployment manifest drops PYTHONHASHSEED.
+metadata:
+  provenance:
+  - title: 'Python docs: command line and environment, PYTHONHASHSEED'
+    url: https://docs.python.org/3/using/cmdline.html
+  reconstruction: Adult census income (real data); Python's per-process hash salting is real
+  dataset: Adult census income via scikit-learn/adult-census-income (CC0)
+  benchmark: holdout
+  preregistered: benchmarks/holdout/PREREGISTRATION.md
+good:
+  runtime_env: manifest-v1
+  model: m1
+  policy: threshold-0.50
+  log_level: info
+  cache_ttl: '300'
+bad:
+  runtime_env: manifest-v2
+  model: m1b
+  policy: threshold-0.48
+  log_level: debug
+  cache_ttl: '600'
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.03
+budget:
+  max_replays: 16
+  audit: full
+cases: ../data/adult/sample_cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/adult_hashing.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 300
+replay:
+  repeats: 3
+  max_repeats: 9
+  confidence: 0.95

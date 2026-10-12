@@ -1,0 +1,79 @@
+{
+  "churn_calibration_interaction": [
+    "model",
+    "preprocessing"
+  ],
+  "churn_policy_threshold": [
+    "policy"
+  ],
+  "env_pandas3_upgrade": [
+    "environment"
+  ],
+  "env_prep_x_pandas3": [
+    "preprocessing",
+    "environment"
+  ],
+  "image_blur": [
+    "preprocessing"
+  ],
+  "image_dead_pixels": [
+    "data"
+  ],
+  "image_invert": [
+    "preprocessing"
+  ],
+  "image_model_x_shift": [
+    "model",
+    "preprocessing"
+  ],
+  "image_model_x_transpose": [
+    "model",
+    "preprocessing"
+  ],
+  "noisy_data_x_width": [
+    "train_data",
+    "width"
+  ],
+  "noisy_epochs": [
+    "epochs"
+  ],
+  "noisy_labels_x_width_borderline": [
+    "label_noise",
+    "width"
+  ],
+  "tabular_calibration_x_abstain": [
+    "model",
+    "policy"
+  ],
+  "tabular_column_order": [
+    "preprocessing"
+  ],
+  "tabular_model_x_column_order": [
+    "model",
+    "preprocessing"
+  ],
+  "tabular_threshold": [
+    "policy"
+  ],
+  "tabular_units_x_model": [
+    "model",
+    "data"
+  ],
+  "tabular_upstream_zero_fill": [
+    "data"
+  ],
+  "text_model_x_uppercase": [
+    "model",
+    "preprocessing"
+  ],
+  "text_tokenizer_x_uppercase": [
+    "preprocessing",
+    "tokenizer"
+  ],
+  "text_truncation": [
+    "max_length"
+  ],
+  "text_uppercase_cased": [
+    "preprocessing"
+  ]
+}

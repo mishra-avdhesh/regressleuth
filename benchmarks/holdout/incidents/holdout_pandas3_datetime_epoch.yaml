@@ -1,0 +1,48 @@
+version: '1.0'
+id: holdout_pandas3_datetime_epoch
+description: Account age, computed with the astype('int64') // 10**9 idiom, breaks after a pandas upgrade.
+metadata:
+  provenance:
+  - title: 'pandas 3.0.0 release notes: datetime resolution inference'
+    url: https://pandas.pydata.org/docs/whatsnew/v3.0.0.html
+  - title: 'pandas-dev/pandas#58989: timestamp resolution inference'
+    url: https://github.com/pandas-dev/pandas/issues/58989
+  reconstruction: seeded synthetic accounts; pandas 2.3 versus 3.0 parsing behavior is real
+  dataset: synthetic (seed 12)
+  benchmark: holdout
+  preregistered: benchmarks/holdout/PREREGISTRATION.md
+good:
+  environment: pandas2
+  model: m1
+  policy: threshold-0.50
+  log_level: info
+  cache_ttl: '300'
+bad:
+  environment: pandas3
+  model: m1b
+  policy: threshold-0.48
+  log_level: debug
+  cache_ttl: '600'
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.03
+budget:
+  max_replays: 16
+  audit: full
+cases: ../data/pandas_datetime/cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/pandas_datetime.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 300
+  interpreters:
+    component: environment
+    map:
+      pandas2: ../envs/np2/bin/python
+      pandas3: ../envs/pd3/bin/python

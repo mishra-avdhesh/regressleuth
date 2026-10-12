@@ -1,0 +1,22 @@
+{
+ "complete": false,
+ "incident": "pypet-pandas220-72",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 190.52034386992455,
+    "status": "ok"
+   }
+  ],
+  "ndindex|pytest|tzdata": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 164.6290034390986,
+    "status": "ok"
+   }
+  ]
+ }
+}

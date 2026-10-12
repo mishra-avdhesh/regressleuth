@@ -1,0 +1,1 @@
+{"expected_prices": [0.04, 0.09, 0.14, 0.19], "source": "https://github.com/pandas-dev/pandas/issues/65118 (prices column 4, 9, 14, 19 divided by 100)"}

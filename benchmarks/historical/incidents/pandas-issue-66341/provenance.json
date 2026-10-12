@@ -1,0 +1,105 @@
+{
+  "bad": {
+    "pandas": "3.0.0"
+  },
+  "changed_components": [
+    "pandas"
+  ],
+  "claim_vs_replay": {
+    "matches_report": true,
+    "method": "2026-10-10, after reproduce.py and before sealing: the runner's reported call re-run in both matched environments, printing the exception type/message or value",
+    "observed_bad": "3.0.0: str \"['this', 'is', 'a', 'regular', 'sentence']\"",
+    "observed_good": "2.3.1: list ['this', 'is', 'a', 'regular', 'sentence']",
+    "reported": "string-formatted list in 3.0.x"
+  },
+  "failure_metric": "historical_str_split_test_pass (pass iff the first element is the list ['this', 'is', 'a', 'regular', 'sentence'])",
+  "fixed_test_cases": "cases.json (and runner.py): Public reproducer from the str.split documentation example: s.astype('category').str.split().",
+  "good": {
+    "pandas": "2.3.1"
+  },
+  "historical_claim": {
+    "expected": "known-good version passes the fixed test; known-bad version fails it",
+    "root_cause_evidence": "Issue reports 2.3.1 correct and 3.0/3.0.3/3.0.4 returning a string-formatted list.",
+    "supported_root_cause": [
+      "pandas"
+    ],
+    "title": "BUG: str.split returns string formatted list in version 3.0.x"
+  },
+  "hybrid_replay_feasibility": "full; one changed component, both masks executed",
+  "incident_id": "pandas-issue-66341",
+  "observed": {
+    "bad": [
+      {
+        "error_kind": null,
+        "metric": 0.0,
+        "seconds": 0.46779894456267357,
+        "status": "ok"
+      }
+    ],
+    "good": [
+      {
+        "error_kind": null,
+        "metric": 1.0,
+        "seconds": 0.4699348248541355,
+        "status": "ok"
+      }
+    ]
+  },
+  "reproduction_command": "python benchmarks/historical/reproduce.py pandas-issue-66341",
+  "reproduction_environment": {
+    "environments": {
+      "2.3.1": {
+        "name": "pandas-2.3.1",
+        "packages": {
+          "numpy": "2.2.6",
+          "pandas": "2.3.1",
+          "pyarrow": "21.0.0",
+          "python-dateutil": "2.9.0.post0",
+          "pytz": "2025.2",
+          "six": "1.17.0",
+          "tzdata": "2025.2"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "pandas==2.3.1",
+          "numpy==2.2.6",
+          "pyarrow==21.0.0",
+          "python-dateutil==2.9.0.post0",
+          "pytz==2025.2",
+          "tzdata==2025.2",
+          "six==1.17.0"
+        ]
+      },
+      "3.0.0": {
+        "name": "pandas-3.0.0",
+        "packages": {
+          "numpy": "2.2.6",
+          "pandas": "3.0.0",
+          "pyarrow": "21.0.0",
+          "python-dateutil": "2.9.0.post0",
+          "pytz": "2025.2",
+          "six": "1.17.0",
+          "tzdata": "2025.2"
+        },
+        "python": "3.11.16",
+        "requested": [
+          "pandas==3.0.0",
+          "numpy==2.2.6",
+          "pyarrow==21.0.0",
+          "python-dateutil==2.9.0.post0",
+          "pytz==2025.2",
+          "tzdata==2025.2",
+          "six==1.17.0"
+        ]
+      }
+    },
+    "host_platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39"
+  },
+  "source_date": "2026-07-15",
+  "source_retrieved_utc": "2026-10-10",
+  "source_type": "github_issue",
+  "source_urls": [
+    "https://github.com/pandas-dev/pandas/issues/66341"
+  ],
+  "threshold": 0.5
+}

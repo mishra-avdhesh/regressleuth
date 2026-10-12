@@ -1,0 +1,1 @@
+{"reproducer": "reproducer_verbatim.py", "pass_criterion": "print(df.head()) completes without an exception"}

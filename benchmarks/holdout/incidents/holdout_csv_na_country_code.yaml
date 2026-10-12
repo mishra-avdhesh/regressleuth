@@ -1,0 +1,50 @@
+version: '1.0'
+id: holdout_csv_na_country_code
+description: Transactions from a high-risk corridor stop being flagged after an export format change and
+  a parser refactor.
+metadata:
+  provenance:
+  - title: 'pandas-dev/pandas#10647: default behavior of read_csv for NA and NaN (Namibia''s code)'
+    url: https://github.com/pandas-dev/pandas/issues/10647
+  - title: 'pandas-dev/pandas#4318: NA string in data gets read as NaN'
+    url: https://github.com/pandas-dev/pandas/issues/4318
+  reconstruction: seeded synthetic transactions; pandas read_csv missing-value defaults are real
+  dataset: synthetic (seed 13)
+  benchmark: holdout
+  preregistered: benchmarks/holdout/PREREGISTRATION.md
+good:
+  export_format: iso-alpha3
+  csv_parser: explicit-na
+  model: m1
+  policy: threshold-0.50
+  log_level: info
+  runtime: py312-pandas2
+bad:
+  export_format: iso-alpha2
+  csv_parser: pandas-default
+  model: m1b
+  policy: threshold-0.48
+  log_level: debug
+  runtime: py312-pandas2
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.03
+budget:
+  max_replays: 16
+  audit: full
+cases: ../data/csv_country/cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/csv_country.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 300
+  interpreters:
+    component: runtime
+    map:
+      py312-pandas2: ../envs/np2/bin/python

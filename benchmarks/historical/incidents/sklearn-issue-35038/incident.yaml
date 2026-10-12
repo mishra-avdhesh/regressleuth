@@ -1,0 +1,39 @@
+version: '1.0'
+id: sklearn-issue-35038
+description: from sklearn.model_selection import * raises ImportError from 1.8.0.
+good:
+  scikit-learn: 1.7.2
+bad:
+  scikit-learn: 1.8.0
+metric:
+  name: historical_star_import_test_pass
+  direction: higher_is_better
+  regression_threshold: 0.5
+replay:
+  repeats: 1
+  max_repeats: 1
+  confidence: 0.95
+  interval: student_t
+search:
+  strategy: adaptive
+  max_cause_size: 2
+  seed: 0
+budget:
+  max_replays: 16
+  audit: extended
+cases: cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - runner.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 300
+  interpreters:
+    component: scikit-learn
+    map:
+      1.7.2: ../../envs/sklearn-1.7.2/bin/python
+      1.8.0: ../../envs/sklearn-1.8.0/bin/python

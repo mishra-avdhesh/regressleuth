@@ -1,0 +1,5546 @@
+{
+"churn_calibration_interaction|adaptive|12": [
+1.0,
+1.0,
+6.0,
+7.0,
+7.0
+],
+"churn_calibration_interaction|adaptive|16": [
+1.0,
+1.0,
+6.0,
+7.0,
+7.0
+],
+"churn_calibration_interaction|adaptive|32": [
+1.0,
+1.0,
+6.0,
+7.0,
+7.0
+],
+"churn_calibration_interaction|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"churn_calibration_interaction|adaptive|6": [
+1.0,
+1.0,
+6.0,
+7.0,
+7.0
+],
+"churn_calibration_interaction|adaptive|8": [
+1.0,
+1.0,
+6.0,
+7.0,
+7.0
+],
+"churn_calibration_interaction|ddmin|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|ddmin|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|ddmin|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"churn_calibration_interaction|ddmin|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"churn_calibration_interaction|ddmin|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"churn_calibration_interaction|exhaustive|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"churn_calibration_interaction|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|greedy|12": [
+1.0,
+1.0,
+7.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|greedy|16": [
+1.0,
+1.0,
+7.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|greedy|32": [
+1.0,
+1.0,
+7.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"churn_calibration_interaction|greedy|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"churn_calibration_interaction|greedy|8": [
+1.0,
+1.0,
+7.0,
+8.0,
+8.0
+],
+"churn_calibration_interaction|one_factor|12": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"churn_calibration_interaction|one_factor|16": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"churn_calibration_interaction|one_factor|32": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"churn_calibration_interaction|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"churn_calibration_interaction|one_factor|6": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"churn_calibration_interaction|one_factor|8": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"churn_calibration_interaction|random|12": [
+1.0,
+1.0,
+6.9,
+7.5,
+7.5
+],
+"churn_calibration_interaction|random|16": [
+1.0,
+1.0,
+6.9,
+7.5,
+7.5
+],
+"churn_calibration_interaction|random|32": [
+1.0,
+1.0,
+6.9,
+7.5,
+7.5
+],
+"churn_calibration_interaction|random|4": [
+0.0,
+0.1,
+4.0,
+4.0,
+4.0
+],
+"churn_calibration_interaction|random|6": [
+0.3,
+0.9,
+6.0,
+6.4,
+6.4
+],
+"churn_calibration_interaction|random|8": [
+1.0,
+1.0,
+6.9,
+7.5,
+7.5
+],
+"churn_policy_threshold|adaptive|12": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|adaptive|16": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|adaptive|32": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"churn_policy_threshold|adaptive|6": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|adaptive|8": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|ddmin|12": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|ddmin|16": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|ddmin|32": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"churn_policy_threshold|ddmin|6": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|ddmin|8": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_policy_threshold|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_policy_threshold|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_policy_threshold|exhaustive|4": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"churn_policy_threshold|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"churn_policy_threshold|greedy|12": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|greedy|16": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|greedy|32": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|greedy|4": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|greedy|6": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|greedy|8": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|one_factor|12": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|one_factor|16": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|one_factor|32": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|one_factor|4": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|one_factor|6": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|one_factor|8": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"churn_policy_threshold|random|12": [
+1.0,
+1.0,
+5.5,
+6.9,
+6.9
+],
+"churn_policy_threshold|random|16": [
+1.0,
+1.0,
+5.5,
+6.9,
+6.9
+],
+"churn_policy_threshold|random|32": [
+1.0,
+1.0,
+5.5,
+6.9,
+6.9
+],
+"churn_policy_threshold|random|4": [
+0.1,
+0.2,
+3.9,
+4.2,
+4.2
+],
+"churn_policy_threshold|random|6": [
+0.7,
+1.0,
+5.2,
+6.5,
+6.5
+],
+"churn_policy_threshold|random|8": [
+1.0,
+1.0,
+5.5,
+6.9,
+6.9
+],
+"env_pandas3_upgrade|adaptive|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|adaptive|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|adaptive|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|adaptive|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|adaptive|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|adaptive|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|ddmin|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|ddmin|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|ddmin|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|ddmin|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|ddmin|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|ddmin|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"env_pandas3_upgrade|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"env_pandas3_upgrade|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"env_pandas3_upgrade|exhaustive|4": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"env_pandas3_upgrade|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"env_pandas3_upgrade|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"env_pandas3_upgrade|greedy|12": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|greedy|16": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|greedy|32": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|greedy|4": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|greedy|6": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|greedy|8": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|one_factor|12": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|one_factor|16": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|one_factor|32": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|one_factor|4": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|one_factor|6": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|one_factor|8": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"env_pandas3_upgrade|random|12": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"env_pandas3_upgrade|random|16": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"env_pandas3_upgrade|random|32": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"env_pandas3_upgrade|random|4": [
+0.4,
+0.4,
+3.9,
+4.9,
+4.9
+],
+"env_pandas3_upgrade|random|6": [
+0.8,
+0.9,
+5.0,
+6.4,
+6.4
+],
+"env_pandas3_upgrade|random|8": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"env_prep_x_pandas3|adaptive|12": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"env_prep_x_pandas3|adaptive|16": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"env_prep_x_pandas3|adaptive|32": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"env_prep_x_pandas3|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"env_prep_x_pandas3|adaptive|6": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"env_prep_x_pandas3|adaptive|8": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"env_prep_x_pandas3|ddmin|12": [
+1.0,
+1.0,
+11.0,
+13.0,
+13.0
+],
+"env_prep_x_pandas3|ddmin|16": [
+1.0,
+1.0,
+11.0,
+13.0,
+13.0
+],
+"env_prep_x_pandas3|ddmin|32": [
+1.0,
+1.0,
+11.0,
+13.0,
+13.0
+],
+"env_prep_x_pandas3|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"env_prep_x_pandas3|ddmin|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"env_prep_x_pandas3|ddmin|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"env_prep_x_pandas3|exhaustive|12": [
+1.0,
+1.0,
+12.0,
+16.0,
+16.0
+],
+"env_prep_x_pandas3|exhaustive|16": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"env_prep_x_pandas3|exhaustive|32": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"env_prep_x_pandas3|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"env_prep_x_pandas3|exhaustive|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"env_prep_x_pandas3|exhaustive|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"env_prep_x_pandas3|greedy|12": [
+1.0,
+1.0,
+9.0,
+13.0,
+13.0
+],
+"env_prep_x_pandas3|greedy|16": [
+1.0,
+1.0,
+9.0,
+13.0,
+13.0
+],
+"env_prep_x_pandas3|greedy|32": [
+1.0,
+1.0,
+9.0,
+13.0,
+13.0
+],
+"env_prep_x_pandas3|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"env_prep_x_pandas3|greedy|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"env_prep_x_pandas3|greedy|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"env_prep_x_pandas3|one_factor|12": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"env_prep_x_pandas3|one_factor|16": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"env_prep_x_pandas3|one_factor|32": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"env_prep_x_pandas3|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"env_prep_x_pandas3|one_factor|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"env_prep_x_pandas3|one_factor|8": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"env_prep_x_pandas3|random|12": [
+0.9,
+1.0,
+8.7,
+10.4,
+10.4
+],
+"env_prep_x_pandas3|random|16": [
+1.0,
+1.0,
+8.8,
+10.7,
+10.7
+],
+"env_prep_x_pandas3|random|32": [
+1.0,
+1.0,
+8.8,
+10.7,
+10.7
+],
+"env_prep_x_pandas3|random|4": [
+0.0,
+0.1,
+4.0,
+4.0,
+4.0
+],
+"env_prep_x_pandas3|random|6": [
+0.0,
+0.4,
+6.0,
+6.0,
+6.0
+],
+"env_prep_x_pandas3|random|8": [
+0.5,
+0.9,
+7.8,
+9.1,
+9.1
+],
+"image_blur|adaptive|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|adaptive|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|adaptive|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|adaptive|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|adaptive|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|adaptive|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|ddmin|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|ddmin|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|ddmin|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|ddmin|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|ddmin|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|ddmin|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_blur|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"image_blur|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"image_blur|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"image_blur|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_blur|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"image_blur|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"image_blur|greedy|12": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"image_blur|greedy|16": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"image_blur|greedy|32": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"image_blur|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_blur|greedy|6": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"image_blur|greedy|8": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"image_blur|one_factor|12": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"image_blur|one_factor|16": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"image_blur|one_factor|32": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"image_blur|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_blur|one_factor|6": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"image_blur|one_factor|8": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"image_blur|random|12": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"image_blur|random|16": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"image_blur|random|32": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"image_blur|random|4": [
+0.5,
+0.6,
+3.7,
+5.1,
+5.1
+],
+"image_blur|random|6": [
+0.9,
+0.9,
+4.6,
+6.4,
+6.4
+],
+"image_blur|random|8": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"image_dead_pixels|adaptive|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|adaptive|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|adaptive|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|adaptive|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|adaptive|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|adaptive|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|ddmin|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|ddmin|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|ddmin|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|ddmin|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|ddmin|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|ddmin|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"image_dead_pixels|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"image_dead_pixels|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"image_dead_pixels|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"image_dead_pixels|exhaustive|4": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"image_dead_pixels|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"image_dead_pixels|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"image_dead_pixels|greedy|12": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|greedy|16": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|greedy|32": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|greedy|4": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|greedy|6": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|greedy|8": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|one_factor|12": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|one_factor|16": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|one_factor|32": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|one_factor|4": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|one_factor|6": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|one_factor|8": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"image_dead_pixels|random|12": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"image_dead_pixels|random|16": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"image_dead_pixels|random|32": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"image_dead_pixels|random|4": [
+0.4,
+0.4,
+3.9,
+4.9,
+4.9
+],
+"image_dead_pixels|random|6": [
+0.8,
+0.9,
+5.0,
+6.4,
+6.4
+],
+"image_dead_pixels|random|8": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"image_invert|adaptive|12": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"image_invert|adaptive|16": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"image_invert|adaptive|32": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"image_invert|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_invert|adaptive|6": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"image_invert|adaptive|8": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"image_invert|ddmin|12": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"image_invert|ddmin|16": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"image_invert|ddmin|32": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"image_invert|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_invert|ddmin|6": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"image_invert|ddmin|8": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"image_invert|exhaustive|12": [
+1.0,
+1.0,
+12.0,
+13.0,
+13.0
+],
+"image_invert|exhaustive|16": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"image_invert|exhaustive|32": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"image_invert|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_invert|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+12.0,
+12.0
+],
+"image_invert|greedy|12": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|greedy|16": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|greedy|32": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_invert|greedy|6": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|greedy|8": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|one_factor|12": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|one_factor|16": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|one_factor|32": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_invert|one_factor|6": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|one_factor|8": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"image_invert|random|12": [
+1.0,
+1.0,
+6.1,
+8.6,
+8.6
+],
+"image_invert|random|16": [
+1.0,
+1.0,
+6.1,
+8.6,
+8.6
+],
+"image_invert|random|32": [
+1.0,
+1.0,
+6.1,
+8.6,
+8.6
+],
+"image_invert|random|4": [
+0.3,
+0.3,
+3.9,
+5.0,
+5.0
+],
+"image_invert|random|6": [
+0.5,
+0.7,
+5.3,
+6.7,
+6.7
+],
+"image_invert|random|8": [
+1.0,
+1.0,
+6.1,
+8.6,
+8.6
+],
+"image_model_x_shift|adaptive|12": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"image_model_x_shift|adaptive|16": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"image_model_x_shift|adaptive|32": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"image_model_x_shift|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_shift|adaptive|6": [
+0.0,
+1.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_shift|adaptive|8": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"image_model_x_shift|ddmin|12": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"image_model_x_shift|ddmin|16": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"image_model_x_shift|ddmin|32": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"image_model_x_shift|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_shift|ddmin|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_shift|ddmin|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"image_model_x_shift|exhaustive|12": [
+1.0,
+1.0,
+12.0,
+16.0,
+16.0
+],
+"image_model_x_shift|exhaustive|16": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"image_model_x_shift|exhaustive|32": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"image_model_x_shift|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_shift|exhaustive|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_shift|exhaustive|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"image_model_x_shift|greedy|12": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"image_model_x_shift|greedy|16": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"image_model_x_shift|greedy|32": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"image_model_x_shift|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_shift|greedy|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_shift|greedy|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"image_model_x_shift|one_factor|12": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_shift|one_factor|16": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_shift|one_factor|32": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_shift|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_shift|one_factor|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_shift|one_factor|8": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_shift|random|12": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"image_model_x_shift|random|16": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"image_model_x_shift|random|32": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"image_model_x_shift|random|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_shift|random|6": [
+0.0,
+0.6,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_shift|random|8": [
+0.4,
+0.8,
+7.9,
+8.8,
+8.8
+],
+"image_model_x_transpose|adaptive|12": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"image_model_x_transpose|adaptive|16": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"image_model_x_transpose|adaptive|32": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"image_model_x_transpose|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_transpose|adaptive|6": [
+0.0,
+1.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_transpose|adaptive|8": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"image_model_x_transpose|ddmin|12": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"image_model_x_transpose|ddmin|16": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"image_model_x_transpose|ddmin|32": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"image_model_x_transpose|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_transpose|ddmin|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_transpose|ddmin|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"image_model_x_transpose|exhaustive|12": [
+1.0,
+1.0,
+12.0,
+16.0,
+16.0
+],
+"image_model_x_transpose|exhaustive|16": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"image_model_x_transpose|exhaustive|32": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"image_model_x_transpose|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_transpose|exhaustive|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_transpose|exhaustive|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"image_model_x_transpose|greedy|12": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"image_model_x_transpose|greedy|16": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"image_model_x_transpose|greedy|32": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"image_model_x_transpose|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_transpose|greedy|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_transpose|greedy|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"image_model_x_transpose|one_factor|12": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_transpose|one_factor|16": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_transpose|one_factor|32": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_transpose|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_transpose|one_factor|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_transpose|one_factor|8": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_transpose|random|12": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"image_model_x_transpose|random|16": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"image_model_x_transpose|random|32": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"image_model_x_transpose|random|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"image_model_x_transpose|random|6": [
+0.0,
+0.6,
+6.0,
+6.0,
+6.0
+],
+"image_model_x_transpose|random|8": [
+0.4,
+0.8,
+7.9,
+8.8,
+8.8
+],
+"noisy_data_x_width|adaptive|12": [
+1.0,
+1.0,
+8.0,
+11.0,
+66.0
+],
+"noisy_data_x_width|adaptive|16": [
+1.0,
+1.0,
+8.0,
+11.0,
+66.0
+],
+"noisy_data_x_width|adaptive|32": [
+1.0,
+1.0,
+8.0,
+11.0,
+66.0
+],
+"noisy_data_x_width|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+24.0
+],
+"noisy_data_x_width|adaptive|6": [
+0.0,
+1.0,
+6.0,
+6.0,
+36.0
+],
+"noisy_data_x_width|adaptive|8": [
+1.0,
+1.0,
+8.0,
+11.0,
+66.0
+],
+"noisy_data_x_width|ddmin|12": [
+1.0,
+1.0,
+6.0,
+10.0,
+60.0
+],
+"noisy_data_x_width|ddmin|16": [
+1.0,
+1.0,
+6.0,
+10.0,
+60.0
+],
+"noisy_data_x_width|ddmin|32": [
+1.0,
+1.0,
+6.0,
+10.0,
+60.0
+],
+"noisy_data_x_width|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+24.0
+],
+"noisy_data_x_width|ddmin|6": [
+1.0,
+1.0,
+6.0,
+10.0,
+60.0
+],
+"noisy_data_x_width|ddmin|8": [
+1.0,
+1.0,
+6.0,
+10.0,
+60.0
+],
+"noisy_data_x_width|exhaustive|12": [
+1.0,
+1.0,
+12.0,
+16.0,
+96.0
+],
+"noisy_data_x_width|exhaustive|16": [
+1.0,
+1.0,
+16.0,
+16.0,
+96.0
+],
+"noisy_data_x_width|exhaustive|32": [
+1.0,
+1.0,
+16.0,
+16.0,
+96.0
+],
+"noisy_data_x_width|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+24.0
+],
+"noisy_data_x_width|exhaustive|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+36.0
+],
+"noisy_data_x_width|exhaustive|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+48.0
+],
+"noisy_data_x_width|greedy|12": [
+1.0,
+1.0,
+12.0,
+16.0,
+96.0
+],
+"noisy_data_x_width|greedy|16": [
+1.0,
+1.0,
+12.0,
+16.0,
+96.0
+],
+"noisy_data_x_width|greedy|32": [
+1.0,
+1.0,
+12.0,
+16.0,
+96.0
+],
+"noisy_data_x_width|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+24.0
+],
+"noisy_data_x_width|greedy|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+36.0
+],
+"noisy_data_x_width|greedy|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+48.0
+],
+"noisy_data_x_width|one_factor|12": [
+0.0,
+0.0,
+6.0,
+6.0,
+36.0
+],
+"noisy_data_x_width|one_factor|16": [
+0.0,
+0.0,
+6.0,
+6.0,
+36.0
+],
+"noisy_data_x_width|one_factor|32": [
+0.0,
+0.0,
+6.0,
+6.0,
+36.0
+],
+"noisy_data_x_width|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+24.0
+],
+"noisy_data_x_width|one_factor|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+36.0
+],
+"noisy_data_x_width|one_factor|8": [
+0.0,
+0.0,
+6.0,
+6.0,
+36.0
+],
+"noisy_data_x_width|random|12": [
+1.0,
+1.0,
+8.7,
+10.4,
+62.4
+],
+"noisy_data_x_width|random|16": [
+1.0,
+1.0,
+8.7,
+10.4,
+62.4
+],
+"noisy_data_x_width|random|32": [
+1.0,
+1.0,
+8.7,
+10.4,
+62.4
+],
+"noisy_data_x_width|random|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+24.0
+],
+"noisy_data_x_width|random|6": [
+0.0,
+0.4,
+6.0,
+6.0,
+36.0
+],
+"noisy_data_x_width|random|8": [
+0.5,
+0.9,
+7.9,
+9.0,
+54.0
+],
+"noisy_epochs|adaptive|12": [
+1.0,
+1.0,
+5.0,
+8.0,
+48.0
+],
+"noisy_epochs|adaptive|16": [
+1.0,
+1.0,
+5.0,
+8.0,
+48.0
+],
+"noisy_epochs|adaptive|32": [
+1.0,
+1.0,
+5.0,
+8.0,
+48.0
+],
+"noisy_epochs|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+24.0
+],
+"noisy_epochs|adaptive|6": [
+1.0,
+1.0,
+5.0,
+8.0,
+48.0
+],
+"noisy_epochs|adaptive|8": [
+1.0,
+1.0,
+5.0,
+8.0,
+48.0
+],
+"noisy_epochs|ddmin|12": [
+1.0,
+1.0,
+4.0,
+7.0,
+42.0
+],
+"noisy_epochs|ddmin|16": [
+1.0,
+1.0,
+4.0,
+7.0,
+42.0
+],
+"noisy_epochs|ddmin|32": [
+1.0,
+1.0,
+4.0,
+7.0,
+42.0
+],
+"noisy_epochs|ddmin|4": [
+1.0,
+1.0,
+4.0,
+7.0,
+42.0
+],
+"noisy_epochs|ddmin|6": [
+1.0,
+1.0,
+4.0,
+7.0,
+42.0
+],
+"noisy_epochs|ddmin|8": [
+1.0,
+1.0,
+4.0,
+7.0,
+42.0
+],
+"noisy_epochs|exhaustive|12": [
+1.0,
+1.0,
+12.0,
+13.0,
+78.0
+],
+"noisy_epochs|exhaustive|16": [
+1.0,
+1.0,
+16.0,
+16.0,
+96.0
+],
+"noisy_epochs|exhaustive|32": [
+1.0,
+1.0,
+16.0,
+16.0,
+96.0
+],
+"noisy_epochs|exhaustive|4": [
+1.0,
+1.0,
+4.0,
+8.0,
+48.0
+],
+"noisy_epochs|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+10.0,
+60.0
+],
+"noisy_epochs|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+10.0,
+60.0
+],
+"noisy_epochs|greedy|12": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|greedy|16": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|greedy|32": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|greedy|4": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|greedy|6": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|greedy|8": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|one_factor|12": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|one_factor|16": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|one_factor|32": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|one_factor|4": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|one_factor|6": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|one_factor|8": [
+1.0,
+1.0,
+3.0,
+7.0,
+42.0
+],
+"noisy_epochs|random|12": [
+1.0,
+1.0,
+7.9,
+10.5,
+63.0
+],
+"noisy_epochs|random|16": [
+1.0,
+1.0,
+7.9,
+10.5,
+63.0
+],
+"noisy_epochs|random|32": [
+1.0,
+1.0,
+7.9,
+10.5,
+63.0
+],
+"noisy_epochs|random|4": [
+0.0,
+0.1,
+4.0,
+4.0,
+24.0
+],
+"noisy_epochs|random|6": [
+0.2,
+0.3,
+5.8,
+6.4,
+38.4
+],
+"noisy_epochs|random|8": [
+0.6,
+0.7,
+7.3,
+9.1,
+54.6
+],
+"noisy_labels_x_width_borderline|adaptive|12": [
+0.0,
+1.0,
+7.0,
+10.0,
+90.0
+],
+"noisy_labels_x_width_borderline|adaptive|16": [
+0.0,
+1.0,
+7.0,
+10.0,
+90.0
+],
+"noisy_labels_x_width_borderline|adaptive|32": [
+0.0,
+1.0,
+7.0,
+10.0,
+90.0
+],
+"noisy_labels_x_width_borderline|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+30.0
+],
+"noisy_labels_x_width_borderline|adaptive|6": [
+0.0,
+1.0,
+6.0,
+6.0,
+42.0
+],
+"noisy_labels_x_width_borderline|adaptive|8": [
+0.0,
+1.0,
+7.0,
+10.0,
+90.0
+],
+"noisy_labels_x_width_borderline|ddmin|12": [
+0.0,
+1.0,
+10.0,
+13.0,
+120.0
+],
+"noisy_labels_x_width_borderline|ddmin|16": [
+0.0,
+1.0,
+10.0,
+13.0,
+120.0
+],
+"noisy_labels_x_width_borderline|ddmin|32": [
+0.0,
+1.0,
+10.0,
+13.0,
+120.0
+],
+"noisy_labels_x_width_borderline|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+42.0
+],
+"noisy_labels_x_width_borderline|ddmin|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+54.0
+],
+"noisy_labels_x_width_borderline|ddmin|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+72.0
+],
+"noisy_labels_x_width_borderline|exhaustive|12": [
+0.0,
+1.0,
+12.0,
+16.0,
+144.0
+],
+"noisy_labels_x_width_borderline|exhaustive|16": [
+0.0,
+1.0,
+16.0,
+16.0,
+144.0
+],
+"noisy_labels_x_width_borderline|exhaustive|32": [
+0.0,
+1.0,
+16.0,
+16.0,
+144.0
+],
+"noisy_labels_x_width_borderline|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+24.0
+],
+"noisy_labels_x_width_borderline|exhaustive|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+42.0
+],
+"noisy_labels_x_width_borderline|exhaustive|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+54.0
+],
+"noisy_labels_x_width_borderline|greedy|12": [
+0.0,
+1.0,
+11.0,
+15.0,
+120.0
+],
+"noisy_labels_x_width_borderline|greedy|16": [
+0.0,
+1.0,
+11.0,
+15.0,
+120.0
+],
+"noisy_labels_x_width_borderline|greedy|32": [
+0.0,
+1.0,
+11.0,
+15.0,
+120.0
+],
+"noisy_labels_x_width_borderline|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+24.0
+],
+"noisy_labels_x_width_borderline|greedy|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+42.0
+],
+"noisy_labels_x_width_borderline|greedy|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+54.0
+],
+"noisy_labels_x_width_borderline|one_factor|12": [
+0.0,
+0.0,
+6.0,
+6.0,
+42.0
+],
+"noisy_labels_x_width_borderline|one_factor|16": [
+0.0,
+0.0,
+6.0,
+6.0,
+42.0
+],
+"noisy_labels_x_width_borderline|one_factor|32": [
+0.0,
+0.0,
+6.0,
+6.0,
+42.0
+],
+"noisy_labels_x_width_borderline|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+24.0
+],
+"noisy_labels_x_width_borderline|one_factor|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+42.0
+],
+"noisy_labels_x_width_borderline|one_factor|8": [
+0.0,
+0.0,
+6.0,
+6.0,
+42.0
+],
+"noisy_labels_x_width_borderline|random|12": [
+0.0,
+0.8,
+10.4,
+11.6,
+103.2
+],
+"noisy_labels_x_width_borderline|random|16": [
+0.0,
+1.0,
+11.0,
+12.2,
+109.2
+],
+"noisy_labels_x_width_borderline|random|32": [
+0.0,
+1.0,
+11.0,
+12.2,
+109.2
+],
+"noisy_labels_x_width_borderline|random|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+34.2
+],
+"noisy_labels_x_width_borderline|random|6": [
+0.0,
+0.3,
+6.0,
+6.0,
+58.8
+],
+"noisy_labels_x_width_borderline|random|8": [
+0.0,
+0.3,
+8.0,
+8.4,
+78.0
+],
+"tabular_calibration_x_abstain|adaptive|12": [
+1.0,
+1.0,
+7.0,
+7.0,
+7.0
+],
+"tabular_calibration_x_abstain|adaptive|16": [
+1.0,
+1.0,
+7.0,
+7.0,
+7.0
+],
+"tabular_calibration_x_abstain|adaptive|32": [
+1.0,
+1.0,
+7.0,
+7.0,
+7.0
+],
+"tabular_calibration_x_abstain|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_calibration_x_abstain|adaptive|6": [
+0.0,
+1.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_calibration_x_abstain|adaptive|8": [
+1.0,
+1.0,
+7.0,
+7.0,
+7.0
+],
+"tabular_calibration_x_abstain|ddmin|12": [
+1.0,
+1.0,
+7.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|ddmin|16": [
+1.0,
+1.0,
+7.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|ddmin|32": [
+1.0,
+1.0,
+7.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_calibration_x_abstain|ddmin|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_calibration_x_abstain|ddmin|8": [
+1.0,
+1.0,
+7.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_calibration_x_abstain|exhaustive|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_calibration_x_abstain|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|greedy|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|greedy|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|greedy|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_calibration_x_abstain|greedy|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_calibration_x_abstain|greedy|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_calibration_x_abstain|one_factor|12": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"tabular_calibration_x_abstain|one_factor|16": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"tabular_calibration_x_abstain|one_factor|32": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"tabular_calibration_x_abstain|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_calibration_x_abstain|one_factor|6": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"tabular_calibration_x_abstain|one_factor|8": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"tabular_calibration_x_abstain|random|12": [
+1.0,
+1.0,
+6.8,
+7.6,
+7.6
+],
+"tabular_calibration_x_abstain|random|16": [
+1.0,
+1.0,
+6.8,
+7.6,
+7.6
+],
+"tabular_calibration_x_abstain|random|32": [
+1.0,
+1.0,
+6.8,
+7.6,
+7.6
+],
+"tabular_calibration_x_abstain|random|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_calibration_x_abstain|random|6": [
+0.3,
+0.8,
+5.9,
+6.4,
+6.4
+],
+"tabular_calibration_x_abstain|random|8": [
+1.0,
+1.0,
+6.8,
+7.6,
+7.6
+],
+"tabular_column_order|adaptive|12": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_column_order|adaptive|16": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_column_order|adaptive|32": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_column_order|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_column_order|adaptive|6": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_column_order|adaptive|8": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_column_order|ddmin|12": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"tabular_column_order|ddmin|16": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"tabular_column_order|ddmin|32": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"tabular_column_order|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_column_order|ddmin|6": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"tabular_column_order|ddmin|8": [
+1.0,
+1.0,
+6.0,
+9.0,
+9.0
+],
+"tabular_column_order|exhaustive|12": [
+1.0,
+1.0,
+12.0,
+13.0,
+13.0
+],
+"tabular_column_order|exhaustive|16": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"tabular_column_order|exhaustive|32": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"tabular_column_order|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_column_order|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+12.0,
+12.0
+],
+"tabular_column_order|greedy|12": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|greedy|16": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|greedy|32": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_column_order|greedy|6": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|greedy|8": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|one_factor|12": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|one_factor|16": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|one_factor|32": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_column_order|one_factor|6": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|one_factor|8": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"tabular_column_order|random|12": [
+1.0,
+1.0,
+6.1,
+8.6,
+8.6
+],
+"tabular_column_order|random|16": [
+1.0,
+1.0,
+6.1,
+8.6,
+8.6
+],
+"tabular_column_order|random|32": [
+1.0,
+1.0,
+6.1,
+8.6,
+8.6
+],
+"tabular_column_order|random|4": [
+0.3,
+0.3,
+3.9,
+5.0,
+5.0
+],
+"tabular_column_order|random|6": [
+0.5,
+0.7,
+5.3,
+6.7,
+6.7
+],
+"tabular_column_order|random|8": [
+1.0,
+1.0,
+6.1,
+8.6,
+8.6
+],
+"tabular_model_x_column_order|adaptive|12": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"tabular_model_x_column_order|adaptive|16": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"tabular_model_x_column_order|adaptive|32": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"tabular_model_x_column_order|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_model_x_column_order|adaptive|6": [
+0.0,
+1.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_model_x_column_order|adaptive|8": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"tabular_model_x_column_order|ddmin|12": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"tabular_model_x_column_order|ddmin|16": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"tabular_model_x_column_order|ddmin|32": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"tabular_model_x_column_order|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_model_x_column_order|ddmin|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_model_x_column_order|ddmin|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_model_x_column_order|exhaustive|12": [
+1.0,
+1.0,
+12.0,
+16.0,
+16.0
+],
+"tabular_model_x_column_order|exhaustive|16": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"tabular_model_x_column_order|exhaustive|32": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"tabular_model_x_column_order|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_model_x_column_order|exhaustive|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_model_x_column_order|exhaustive|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_model_x_column_order|greedy|12": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"tabular_model_x_column_order|greedy|16": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"tabular_model_x_column_order|greedy|32": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"tabular_model_x_column_order|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_model_x_column_order|greedy|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_model_x_column_order|greedy|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_model_x_column_order|one_factor|12": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_model_x_column_order|one_factor|16": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_model_x_column_order|one_factor|32": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_model_x_column_order|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_model_x_column_order|one_factor|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_model_x_column_order|one_factor|8": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"tabular_model_x_column_order|random|12": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"tabular_model_x_column_order|random|16": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"tabular_model_x_column_order|random|32": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"tabular_model_x_column_order|random|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_model_x_column_order|random|6": [
+0.0,
+0.6,
+6.0,
+6.0,
+6.0
+],
+"tabular_model_x_column_order|random|8": [
+0.4,
+0.8,
+7.9,
+8.8,
+8.8
+],
+"tabular_threshold|adaptive|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|adaptive|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|adaptive|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|adaptive|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|adaptive|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|adaptive|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|ddmin|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|ddmin|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|ddmin|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|ddmin|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|ddmin|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|ddmin|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_threshold|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_threshold|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_threshold|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_threshold|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_threshold|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"tabular_threshold|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_threshold|greedy|12": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"tabular_threshold|greedy|16": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"tabular_threshold|greedy|32": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"tabular_threshold|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_threshold|greedy|6": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"tabular_threshold|greedy|8": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"tabular_threshold|one_factor|12": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"tabular_threshold|one_factor|16": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"tabular_threshold|one_factor|32": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"tabular_threshold|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_threshold|one_factor|6": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"tabular_threshold|one_factor|8": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"tabular_threshold|random|12": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"tabular_threshold|random|16": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"tabular_threshold|random|32": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"tabular_threshold|random|4": [
+0.5,
+0.6,
+3.7,
+5.1,
+5.1
+],
+"tabular_threshold|random|6": [
+0.9,
+0.9,
+4.6,
+6.4,
+6.4
+],
+"tabular_threshold|random|8": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"tabular_units_x_model|adaptive|12": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_units_x_model|adaptive|16": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_units_x_model|adaptive|32": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_units_x_model|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_units_x_model|adaptive|6": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_units_x_model|adaptive|8": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_units_x_model|ddmin|12": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_units_x_model|ddmin|16": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_units_x_model|ddmin|32": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_units_x_model|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_units_x_model|ddmin|6": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_units_x_model|ddmin|8": [
+1.0,
+1.0,
+5.0,
+7.0,
+7.0
+],
+"tabular_units_x_model|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_units_x_model|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_units_x_model|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_units_x_model|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_units_x_model|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"tabular_units_x_model|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_units_x_model|greedy|12": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"tabular_units_x_model|greedy|16": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"tabular_units_x_model|greedy|32": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"tabular_units_x_model|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_units_x_model|greedy|6": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"tabular_units_x_model|greedy|8": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"tabular_units_x_model|one_factor|12": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"tabular_units_x_model|one_factor|16": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"tabular_units_x_model|one_factor|32": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"tabular_units_x_model|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"tabular_units_x_model|one_factor|6": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"tabular_units_x_model|one_factor|8": [
+0.0,
+0.0,
+5.0,
+5.0,
+5.0
+],
+"tabular_units_x_model|random|12": [
+1.0,
+1.0,
+7.0,
+7.6,
+7.6
+],
+"tabular_units_x_model|random|16": [
+1.0,
+1.0,
+7.0,
+7.6,
+7.6
+],
+"tabular_units_x_model|random|32": [
+1.0,
+1.0,
+7.0,
+7.6,
+7.6
+],
+"tabular_units_x_model|random|4": [
+0.0,
+0.1,
+4.0,
+4.0,
+4.0
+],
+"tabular_units_x_model|random|6": [
+0.1,
+0.7,
+5.9,
+6.1,
+6.1
+],
+"tabular_units_x_model|random|8": [
+1.0,
+1.0,
+7.0,
+7.6,
+7.6
+],
+"tabular_upstream_zero_fill|adaptive|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|adaptive|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|adaptive|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|adaptive|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|adaptive|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|adaptive|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|ddmin|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|ddmin|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|ddmin|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|ddmin|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|ddmin|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|ddmin|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_upstream_zero_fill|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_upstream_zero_fill|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_upstream_zero_fill|exhaustive|4": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"tabular_upstream_zero_fill|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"tabular_upstream_zero_fill|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"tabular_upstream_zero_fill|greedy|12": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|greedy|16": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|greedy|32": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|greedy|4": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|greedy|6": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|greedy|8": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|one_factor|12": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|one_factor|16": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|one_factor|32": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|one_factor|4": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|one_factor|6": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|one_factor|8": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"tabular_upstream_zero_fill|random|12": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"tabular_upstream_zero_fill|random|16": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"tabular_upstream_zero_fill|random|32": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"tabular_upstream_zero_fill|random|4": [
+0.4,
+0.4,
+3.9,
+4.9,
+4.9
+],
+"tabular_upstream_zero_fill|random|6": [
+0.8,
+0.9,
+5.0,
+6.4,
+6.4
+],
+"tabular_upstream_zero_fill|random|8": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"text_model_x_uppercase|adaptive|12": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"text_model_x_uppercase|adaptive|16": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"text_model_x_uppercase|adaptive|32": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"text_model_x_uppercase|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_model_x_uppercase|adaptive|6": [
+0.0,
+1.0,
+6.0,
+6.0,
+6.0
+],
+"text_model_x_uppercase|adaptive|8": [
+1.0,
+1.0,
+7.0,
+10.0,
+10.0
+],
+"text_model_x_uppercase|ddmin|12": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"text_model_x_uppercase|ddmin|16": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"text_model_x_uppercase|ddmin|32": [
+1.0,
+1.0,
+10.0,
+13.0,
+13.0
+],
+"text_model_x_uppercase|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_model_x_uppercase|ddmin|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_model_x_uppercase|ddmin|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"text_model_x_uppercase|exhaustive|12": [
+1.0,
+1.0,
+12.0,
+16.0,
+16.0
+],
+"text_model_x_uppercase|exhaustive|16": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"text_model_x_uppercase|exhaustive|32": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"text_model_x_uppercase|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_model_x_uppercase|exhaustive|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_model_x_uppercase|exhaustive|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"text_model_x_uppercase|greedy|12": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"text_model_x_uppercase|greedy|16": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"text_model_x_uppercase|greedy|32": [
+1.0,
+1.0,
+11.0,
+15.0,
+15.0
+],
+"text_model_x_uppercase|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_model_x_uppercase|greedy|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_model_x_uppercase|greedy|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"text_model_x_uppercase|one_factor|12": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_model_x_uppercase|one_factor|16": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_model_x_uppercase|one_factor|32": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_model_x_uppercase|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_model_x_uppercase|one_factor|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_model_x_uppercase|one_factor|8": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_model_x_uppercase|random|12": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"text_model_x_uppercase|random|16": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"text_model_x_uppercase|random|32": [
+1.0,
+1.0,
+9.0,
+10.7,
+10.7
+],
+"text_model_x_uppercase|random|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_model_x_uppercase|random|6": [
+0.0,
+0.6,
+6.0,
+6.0,
+6.0
+],
+"text_model_x_uppercase|random|8": [
+0.4,
+0.8,
+7.9,
+8.8,
+8.8
+],
+"text_tokenizer_x_uppercase|adaptive|12": [
+1.0,
+1.0,
+8.0,
+11.0,
+11.0
+],
+"text_tokenizer_x_uppercase|adaptive|16": [
+1.0,
+1.0,
+8.0,
+11.0,
+11.0
+],
+"text_tokenizer_x_uppercase|adaptive|32": [
+1.0,
+1.0,
+8.0,
+11.0,
+11.0
+],
+"text_tokenizer_x_uppercase|adaptive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_tokenizer_x_uppercase|adaptive|6": [
+0.0,
+1.0,
+6.0,
+6.0,
+6.0
+],
+"text_tokenizer_x_uppercase|adaptive|8": [
+1.0,
+1.0,
+8.0,
+11.0,
+11.0
+],
+"text_tokenizer_x_uppercase|ddmin|12": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"text_tokenizer_x_uppercase|ddmin|16": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"text_tokenizer_x_uppercase|ddmin|32": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"text_tokenizer_x_uppercase|ddmin|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_tokenizer_x_uppercase|ddmin|6": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"text_tokenizer_x_uppercase|ddmin|8": [
+1.0,
+1.0,
+6.0,
+10.0,
+10.0
+],
+"text_tokenizer_x_uppercase|exhaustive|12": [
+1.0,
+1.0,
+12.0,
+16.0,
+16.0
+],
+"text_tokenizer_x_uppercase|exhaustive|16": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"text_tokenizer_x_uppercase|exhaustive|32": [
+1.0,
+1.0,
+16.0,
+16.0,
+16.0
+],
+"text_tokenizer_x_uppercase|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_tokenizer_x_uppercase|exhaustive|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_tokenizer_x_uppercase|exhaustive|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"text_tokenizer_x_uppercase|greedy|12": [
+1.0,
+1.0,
+12.0,
+16.0,
+16.0
+],
+"text_tokenizer_x_uppercase|greedy|16": [
+1.0,
+1.0,
+12.0,
+16.0,
+16.0
+],
+"text_tokenizer_x_uppercase|greedy|32": [
+1.0,
+1.0,
+12.0,
+16.0,
+16.0
+],
+"text_tokenizer_x_uppercase|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_tokenizer_x_uppercase|greedy|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_tokenizer_x_uppercase|greedy|8": [
+0.0,
+0.0,
+8.0,
+8.0,
+8.0
+],
+"text_tokenizer_x_uppercase|one_factor|12": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_tokenizer_x_uppercase|one_factor|16": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_tokenizer_x_uppercase|one_factor|32": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_tokenizer_x_uppercase|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_tokenizer_x_uppercase|one_factor|6": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_tokenizer_x_uppercase|one_factor|8": [
+0.0,
+0.0,
+6.0,
+6.0,
+6.0
+],
+"text_tokenizer_x_uppercase|random|12": [
+1.0,
+1.0,
+8.7,
+10.4,
+10.4
+],
+"text_tokenizer_x_uppercase|random|16": [
+1.0,
+1.0,
+8.7,
+10.4,
+10.4
+],
+"text_tokenizer_x_uppercase|random|32": [
+1.0,
+1.0,
+8.7,
+10.4,
+10.4
+],
+"text_tokenizer_x_uppercase|random|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_tokenizer_x_uppercase|random|6": [
+0.0,
+0.4,
+6.0,
+6.0,
+6.0
+],
+"text_tokenizer_x_uppercase|random|8": [
+0.5,
+0.9,
+7.9,
+9.0,
+9.0
+],
+"text_truncation|adaptive|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|adaptive|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|adaptive|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|adaptive|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|adaptive|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|adaptive|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|ddmin|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|ddmin|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|ddmin|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|ddmin|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|ddmin|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|ddmin|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_truncation|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"text_truncation|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"text_truncation|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"text_truncation|exhaustive|4": [
+1.0,
+1.0,
+4.0,
+7.0,
+7.0
+],
+"text_truncation|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"text_truncation|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"text_truncation|greedy|12": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|greedy|16": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|greedy|32": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|greedy|4": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|greedy|6": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|greedy|8": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|one_factor|12": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|one_factor|16": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|one_factor|32": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|one_factor|4": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|one_factor|6": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|one_factor|8": [
+1.0,
+1.0,
+3.0,
+6.0,
+6.0
+],
+"text_truncation|random|12": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"text_truncation|random|16": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"text_truncation|random|32": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"text_truncation|random|4": [
+0.4,
+0.4,
+3.9,
+4.9,
+4.9
+],
+"text_truncation|random|6": [
+0.8,
+0.9,
+5.0,
+6.4,
+6.4
+],
+"text_truncation|random|8": [
+1.0,
+1.0,
+5.2,
+6.8,
+6.8
+],
+"text_uppercase_cased|adaptive|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|adaptive|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|adaptive|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|adaptive|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|adaptive|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|adaptive|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|ddmin|12": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|ddmin|16": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|ddmin|32": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|ddmin|4": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|ddmin|6": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|ddmin|8": [
+1.0,
+1.0,
+4.0,
+6.0,
+6.0
+],
+"text_uppercase_cased|exhaustive|12": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|exhaustive|16": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|exhaustive|32": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|exhaustive|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_uppercase_cased|exhaustive|6": [
+1.0,
+1.0,
+6.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|exhaustive|8": [
+1.0,
+1.0,
+8.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|greedy|12": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|greedy|16": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|greedy|32": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|greedy|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_uppercase_cased|greedy|6": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|greedy|8": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|one_factor|12": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|one_factor|16": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|one_factor|32": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|one_factor|4": [
+0.0,
+0.0,
+4.0,
+4.0,
+4.0
+],
+"text_uppercase_cased|one_factor|6": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|one_factor|8": [
+1.0,
+1.0,
+5.0,
+8.0,
+8.0
+],
+"text_uppercase_cased|random|12": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"text_uppercase_cased|random|16": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"text_uppercase_cased|random|32": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+],
+"text_uppercase_cased|random|4": [
+0.5,
+0.6,
+3.7,
+5.1,
+5.1
+],
+"text_uppercase_cased|random|6": [
+0.9,
+0.9,
+4.6,
+6.4,
+6.4
+],
+"text_uppercase_cased|random|8": [
+1.0,
+1.0,
+4.7,
+6.6,
+6.6
+]
+}

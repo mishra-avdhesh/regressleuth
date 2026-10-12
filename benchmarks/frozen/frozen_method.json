@@ -1,0 +1,145 @@
+{
+  "behavioral_trace": {
+    "budgets": [
+      4,
+      6,
+      8,
+      12,
+      16,
+      32
+    ],
+    "entries": 1872,
+    "fields": "per (incident, strategy, budget, seed): digest of diagnosis and ordered (mask, outcome, role)",
+    "file": "benchmarks/frozen/synthetic_trace.json",
+    "file_sha256": "2237046c08b6eaf6bebd9410da58fce80d47dba4fc59425a2458bb8d1e42b785",
+    "random_seeds": 3
+  },
+  "benchmark_configuration": {
+    "bootstrap": {
+      "interval": 0.95,
+      "rounds": 1000,
+      "seed": 20261008
+    },
+    "budgets": [
+      4,
+      6,
+      8,
+      12,
+      16,
+      32
+    ],
+    "fairness": "every strategy replays against identical metric tables and identical seeded noise",
+    "random_seeds": 10,
+    "real_incident_runner": "benchmarks/run_real.py with cached replay tables in benchmarks/results/tables",
+    "synthetic_suite": "regressleuth.bench.build_suite() at freeze time"
+  },
+  "development_incidents": {
+    "ground_truth_sha256": "6afc3f76397d20beee6a60990b6bc7b8cce0bfe099a504e106d95084671a1667",
+    "manifests_sha256": {
+      "churn_calibration_interaction.json": "4464f6cef77e1be9cea82e17951783cfc0c3ae79d40160132a05349409e54e5e",
+      "churn_policy_threshold.json": "17851def4528b7ff48d39afb2099f9bc44699f07486e50782669aa9e3fed7372",
+      "env_pandas3_upgrade.json": "33494983220cdd321d89e9d9a79713f5849e4c3f405d0bac213ad549f0917f58",
+      "env_prep_x_pandas3.json": "b0265a32089f1fb68f164d8afdadb3b7f6c7846804b6dc97c0e1b2fa6ab12032",
+      "image_blur.json": "7c8cf982da23a25a7a4751d9d8e546b849582c39ae95326f26c514884d49ef11",
+      "image_dead_pixels.json": "c6ed58b61dc62e590eae682d55eda036547890581d0c7c3bacd1595ce35a746b",
+      "image_invert.json": "cad2fbf360079a68cf7794d67a837fa23ea28e20dca37bae9a0b062be92e6d46",
+      "image_model_x_shift.json": "1befd7fb2b6bc37f38ca5f2621c5b2979c56a96641dbe630d19ded9a644c2271",
+      "image_model_x_transpose.json": "8dcc007eb481400bc4431f192b9d3c1e95778101d81ec72d94bdcf1a6d607d5b",
+      "noisy_data_x_width.json": "5a7373a2f300e502b67f6bf4ba408737b6da6519193ee5604d14e2ab2140d575",
+      "noisy_epochs.json": "f82c11021dbf19665fd17a4fbf2566dd2dfd704983d230e45672a48125b44a56",
+      "noisy_labels_x_width_borderline.json": "10d742c6cdf1bae3a3fa6f76c5735ecd8a906b5d72af04ac8e9979d200c59ae2",
+      "tabular_calibration_x_abstain.json": "b4afaff43ae4ca8fbcd927a81c30a685c07ce15d88b0d8fec5e7d1fbb8e4b5fb",
+      "tabular_column_order.json": "6724de043ce1a11e6d2e8846ed3d9c6a81c55dfd0e6ff3dc4775fb15ac672fe2",
+      "tabular_model_x_column_order.json": "42e1bb896ca171e4341c1b07f310d37dc699f9d157863b4b58547526f749b361",
+      "tabular_threshold.json": "58f388302e13656fd41cf6628c005ad3a5f46b1f4d599e7743a98191db4c4f25",
+      "tabular_units_x_model.json": "b12c92bdfb7a9bed00d39a61e62a577fe1d8d753e307eef63a130cf6b5fdf153",
+      "tabular_upstream_zero_fill.json": "92eab4254f290d81ac0708f9b33da75bbc16eb35b9b0f4ffb463d4a9a469dea2",
+      "text_model_x_uppercase.json": "6551be13c58bd4e43fe6cf7c976a2cbdca247a684f8a926a1eece19776e0aa29",
+      "text_tokenizer_x_uppercase.json": "3284dc08d845791f7a1123a09f4b5f2e24d67fa7aa9ac53b069f552abefff269",
+      "text_truncation.json": "ca19d2f3f1ab2177e955cd6851cfc2a2096cf0006cd8f332c6762b405bfacd81",
+      "text_uppercase_cased.json": "8993633c458e6b05ba3a37a081aa14c228349c44076b31b91f1d04b6e47260d9"
+    }
+  },
+  "development_real_results": {
+    "entries": 792,
+    "fields": "[verified_and_right, right_any_status, isolation_replays, total_replays, runner_runs] per incident|strategy|budget; random averaged over 10 seeds",
+    "file": "benchmarks/frozen/real_dev_results.json",
+    "replay_tables_sha256": {
+      "churn_calibration_interaction.json": "56a5fd33bf5c575fb68013e6dd0898b06e0197b65c751803a5f19808a6173b2e",
+      "churn_policy_threshold.json": "fdaf2448dd90d784f671ea60a7bb34c5cbbb66377fb4f92845882b26dee6ca75",
+      "env_pandas3_upgrade.json": "35d406ee49a2a4993ea17a1699c0958d80c2512d510993b4fefc4e965a54be07",
+      "env_prep_x_pandas3.json": "7230df4b6b6e6e5dc4580bd49fb8521c995ebdc03d65626adf0ee6aa4a4ccc2b",
+      "image_blur.json": "06b847e7116d4b5e7dcb5cad4a6645a06d336db5f91811f9a027fdff103ac14e",
+      "image_dead_pixels.json": "31573a025602929d28b4620b70da8b2d66221c60b2866f05d0e4c7b636384d71",
+      "image_invert.json": "dee61adf43bbe444829c9edd344980863674f5c2aceecde30d1a47bdc526243a",
+      "image_model_x_shift.json": "8b4ed2e33c1d147559af9c197fc520ed051a5ff77a18f12ad4d036e0f87d16fd",
+      "image_model_x_transpose.json": "1f6ac37e4bd7be9cd34515030080c44addbc750536762fd2900926f6b7cca7c3",
+      "noisy_data_x_width.json": "9466567b5b34132eca8d1d87a357d8846e0fdc532a1936b186cf689ca35c8907",
+      "noisy_epochs.json": "09f80f8e5eecfee13866e2ccbee2d6a56a2ea69b11f3160803f2e9b6bba0533a",
+      "noisy_labels_x_width_borderline.json": "b64a934507aae8ff19157cd6922e471323c6b6de78511e7bf7ab6c2ba0acf95e",
+      "tabular_calibration_x_abstain.json": "ce328f289eac9f7650dfa72217a86b244133c1a8f86cd8ae10dd92dc918962c7",
+      "tabular_column_order.json": "1ae3f8744e914df1bebae402362b448873b025c15e8299e2c6c770f020c860b4",
+      "tabular_model_x_column_order.json": "d83a4e870898c50f0f82e4dc071d8bd2427f47aaf654092a09219b1f2eba568d",
+      "tabular_threshold.json": "676796f63df20f3744dd0f81247cdeb472780ccdd0f99b9443978443d9e7e786",
+      "tabular_units_x_model.json": "dbe594f917c61e0c0a35b91375c4c1235e29af9083d0f1d550daa7fccfa8df56",
+      "tabular_upstream_zero_fill.json": "ec325eb8c903b62df3e0c50becdf6b479dd312022930c23d6adf511dd3ac3d8d",
+      "text_model_x_uppercase.json": "e3f64d78e7240e58bc66fe6bb8d6e7014d574bbbd608b8a6a3a1e5c76a2bb403",
+      "text_tokenizer_x_uppercase.json": "ecf0f5cc02a9757b49ac28817ae80bb79eadb827126e2c9345771cb42a9a9d18",
+      "text_truncation.json": "9d5ec8c2ffa65a6785a695349a96c368ec7ea3abe6fd341fda62c62a6372b927",
+      "text_uppercase_cased.json": "0fc3cef66040330d6d9f36faad0d7be9ae6d0d5a8b4e3ef5acd6a225024189ae"
+    },
+    "sha256": "3d65551ce579cda9f4d4e1a8e307015a73f1fd2c42a83fa905a4f2da05d61a15"
+  },
+  "frozen_on": "2026-10-08",
+  "manifest_version": 1,
+  "method": {
+    "adaptive_objective": "replay the unseen mask whose predicted failures split the remaining hypotheses closest to evenly (maximizes 2*p*(1-p) with p = fraction of hypotheses predicting FAIL); uniform prior, unit replay cost",
+    "assumptions": [
+      "replays depend only on the declared components and the run seed",
+      "the evaluation cohort and labels are identical in every replay",
+      "failure is monotone in the set of bad components for the true cause",
+      "the cause has at most two components"
+    ],
+    "audit": {
+      "budget": "separate from the isolation budget; failure to complete the audit yields status inferred; any contradiction yields assumption_violated",
+      "default": "full",
+      "masks": "complement of the all-bad state minus each cause component (expected pass), and the cause plus each one other component (expected fail)"
+    },
+    "budget_semantics": "budget counts both endpoint replays, search replays and minimality-verification replays; the audit is extra and reported separately; a replay is one mask evaluation regardless of repeats",
+    "cause_model": "one deterministic, inclusion-minimal conjunction: F(S) is true exactly when h is a subset of S",
+    "elimination": "a pass or fail outcome removes every hypothesis predicting the other outcome; inconclusive, incompatible and error outcomes prune nothing",
+    "endpoint_rules": "F(empty) false and F(all-bad) true must hold, else the result is invalid_baseline or evaluation error",
+    "hypothesis_space": {
+      "description": "all singletons and all pairs of changed components",
+      "max_cause_size": 2
+    },
+    "name": "regressleuth adaptive search (0.1.0a1 default configuration)",
+    "regression_rule": {
+      "default_confidence": 0.95,
+      "default_repeats": 1,
+      "deterministic": "FAIL when sign*(mean(good)-mean(mask)) >= threshold - 1e-12 else PASS",
+      "noisy": "FAIL if effect - z*se >= threshold; PASS if effect + z*se < threshold; else inconclusive (more runs up to max_repeats)",
+      "tolerance": 1e-12
+    },
+    "tie_break": "smaller mask first, then lexicographic order of sorted component names",
+    "verification": "unique hypothesis whose own mask failed and whose proper subsets all passed"
+  },
+  "package_version": "0.1.0a1",
+  "rule": "No tuning of the method using any result from the holdout benchmark. A failing holdout incident is reported, not fixed.",
+  "source": {
+    "files": {
+      "benchmarks/build_incidents.py": "eee961c99ce31dd8671183437d6130e133f75b63fcb4ad6719b0c255b6f6ffc2",
+      "benchmarks/run_real.py": "5a76bbd8b43ac472c0e05af29ab821015feb34c1b3f135f11dcae5cd37595620",
+      "benchmarks/validate_fixtures.py": "5243df62f23a6180168548acc7a1141463dd1a3408d4b4070a275efa913a93d3",
+      "src/regressleuth/api.py": "65ef404f0fa0a99a272d344036006ebc3537e30bd4f156aa63e3992451d13487",
+      "src/regressleuth/bench.py": "1bf44bef52890aeac12827d3e0b6736d3097ff72710cf2e847d9e2670730743d",
+      "src/regressleuth/engine.py": "532576780334dc04042c23c6593605bc473989cf25052e6d11c8ccfafed4915f",
+      "src/regressleuth/executor.py": "80567bbc58f1c478cdd1fc9ecb22d17522980bd68131d410c272fc055fbf02d4",
+      "src/regressleuth/models.py": "ac8b5f68408d00d1356ad806dc9bba203e56f1cc3177d7757db26bc8bc333acf",
+      "src/regressleuth/strategies.py": "572db230c0cb8320d09f3664506004531b772f9b986af777583ffb9465cd3416"
+    },
+    "git_commit": null,
+    "note": "the project was not a git repository at freeze time, so the tree hash below is the source hash",
+    "tree_sha256": "55cedbdfffe61ac8078861b5f2888a60a56ddba4946e465b1221cf2b2a0e9b9e"
+  }
+}

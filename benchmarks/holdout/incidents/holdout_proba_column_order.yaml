@@ -1,0 +1,41 @@
+version: '1.0'
+id: holdout_proba_column_order
+description: A relabeled retrained model meets postprocessing that reads predict_proba column 1.
+metadata:
+  provenance:
+  - title: 'scikit-learn glossary: classes_ and predict_proba column order'
+    url: https://scikit-learn.org/stable/glossary.html
+  reconstruction: Adult census income (real data); the column order rule is documented scikit-learn behavior
+  dataset: Adult census income via scikit-learn/adult-census-income (CC0)
+  benchmark: holdout
+  preregistered: benchmarks/holdout/PREREGISTRATION.md
+good:
+  model: m_yesno
+  postprocessing: lookup-by-name
+  policy: threshold-0.50
+  log_level: info
+  cache_ttl: '300'
+bad:
+  model: m_relabeled
+  postprocessing: hardcoded-column-1
+  policy: threshold-0.48
+  log_level: debug
+  cache_ttl: '600'
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.03
+budget:
+  max_replays: 16
+  audit: full
+cases: ../data/adult/sample_cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/adult_proba.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 300

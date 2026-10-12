@@ -1,0 +1,43 @@
+{
+  "blamed_in_report": [
+    "pandas"
+  ],
+  "changed_components": [
+    "pandas",
+    "platformdirs",
+    "tzdata"
+  ],
+  "coupled_minimal_sets": [],
+  "d_bad": "2024-09-27",
+  "d_good": "2024-09-13",
+  "endpoint_rerun_identical": true,
+  "fixed_commit": "17ef6d1e8f4de0bd41ce753c34d9feb8770e4dab",
+  "host": {
+    "platform": "linux",
+    "uv": "uv 0.13.0 (x86_64-unknown-linux-gnu)"
+  },
+  "host_time_zone_database": "tzdata==2025.2",
+  "incident_id": "scikit-mol-pandas-51",
+  "mask_statuses": {
+    "ok": 2
+  },
+  "minimal_failing_sets": [],
+  "project": "EBjerrum/scikit-mol",
+  "python": "3.11",
+  "replayed_utc": "2026-10-10T20:49:40+00:00",
+  "requirements": {
+    "project_extras": [
+      "dev"
+    ]
+  },
+  "search_space": 8,
+  "source": {
+    "sha256": "4d457ed2daf14e03789a33e864716f914e7162c6ba9e915367fb9098bacf7616",
+    "url": "https://codeload.github.com/EBjerrum/scikit-mol/tar.gz/17ef6d1e8f4de0bd41ce753c34d9feb8770e4dab",
+    "wheel": "scikit_mol-0.3.1-py3-none-any.whl"
+  },
+  "source_date": "2024-09-27",
+  "source_urls": [
+    "https://github.com/EBjerrum/scikit-mol/issues/51"
+  ]
+}

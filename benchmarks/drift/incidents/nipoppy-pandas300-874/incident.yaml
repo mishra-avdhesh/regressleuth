@@ -1,0 +1,40 @@
+version: '1.0'
+id: nipoppy-pandas300-874
+description: "[BUG] Tests fail with `pandas` 3.0.0"
+good:
+  bids-validator-deno: "2.2.6"
+  bidsschematools: "1.1.4"
+  coverage: "7.13.1"
+  greenlet: "3.3.0"
+  packaging: "25.0"
+  pandas: "2.3.3"
+  pysqa: "0.3.3"
+  pytz: "2025.2"
+  rich: "14.2.0"
+  rich-click: "1.9.5"
+  sqlalchemy: "2.0.45"
+  textual: "7.2.0"
+  tzdata: "2025.3"
+bad:
+  bids-validator-deno: "2.2.10"
+  bidsschematools: "1.1.6"
+  coverage: "7.13.2"
+  greenlet: "3.3.1"
+  packaging: "26.0"
+  pandas: "3.0.0"
+  pysqa: "0.3.4"
+  pytz: "absent"
+  rich: "14.3.1"
+  rich-click: "1.9.6"
+  sqlalchemy: "2.0.46"
+  textual: "7.4.0"
+  tzdata: "absent"
+metric: {name: drift_tests_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1, interval: student_t}
+search: {strategy: adaptive, max_cause_size: 2, seed: 0}
+budget: {max_replays: 32, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', ../../runner.py, --state, '{state}', --result, '{result}']
+  timeout_seconds: 1800

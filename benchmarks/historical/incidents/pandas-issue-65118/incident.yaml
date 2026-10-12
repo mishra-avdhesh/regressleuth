@@ -1,0 +1,39 @@
+version: '1.0'
+id: pandas-issue-65118
+description: Assignment to a single sub-column of a mixed-dtype column MultiIndex is silently dropped in 3.0.x.
+good:
+  pandas: 2.3.3
+bad:
+  pandas: 3.0.2
+metric:
+  name: historical_multiindex_setitem_test_pass
+  direction: higher_is_better
+  regression_threshold: 0.5
+replay:
+  repeats: 1
+  max_repeats: 1
+  confidence: 0.95
+  interval: student_t
+search:
+  strategy: adaptive
+  max_cause_size: 2
+  seed: 0
+budget:
+  max_replays: 16
+  audit: extended
+cases: cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - runner.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 300
+  interpreters:
+    component: pandas
+    map:
+      2.3.3: ../../envs/pandas-2.3.3/bin/python
+      3.0.2: ../../envs/pandas-3.0.2/bin/python

@@ -1,0 +1,65 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Distribution builds
+build/
+dist/
+*.egg-info/
+
+# Local reports and experiment output
+FINAL_PLAN.md
+run.json
+run.html
+/runs/
+/reports/
+/outputs/
+mlruns/
+wandb/
+
+# Local model and data stores; small checked-in fixtures live in examples/ and benchmarks/
+/artifacts/
+/checkpoints/
+/models/
+/data/
+/hf_cache/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+*.hdf5
+*.parquet
+*.arrow
+*.feather
+*.joblib
+*.pkl
+*.pickle
+
+# Generated example artifacts (recreate with each example's prepare.py)
+examples/*/artifacts/
+examples/real_tabular/cases.json
+examples/real_text/cases.json
+examples/real_image/cases.json
+examples/real_noisy/cases.json
+examples/real_env/cases.json
+examples/real_env/envs/
+examples/http_service/out/
+examples/http_service/cases.jsonl
+benchmarks/holdout/data/
+benchmarks/holdout/envs/
+benchmarks/historical/envs/
+benchmarks/drift/work/
+
+# Local credentials
+.env
+.env.*

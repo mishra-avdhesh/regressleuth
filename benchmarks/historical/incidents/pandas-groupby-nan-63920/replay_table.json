@@ -1,0 +1,21 @@
+{
+ "incident": "pandas-groupby-nan-63920",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 1.0,
+    "seconds": 0.47030865773558617,
+    "status": "ok"
+   }
+  ],
+  "pandas": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 0.46814851835370064,
+    "status": "ok"
+   }
+  ]
+ }
+}

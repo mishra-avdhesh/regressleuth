@@ -1,0 +1,37 @@
+{
+  "id": "env_pandas3_upgrade",
+  "good": {
+    "model": "m1",
+    "preprocessing": "impute-chained",
+    "environment": "pandas2",
+    "policy": "threshold-0.50"
+  },
+  "bad": {
+    "model": "m2",
+    "preprocessing": "impute-chained",
+    "environment": "pandas3",
+    "policy": "threshold-0.45"
+  },
+  "replay": {
+    "command": [
+      "{python}",
+      "../../examples/real_env/runner.py",
+      "--state",
+      "{state}",
+      "--result",
+      "{result}"
+    ],
+    "cases": "../../examples/real_env/cases.json",
+    "metric": "accuracy",
+    "direction": "higher",
+    "regression_threshold": 0.1,
+    "timeout_seconds": 120,
+    "interpreters": {
+      "component": "environment",
+      "map": {
+        "pandas2": "../../examples/real_env/envs/pandas2/bin/python",
+        "pandas3": "../../examples/real_env/envs/pandas3/bin/python"
+      }
+    }
+  }
+}

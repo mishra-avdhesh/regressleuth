@@ -1,0 +1,21 @@
+{
+  "incident": "moneyprinter-pillow-antialias-70",
+  "table": {
+    "": [
+      {
+        "error_kind": null,
+        "metric": 1.0,
+        "seconds": 0.11729785054922104,
+        "status": "ok"
+      }
+    ],
+    "pillow": [
+      {
+        "error_kind": null,
+        "metric": 0.0,
+        "seconds": 0.11663909256458282,
+        "status": "ok"
+      }
+    ]
+  }
+}

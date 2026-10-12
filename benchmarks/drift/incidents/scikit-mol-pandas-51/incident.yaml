@@ -1,0 +1,20 @@
+version: '1.0'
+id: scikit-mol-pandas-51
+description: "Some tests fails with some version of pandas"
+good:
+  pandas: "2.2.2"
+  platformdirs: "4.3.3"
+  tzdata: "2024.1"
+bad:
+  pandas: "2.2.3"
+  platformdirs: "4.3.6"
+  tzdata: "2024.2"
+metric: {name: drift_tests_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1, interval: student_t}
+search: {strategy: adaptive, max_cause_size: 2, seed: 0}
+budget: {max_replays: 32, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', ../../runner.py, --state, '{state}', --result, '{result}']
+  timeout_seconds: 1800

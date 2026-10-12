@@ -1,0 +1,39 @@
+version: '1.0'
+id: triple_text_lowercase_safeguards
+description: Upper-cased text reaches an uncased model only when the explicit lowercase step AND the tokenizer's
+  lowercasing are both gone.
+metadata:
+  benchmark: higher_order
+  designed_by: project author (not independent)
+good:
+  model: distilbert/distilbert-base-uncased-finetuned-sst-2-english
+  normalizer: identity
+  tokenizer: lowercasing
+  lowercase_step: 'on'
+  max_length: '128'
+  policy: threshold-0.50
+bad:
+  model: distilbert/distilbert-base-uncased-finetuned-sst-2-english
+  normalizer: uppercase
+  tokenizer: no-lowercasing
+  lowercase_step: 'off'
+  max_length: '64'
+  policy: threshold-0.60
+metric:
+  name: accuracy
+  direction: higher_is_better
+  regression_threshold: 0.1
+budget:
+  max_replays: 16
+  audit: full
+cases: ../../../examples/real_text/cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - ../runners/text_triple.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 900

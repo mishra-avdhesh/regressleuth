@@ -1,0 +1,39 @@
+version: '1.0'
+id: pandas-groupby-nan-63920
+description: Pandas 3.0.0 assigns a NaN categorical row to the wrong group in a public reproducer.
+good:
+  pandas: 2.3.3
+bad:
+  pandas: 3.0.0
+metric:
+  name: historical_groupby_test_pass
+  direction: higher_is_better
+  regression_threshold: 0.5
+replay:
+  repeats: 1
+  max_repeats: 1
+  confidence: 0.95
+  interval: student_t
+search:
+  strategy: adaptive
+  max_cause_size: 2
+  seed: 0
+budget:
+  max_replays: 16
+  audit: extended
+cases: cases.json
+adapter:
+  type: command
+  command:
+  - '{python}'
+  - runner.py
+  - --state
+  - '{state}'
+  - --result
+  - '{result}'
+  timeout_seconds: 300
+  interpreters:
+    component: pandas
+    map:
+      2.3.3: ../../envs/pandas-2.3.3/bin/python
+      3.0.0: ../../envs/pandas-3.0.0/bin/python

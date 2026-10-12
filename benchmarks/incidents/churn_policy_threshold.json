@@ -1,0 +1,21 @@
+{
+  "id": "churn_policy_threshold",
+  "good": {
+    "model": "linear-v1",
+    "preprocessing": "risk-score-v1",
+    "policy": "balanced"
+  },
+  "bad": {
+    "model": "linear-v2",
+    "preprocessing": "risk-score-corrected",
+    "policy": "growth"
+  },
+  "replay": {
+    "command": ["{python}", "../../examples/churn_replay/runner.py", "--state", "{state}", "--result", "{result}"],
+    "cases": "../../examples/churn_replay/cases.json",
+    "metric": "accuracy",
+    "direction": "higher",
+    "regression_threshold": 0.1,
+    "timeout_seconds": 30
+  }
+}

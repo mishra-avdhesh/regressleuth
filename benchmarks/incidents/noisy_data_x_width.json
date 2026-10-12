@@ -1,0 +1,35 @@
+{
+  "id": "noisy_data_x_width",
+  "good": {
+    "train_data": "full",
+    "width": "64",
+    "label_noise": "0.0",
+    "eval_dtype": "float64",
+    "epochs": "40"
+  },
+  "bad": {
+    "train_data": "subset-600",
+    "width": "24",
+    "label_noise": "0.3",
+    "eval_dtype": "float32",
+    "epochs": "40"
+  },
+  "replay": {
+    "command": [
+      "{python}",
+      "../../examples/real_noisy/runner.py",
+      "--state",
+      "{state}",
+      "--result",
+      "{result}"
+    ],
+    "cases": "../../examples/real_noisy/cases.json",
+    "metric": "accuracy",
+    "direction": "higher",
+    "regression_threshold": 0.1,
+    "timeout_seconds": 120,
+    "repeats": 6,
+    "max_repeats": 24,
+    "confidence": 0.95
+  }
+}

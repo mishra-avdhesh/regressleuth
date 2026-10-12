@@ -1,0 +1,50 @@
+{
+  "triple_env_defense_in_depth": {
+    "baseline": 0.9649,
+    "closest_combination": "environment|imputation_code|validator",
+    "closest_margin_to_threshold": 0.017,
+    "combinations": 32,
+    "endpoint_drop": 0.1228,
+    "max_run_sd": 0.0,
+    "proved": true,
+    "runs_per_combination": 1,
+    "seconds": 1.2,
+    "violations": []
+  },
+  "triple_image_orientation": {
+    "baseline": 0.9204,
+    "closest_combination": "data",
+    "closest_margin_to_threshold": 0.0963,
+    "combinations": 32,
+    "endpoint_drop": 0.8167,
+    "max_run_sd": 0.0,
+    "proved": true,
+    "runs_per_combination": 1,
+    "seconds": 4.4,
+    "violations": []
+  },
+  "triple_tabular_schema_guard": {
+    "baseline": 0.9591,
+    "closest_combination": "model",
+    "closest_margin_to_threshold": 0.0766,
+    "combinations": 32,
+    "endpoint_drop": 0.3333,
+    "max_run_sd": 0.0,
+    "proved": true,
+    "runs_per_combination": 1,
+    "seconds": 4.2,
+    "violations": []
+  },
+  "triple_text_lowercase_safeguards": {
+    "baseline": 0.9106,
+    "closest_combination": "policy",
+    "closest_margin_to_threshold": 0.0977,
+    "combinations": 32,
+    "endpoint_drop": 0.414,
+    "max_run_sd": 0.0,
+    "proved": true,
+    "runs_per_combination": 1,
+    "seconds": 93.5,
+    "violations": []
+  }
+}

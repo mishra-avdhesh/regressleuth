@@ -1,0 +1,18 @@
+version: '1.0'
+id: nestcheck-pandas3-numpy246-12
+description: "Support Pandas 3 and NumPy 2.4.6"
+good:
+  pillow: "12.2.0"
+  tqdm: "4.68.3"
+bad:
+  pillow: "12.3.0"
+  tqdm: "4.68.4"
+metric: {name: drift_tests_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1, interval: student_t}
+search: {strategy: adaptive, max_cause_size: 2, seed: 0}
+budget: {max_replays: 32, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', ../../runner.py, --state, '{state}', --result, '{result}']
+  timeout_seconds: 1800

@@ -1,0 +1,1 @@
+{"pass_criterion": "drop(index=[pd.NA]) succeeds and leaves 2 rows", "source": "https://github.com/pandas-dev/pandas/issues/63304"}

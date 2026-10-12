@@ -1,0 +1,22 @@
+{
+ "complete": false,
+ "incident": "seaborn-numpy231-3892",
+ "table": {
+  "": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 3.526359986513853,
+    "status": "ok"
+   }
+  ],
+  "coverage|fonttools|librt|matplotlib|pandas-stubs|platformdirs|pytest|tzdata|urllib3": [
+   {
+    "error_kind": null,
+    "metric": 0.0,
+    "seconds": 3.2772189378738403,
+    "status": "ok"
+   }
+  ]
+ }
+}

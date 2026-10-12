@@ -1,0 +1,43 @@
+{
+  "blamed_in_report": [
+    "numpy",
+    "pandas"
+  ],
+  "changed_components": [
+    "pillow",
+    "tqdm"
+  ],
+  "coupled_minimal_sets": [],
+  "d_bad": "2026-07-11",
+  "d_good": "2026-06-27",
+  "endpoint_rerun_identical": true,
+  "fixed_commit": "5fc30349736e0a7fec463738f3ab62a9c3e09bbd",
+  "host": {
+    "platform": "linux",
+    "uv": "uv 0.13.0 (x86_64-unknown-linux-gnu)"
+  },
+  "host_time_zone_database": "tzdata==2025.2",
+  "incident_id": "nestcheck-pandas3-numpy246-12",
+  "mask_statuses": {
+    "ok": 2
+  },
+  "minimal_failing_sets": [],
+  "project": "ejhigson/nestcheck",
+  "python": "3.11",
+  "replayed_utc": "2026-10-10T20:33:00+00:00",
+  "requirements": {
+    "extra_requirements": [
+      "pytest"
+    ]
+  },
+  "search_space": 4,
+  "source": {
+    "sha256": "908cc79dcf4bf067643e4f6ec1bfe108565ea354a07c582f4f0999ea31812200",
+    "url": "https://codeload.github.com/ejhigson/nestcheck/tar.gz/5fc30349736e0a7fec463738f3ab62a9c3e09bbd",
+    "wheel": "nestcheck-0.2.1-py2.py3-none-any.whl"
+  },
+  "source_date": "2026-07-11",
+  "source_urls": [
+    "https://github.com/ejhigson/nestcheck/issues/12"
+  ]
+}

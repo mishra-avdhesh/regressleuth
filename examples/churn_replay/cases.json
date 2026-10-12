@@ -1,0 +1,22 @@
+[
+  {"id": "acct-001", "risk_score": 0.10, "label": 0},
+  {"id": "acct-002", "risk_score": 0.16, "label": 0},
+  {"id": "acct-003", "risk_score": 0.22, "label": 0},
+  {"id": "acct-004", "risk_score": 0.28, "label": 0},
+  {"id": "acct-005", "risk_score": 0.31, "label": 0},
+  {"id": "acct-006", "risk_score": 0.34, "label": 0},
+  {"id": "acct-007", "risk_score": 0.40, "label": 0},
+  {"id": "acct-008", "risk_score": 0.41, "label": 0},
+  {"id": "acct-009", "risk_score": 0.42, "label": 0},
+  {"id": "acct-010", "risk_score": 0.43, "label": 0},
+  {"id": "acct-011", "risk_score": 0.61, "label": 1},
+  {"id": "acct-012", "risk_score": 0.63, "label": 1},
+  {"id": "acct-013", "risk_score": 0.66, "label": 1},
+  {"id": "acct-014", "risk_score": 0.69, "label": 1},
+  {"id": "acct-015", "risk_score": 0.72, "label": 1},
+  {"id": "acct-016", "risk_score": 0.75, "label": 1},
+  {"id": "acct-017", "risk_score": 0.78, "label": 1},
+  {"id": "acct-018", "risk_score": 0.82, "label": 1},
+  {"id": "acct-019", "risk_score": 0.85, "label": 1},
+  {"id": "acct-020", "risk_score": 0.89, "label": 1}
+]
