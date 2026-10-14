@@ -1,1 +1,1 @@
-regressleuth==0.1.0a1
+regressleuth @ git+https://github.com/mishra-avdhesh/regressleuth.git@69892bfd5dc848619be7500374cba541ec3a4282

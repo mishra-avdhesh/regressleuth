@@ -1,8 +1,8 @@
 # Regressleuth: an ML regression debugging case study
 
 **Project:** Python CLI and library for finding which versioned ML pipeline changes
-reproduce a measured regression. **State:** local `0.1.0a1` alpha; publication is
-pending. **Live computation:** local installation. **Free web demo:**
+reproduce a measured regression. **State:** `0.1.0a1` alpha source on GitHub;
+no package-index release. **Live computation:** local installation. **Free web demo:**
 [precomputed replay explorer](../space_static/README.md).
 
 ## The engineering problem

@@ -1,7 +1,7 @@
 """Hugging Face Space: explore how Regressleuth isolates a regression.
 
 Only the built-in oracle incidents run here (no user code is executed), so the Space is safe
-to host publicly. Its requirements pin a released package version.
+to host publicly. The optional hosted template pins the public source revision.
 """
 
 from __future__ import annotations
