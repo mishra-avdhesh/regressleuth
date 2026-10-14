@@ -90,6 +90,25 @@ fake `docker` executable that checks the command line and emulates the container
 been validated against a real Docker daemon. Use the `command` adapter with `interpreters`
 for tested environment isolation.
 
+## Lockfile runner (dependency upgrades)
+
+`regressleuth init DIR --from-lockfiles GOOD BAD --test NODE` writes an incident whose
+`command` adapter is `python -m regressleuth.lockfile_runner`. For each replayed mix, the
+runner:
+
+1. builds a virtual environment per pin set with uv, cached in `DIR/.regressleuth-envs`
+   and keyed by the exact pins;
+2. installs the pins with `--no-deps` (plus any custom indexes the lockfile names) and the
+   project in editable mode;
+3. checks installed files against their wheels' RECORD hashes, and runs `uv pip check`;
+4. runs the named pytest node IDs.
+
+It writes metric 1 when every node passed, and 0 when any failed, errored, was skipped or
+could not be collected. A mix that cannot be installed, or fails the check, is
+`incompatible`. A missing uv, an unknown node ID, or a crash is a replay error. Settings
+live in `DIR/cases.json`: Python version, test selection, pytest arguments, test
+environment, `wheels_only`, indexes and timeout.
+
 ## Writing your own
 
 Subclass `Adapter`, implement `replay(request) -> ReplayOutcome` and `describe()` (no secret

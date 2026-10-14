@@ -4,9 +4,10 @@ This checkout is prepared as `0.1.0a1`. No remote, tag, package upload, or Space
 deployment has been made. The maintainer performs every account and publication step
 below. Keep the version at `0.1.0a1` for the alpha; `0.1.0` requires a separate decision.
 
-The historical pilot validates only single-component replay. The separately sealed
-dependency-drift study yielded zero eligible incidents, so independent multi-component
-search and interaction evidence is still missing. Do not use that study as a performance
+The historical pilot validates only single-component replay. The two separately sealed
+dependency-drift studies (issue reports and lockfile-update pull requests) yielded zero
+eligible incidents, so independent multi-component search and interaction evidence is
+still missing. Do not use that study as a performance
 or false-verification claim; review [the benchmark report](docs/BENCHMARKS.md#dependency-drift-study-zero-eligible-incidents)
 before deciding on a stable release.
 
@@ -14,12 +15,16 @@ before deciding on a stable release.
 
 ```bash
 python3 -m venv .venv && . .venv/bin/activate
-pip install -e ".[demo,dev]"
+pip install -e ".[demo,dev,lockfiles]"
 pytest --cov=regressleuth --cov-report=term-missing --cov-fail-under=90
 ruff check . && ruff format --check . && mypy --strict
 python benchmarks/freeze_method.py verify
 python benchmarks/seal.py verify benchmarks/holdout --definitions-only
 python benchmarks/seal.py verify benchmarks/higher_order --definitions-only
+python benchmarks/historical/verify_snapshot.py
+python benchmarks/snapshot.py verify benchmarks/drift
+python benchmarks/snapshot.py verify benchmarks/lockdrift
+python tools/check_lockfile_example.py             # real uv, pandas upgrade
 python -m build && twine check dist/* && python tools/audit_package.py dist/*
 python -m venv /tmp/rl-clean && /tmp/rl-clean/bin/pip install dist/*.whl
 /tmp/rl-clean/bin/regressleuth --version && /tmp/rl-clean/bin/regressleuth demo
@@ -80,8 +85,9 @@ the CI workflow passes on all three Python versions.
    with required reviewers if desired. Approve the deployment only after reviewing
    the build artifact and the TestPyPI rehearsal.
 3. Confirm `pyproject.toml`, `src/regressleuth/__init__.py`, `CITATION.cff`, the Space
-   pin, and the release notes all say `0.1.0a1`. Replace the README's "not yet
-   published" status and date the `0.1.0a1` changelog entry in the release commit.
+   pin, and the release notes all say `0.1.0a1`. When the package is published,
+   replace the README's "once released" install note and date the `0.1.0a1`
+   changelog entry in the release commit.
    Push that commit to `main` and confirm its CI checks. Then,
    when ready to publish, run `git tag v0.1.0a1 && git push origin v0.1.0a1` manually.
    **Pushing this tag triggers PyPI publication** through `release.yml`; pushing

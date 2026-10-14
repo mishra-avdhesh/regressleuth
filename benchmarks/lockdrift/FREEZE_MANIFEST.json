@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-12T20:53:40+00:00",
+  "defaults_used": {
+    "audit": "extended",
+    "interval": "student_t",
+    "max_cause_size": 2
+  },
+  "files": {
+    "benchmarks/lockdrift/ADDENDUM_2026-10-13.md": "1f9f952267115c305db2dd49e3230b8e1e2e97e63490b83dd4678d3fb3bbca30",
+    "benchmarks/lockdrift/ADDENDUM_2026-10-13b.md": "e3889aa1fa5de49afad8f6ccddd9e96cff4065bc52cd74190458a76f83455d93",
+    "benchmarks/lockdrift/SELECTION_PROTOCOL.md": "169b119f2c709f26ff915aa22cae105e9320bc64ec498209be6e787ea9caf61c",
+    "src/regressleuth/__init__.py": "7f388a43e3932e620065107c8e3d34c2dc949a09cc87d2d2c18a2d700caa7b3c",
+    "src/regressleuth/adapters/__init__.py": "a25e6675a139234e7e8291c98a0c52f6844a973cb67c87c6294100b58e438566",
+    "src/regressleuth/adapters/_env.py": "672c63ac570e7ac40f66c77bbf6caa6de87a262c1d3806f64fa3933a572474ac",
+    "src/regressleuth/adapters/base.py": "2ed8f8c3f0e9aa1b90971265917ac5ad2f298db81c4118746c84d91d72b1ee84",
+    "src/regressleuth/adapters/command.py": "ccfe3159c676c1aed3614e794a0a4e386124c956f954f5241aed10eedf6e9c3c",
+    "src/regressleuth/adapters/docker.py": "bb6242fceab40f32612fef0471557ec1f0d7b1efcdc764c9c7641e729cc73c12",
+    "src/regressleuth/adapters/http.py": "bb6706375a32fd791faa268b854cd8e1d7cecce13c42c222cd0a35460fa1a1a2",
+    "src/regressleuth/adapters/python.py": "c426d0688445efbcdf2810928c30c8b66ecf3220c618291a9c0f5292125d86d8",
+    "src/regressleuth/api.py": "4e5e6937c3ac719559ea2f2fbfb7231ca1cfe20469e456311fddee9451177787",
+    "src/regressleuth/engine.py": "5f219639c98e3acc32fc45bc05250946f10955c4c3f36005bf38246f68c5f1e2",
+    "src/regressleuth/errors.py": "47761922321d7202198157638fcf371834107fe0a7791f46e286dd0cfc6378ff",
+    "src/regressleuth/executor.py": "a4c2af9d8993dee78c5ba3ecdd72bfbb99f88f7fb5ec3e5fc9c365d240cb1e1c",
+    "src/regressleuth/lockfile_runner.py": "c011635290bbf037acff585a3106046b3bc8dee6ae6ff7a0836450a6b3d41452",
+    "src/regressleuth/lockfiles.py": "6bce696934a9e6a73c6e1d74edb2caeaa66f52abe1518b5f8e12127907dea6ee",
+    "src/regressleuth/models.py": "7d736c7e3922621b25d64a0f23acab36f213d66756725ae0f8c7adcf4dc99db4",
+    "src/regressleuth/spec.py": "57b814e386c1bef90e0370d92812904bfdd5f80c59715e3434a4ad2172c48868",
+    "src/regressleuth/stats.py": "42c394bf64bc1440f013853f30cf3a3242c9caccfb2a1b58cdd0600a754ba9ae",
+    "src/regressleuth/strategies.py": "8cfc16c90fa841745279c96f8e8a70748750e27da2b765aaaca2644e5e940a66"
+  },
+  "purpose": "re-frozen after the second lockfile-reader fix in addendum D, before any test ran (supersedes v1)",
+  "tree_sha256": "b65b93257035ce58e44ad5cc82ef65d29282c143ad09a33c9b1e52eb7ec388c3"
+}

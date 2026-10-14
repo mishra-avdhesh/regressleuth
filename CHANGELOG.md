@@ -2,6 +2,13 @@
 
 ## 0.1.0a1 - alpha, unreleased
 
+### Final release hardening (2026-10-14)
+
+- Requirements-style lockfiles now reject trailing unparsed text and conflicting pins active for the target Python, instead of silently accepting or overwriting them.
+- `noise-scale` reports a clean input error for an invalid calibration level or a zero-variance sample, which cannot yield the positive scale required by `interval: anytime`.
+- CI and the release gate run the bundled pandas-upgrade example with real uv on Python 3.11 and require a `verified` pandas diagnosis under the extended audit in eight replays.
+- Related-work citations formerly marked as recalled from memory were linked to source pages or removed; the Dasgupta venue year was corrected.
+
 ### Release and evidence workflow (2026-10-11)
 
 - Added a no-cost static Space template with eight precomputed engine reports from two existing synthetic incidents; no paid API, server, or model hosting is needed. The live Gradio template remains available for local use or paid hosting.
@@ -13,6 +20,25 @@
 
 - Pre-registered 40-candidate public dependency-drift search, sealed after screening and controlled replay. Thirty-three candidates were excluded and all seven replayed candidates were disputed (six good states failed; one bad state passed). No incident was eligible, so the one-time evaluator produced zero strategy rows and no external evidence for search or interaction claims. The full candidate ledger and dispute reasons are retained.
 - The drift evaluator now refuses to overwrite any partial or complete result file, and its seal ignores generated Ruff caches. The historical pilot seal and frozen results remain unchanged.
+
+### Release review (2026-10-13)
+
+- **Sealed studies stay verifiable as the library changes.** `benchmarks/snapshot.py` archives each study's frozen source files and re-runs its `harness.py verify` from that archive. CI and the release workflow use it for both drift studies; the historical pilot keeps its own `verify_snapshot.py`.
+- **Lockfile incidents:** `-e .` lines (the project itself, as pip-compile writes it) are accepted. Custom package indexes named in the lockfile (for example PyTorch's CPU index in `uv.lock`, a legacy source in `poetry.lock`, `--extra-index-url` in requirements) are passed to uv. Virtual-environment paths work on Windows. Project paths across Windows drives fall back to absolute.
+- `regressleuth noise-scale` warns when the regression threshold is under four times the noise bound, where anytime replays often end inconclusive.
+- The dev extra installs `packaging` and, on Python 3.10, `tomli`, which the TOML lockfile readers need.
+- README reorganized around the two practical use cases, with the evidence condensed into one table; the case study, adapter guide, security notes and release checklist were updated.
+
+### Lockfile incidents (2026-10-12)
+
+- **Lockfile-update study (drift v2), sealed and evaluated once:** 40 failing Dependabot or Renovate lockfile pull requests were logged under a protocol frozen before the search. 37 were excluded and 3 replayed. No test separated the good state from the bad one, so 0 incidents were eligible. Two lockfile-reader defects were found and fixed in dated addenda before any test ran.
+- `docs/RELATED_WORK.md` maps the prior work (delta debugging over changes, ProbDD, group testing for complexes and inhibitors, generalized binary search, BugDoc, confidence sequences, breaking-update benchmarks) and states what is and is not new.
+
+- **`regressleuth init DIR --from-lockfiles GOOD BAD --test NODE`** builds a runnable incident from two dependency lockfiles. Supported formats: requirements-style pins (markers evaluated, hashes ignored), `uv.lock` and `poetry.lock`. Each changed distribution becomes a component, and `--group` merges an upgrade with the dependencies it dropped. The project path is stored relative to the incident.
+- **`python -m regressleuth.lockfile_runner`** installs each version mix into a cached virtual environment with uv (optional `[lockfiles]` extra). It checks installed files against their wheels' RECORD hashes, reports uninstallable or conflicting mixes as incompatible, counts a test module that cannot be collected as a failure, and rebuilds environments left unfinished by an interrupted run.
+- `examples/lockfile_upgrade`: a real pandas 2.3.3 to 3.0.0 upgrade among five changed distributions, `verified` as pandas after 8 replays.
+- Lockfiles are read for the target Python and platform: `uv.lock` is walked from its workspace along edges whose markers hold, `poetry.lock` packages are filtered by their markers (group-scoped markers included) and Python range, and git or URL sources are rejected clearly. The first version ignored markers, so it would have installed, for example, numpy for Python 3.12 into a 3.11 environment.
+- **`regressleuth noise-scale INCIDENT`** runs the good state on calibration seeds and suggests a `noise_scale`: a 99% chi-square upper bound on the run-to-run SD.
 
 ### Error control and scale (2026-10-11)
 

@@ -68,9 +68,39 @@ def _parser() -> argparse.ArgumentParser:
     demo.add_argument("--format", choices=tuple(RENDERERS), default="text")
     demo.add_argument("--output", type=Path)
 
-    init = sub.add_parser("init", help="write a runnable incident.yaml + runner template")
+    init = sub.add_parser(
+        "init",
+        help="write a runnable incident.yaml + runner template, or build one from two lockfiles",
+        description="Without --from-lockfiles: write a template. With --from-lockfiles GOOD BAD: "
+        "every distribution whose pin differs becomes a component, and replays install each "
+        "version mix with uv and run the named tests.",
+    )
     init.add_argument("directory", type=Path)
     init.add_argument("--force", action="store_true")
+    init.add_argument(
+        "--from-lockfiles",
+        nargs=2,
+        type=Path,
+        metavar=("GOOD", "BAD"),
+        help="requirements-style pins, uv.lock or poetry.lock of the passing and failing states",
+    )
+    init.add_argument("--project", type=Path, default=Path("."), help="project checkout to test (default .)")
+    init.add_argument("--test", action="append", default=[], help="failing pytest node ID (repeatable)")
+    init.add_argument("--python", help="Python version for the environments (default: this interpreter)")
+    init.add_argument("--id", dest="incident_id", help="incident id (default from the project name)")
+    init.add_argument(
+        "--no-install-project", action="store_true", help="test the checkout without installing it"
+    )
+    init.add_argument("--wheels-only", action="store_true", help="never build distributions from source")
+    init.add_argument("--pytest-arg", action="append", default=[], help="extra pytest argument (repeatable)")
+    init.add_argument(
+        "--group",
+        action="append",
+        default=[],
+        metavar="A,B,...",
+        help="replay these changed distributions as one component, e.g. an upgrade and the "
+        "dependencies it dropped (repeatable)",
+    )
 
     check = sub.add_parser("validate", help="check an incident file against the specification")
     check.add_argument("incident", type=Path)
@@ -108,6 +138,15 @@ def _parser() -> argparse.ArgumentParser:
             type=Path,
             help="write each replay's captured stdout/stderr tails here (local only)",
         )
+
+    noise = sub.add_parser(
+        "noise-scale",
+        help="estimate noise_scale for interval: anytime from calibration runs of the good state",
+    )
+    noise.add_argument("incident", type=Path)
+    noise.add_argument("--runs", type=int, default=10, help="calibration runs (default 10)")
+    noise.add_argument("--level", type=float, default=0.99, help="upper-bound confidence (default 0.99)")
+    noise.add_argument("--seed-offset", type=int, default=1000, help="first calibration seed (default 1000)")
 
     report = sub.add_parser("report", help="render a saved JSON result")
     report.add_argument("result", type=Path)
@@ -298,6 +337,68 @@ def main(argv: list[str] | None = None) -> int:
             name = f"{args.which}-1.0.schema.json"
             sys.stdout.write(
                 resources.files("regressleuth").joinpath("schemas").joinpath(name).read_text("utf-8")
+            )
+            return 0
+        if args.command == "noise-scale":
+            from .noise import calibrate
+
+            found = calibrate(
+                Incident.from_file(args.incident),
+                runs=args.runs,
+                level=args.level,
+                seed_offset=args.seed_offset,
+            )
+            print(
+                f"Good state over {found['runs']} runs (seeds {found['seeds'][0]}-{found['seeds'][1]}): "
+                f"mean {found['mean']:.6g}, SD {found['sd']:.4g}\n"
+                f"{found['level']:.0%} upper bound for the SD: {found['noise_scale']:.4g} "
+                f"(regression threshold = {found['threshold_to_noise']:.3g} x that)\n\n"
+                "replay:\n  interval: anytime\n"
+                f"  noise_scale: {found['noise_scale']:.4g}\n"
+                "  repeats: 3\n  max_repeats: 24\n\n"
+                "Valid for roughly Gaussian run-to-run noise; the diagnosis bound becomes "
+                f"1 - confidence + {1 - found['level']:.2g}."
+            )
+            if found["threshold_to_noise"] < 4:
+                print(
+                    "Hint: the regression threshold is small compared with the noise, so anytime replays "
+                    "will often end inconclusive. Raise max_repeats or use more stable cases."
+                )
+            return 0
+        if args.command == "init" and args.from_lockfiles:
+            from .lockfiles import write_incident
+
+            good, bad = args.from_lockfiles
+            built = write_incident(
+                good,
+                bad,
+                project=args.project,
+                tests=args.test,
+                directory=args.directory,
+                incident_id=args.incident_id,
+                install_project="none" if args.no_install_project else "editable",
+                wheels_only=args.wheels_only,
+                pytest_args=tuple(args.pytest_arg),
+                groups=[group.split(",") for group in args.group],
+                force=args.force,
+                **({"python": args.python} if args.python else {}),
+            )
+            changed = built["changed"]
+            print(
+                f"{len(changed)} changed distributions ({2 ** len(changed)} combinations), {built['shared']} unchanged:"
+            )
+            for name, (old_version, new_version) in changed.items():
+                print(f"  {name}: {old_version} -> {new_version}")
+            if built["removed"]:
+                print(
+                    f"Note: {', '.join(built['removed'])} disappear in the bad lockfile. If an upgrade dropped "
+                    "them, mixes that keep the old version without them cannot be installed; replay them "
+                    "with that upgrade, e.g. --group <upgraded>," + ",".join(built["removed"])
+                )
+            print(
+                f"Wrote {args.directory}/incident.yaml and cases.json (replays need uv on PATH)\n"
+                f"Next:  regressleuth inspect {args.directory}/incident.yaml\n"
+                f"       regressleuth diagnose {args.directory}/incident.yaml"
             )
             return 0
         if args.command == "init":

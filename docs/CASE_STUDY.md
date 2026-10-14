@@ -59,10 +59,19 @@ but still constructed by the project author. Full rows and methods are in the
 
 An external historical pilot reproduced nine public bugs in matched environments.
 Every eligible bug changed only one component, so this validates the replay path
-but offers no external evidence for multi-component search or interactions. A
-separate pre-registered dependency-drift study found zero eligible incidents;
-its [negative result](BENCHMARKS.md#dependency-drift-study-zero-eligible-incidents)
-is reported without a performance claim.
+but offers no external evidence for multi-component search or interactions. Two
+separate pre-registered dependency-drift studies, one from issue reports and one from
+failing lockfile-update pull requests, screened 80 public candidates and found zero
+eligible incidents. Their [negative results](BENCHMARKS.md#dependency-drift-study-zero-eligible-incidents)
+are reported without a performance claim.
+
+## A practical entry point: dependency upgrades
+
+`regressleuth init --from-lockfiles good.lock bad.lock --test NODE` turns a broken
+dependency update into an incident. Each changed distribution becomes a component, and
+each replay installs one mix of old and new pins with uv and runs the failing test. In the
+bundled real example, pandas 2.3.3 → 3.0.0 among five changed distributions is
+`verified` as pandas in 8 replays.
 
 ## Safety and verification
 
@@ -92,7 +101,7 @@ python benchmarks/seal.py verify benchmarks/holdout --definitions-only
 python benchmarks/evaluate_safe_default.py
 ```
 
-The package currently passes 192 tests at 95% coverage, strict type checking,
+The package currently passes over 210 tests at about 93% coverage, strict type checking,
 lint and format checks, build, Twine checks, and wheel/sdist content auditing.
 The [static explorer](../space_static/README.md) shows actual reports from bundled
 synthetic oracle incidents without a paid API or server. Its snapshots are not

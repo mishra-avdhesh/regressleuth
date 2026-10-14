@@ -1,0 +1,19 @@
+version: '1.0'
+id: "pandas3-upgrade"
+description: "Dependency upgrade from good.txt to bad.txt"
+good:
+  numpy: "2.4.1"
+  packaging: "25.0"
+  pandas: "pins:pandas==2.3.3,pytz==2025.2,tzdata==2025.3"
+bad:
+  numpy: "2.4.2"
+  packaging: "26.0"
+  pandas: "pins:pandas==3.0.0"
+metric: {name: tests_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1}
+budget: {max_replays: 16, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', -m, regressleuth.lockfile_runner, --state, '{state}', --result, '{result}']
+  timeout_seconds: 2400

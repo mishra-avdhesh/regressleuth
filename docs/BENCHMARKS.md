@@ -240,6 +240,42 @@ comparison are **not supported** here. The result documents how hard it was to r
 multi-component dependency-drift incidents under the stated reconstruction rules; it does
 not measure algorithm performance or imply that such incidents do not exist.
 
+## Lockfile-update study, drift v2 (zero eligible incidents)
+
+[Protocol](../benchmarks/lockdrift/SELECTION_PROTOCOL.md), frozen before the search, with
+addenda [C](../benchmarks/lockdrift/ADDENDUM_2026-10-13.md) and
+[D](../benchmarks/lockdrift/ADDENDUM_2026-10-13b.md),
+[search log](../benchmarks/lockdrift/SEARCH_LOG.md),
+[ledger](../benchmarks/lockdrift/CANDIDATES.jsonl) and the
+[sealed report](../benchmarks/results/lockdrift/EVALUATION.md).
+This version targeted the first study's main failure, guessed dates. Each candidate is a
+Dependabot or Renovate pull request that changed a lockfile and failed CI, so the base
+and head lockfiles are the good and bad states exactly. Fixed tests are chosen
+mechanically: those that pass in the good state and fail in the bad one, when the CI test
+selection runs in both endpoint environments.
+
+| stage | count | detail |
+|---|---:|---|
+| logged | 40 | two GitHub searches, in listed order |
+| excluded | 37 | update group above 12 changed packages 14, no exact-pin lockfile 8, CI Python unavailable here 6, outside the population 4, not a pure dependency change 4, no CI test command 2, endpoint not buildable 2 (a custom PyTorch index; a local path dependency) |
+| replayed (CI selection at both endpoints) | 3 | 162, 162 and 171 tests |
+| disputed | 3 | no test passed in the good state and failed in the bad one |
+| included | **0** | no strategy rows |
+
+Two defects in the new lockfile reader surfaced when the first environments were
+installed, before any test ran. It ignored Python and platform markers in `uv.lock` and
+`poetry.lock`, and it misread group-scoped `poetry.lock` markers. Both were fixed in dated
+addenda with a re-freeze. All 40 candidates were re-screened with the corrected reader, and
+no screening decision changed. Exclusion counts overlap because a candidate can have
+several reasons.
+
+What the two drift studies together show: public, reproducible, multi-package
+dependency regressions with a clean failing test are rare under strict rules. The common
+obstacles are large update groups, CI-only services and layouts, Python versions,
+non-PyPI sources, and CI failures that are not test failures. A third version would need
+named failing tests from current CI logs, more Python versions, custom package indexes,
+local path dependencies, and a larger cap with targeted (non-exhaustive) ground truth.
+
 ## Noise-guarantee simulations (pre-registered, one run each)
 
 These test the diagnosis-level bound of `interval: anytime`, whose proof is in
@@ -306,9 +342,10 @@ python benchmarks/holdout/setup_envs.py && python benchmarks/holdout/prepare.py 
 python benchmarks/prove_ground_truth.py benchmarks/holdout
 python benchmarks/reproduce_frozen.py --output /tmp/regressleuth-frozen-reproduction
 python benchmarks/evaluate_safe_default.py     # writes only benchmarks/results/safe_default/
-python benchmarks/drift/harness.py verify       # drift study: sealed ledger and method freeze
+python benchmarks/snapshot.py verify benchmarks/drift      # drift study: seal plus frozen source archive
+python benchmarks/snapshot.py verify benchmarks/lockdrift  # lockfile-update study: seal plus frozen source archive
 python3.11 benchmarks/historical/setup_envs.py  # matched historical environments (network)
-regressleuth diagnose benchmarks/historical/incidents/sklearn-issue-35038/incident.yaml  # live replay
+regressleuth diagnose benchmarks/historical/incidents/sklearn-issue-35038/incident.yaml  # live replay (first rebuild envs with setup_envs.py; they are deleted after sealing)
 python benchmarks/historical/verify_snapshot.py  # pilot reproduced from the frozen source archive
 python benchmarks/noise_guarantee/simulate.py smoke  # the pre-registered runs refuse to overwrite
 python benchmarks/scale/scale.py smoke

@@ -1,0 +1,20 @@
+{
+  "environments": ".regressleuth-envs",
+  "install_project": "editable",
+  "project": "../project",
+  "pytest_args": [],
+  "python": "3.11",
+  "shared_pins": [
+    "iniconfig==2.3.0",
+    "pluggy==1.6.0",
+    "pygments==2.19.2",
+    "pytest==9.0.2",
+    "python-dateutil==2.9.0.post0",
+    "six==1.17.0"
+  ],
+  "test_timeout_seconds": 1800,
+  "tests": [
+    "tests/test_features.py::test_clip_and_round"
+  ],
+  "wheels_only": false
+}

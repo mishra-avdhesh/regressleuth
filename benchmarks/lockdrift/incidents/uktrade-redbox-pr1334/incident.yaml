@@ -1,0 +1,17 @@
+version: '1.0'
+id: "uktrade-redbox-pr1334"
+description: "Dependency upgrade from poetry.lock to poetry.lock"
+good:
+  autobahn: "25.12.2"
+  py-ubjson: "0.16.1"
+bad:
+  autobahn: "26.7.1"
+  py-ubjson: "absent"
+metric: {name: tests_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1}
+budget: {max_replays: 16, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', -m, regressleuth.lockfile_runner, --state, '{state}', --result, '{result}']
+  timeout_seconds: 2400

@@ -1,0 +1,49 @@
+{
+  "audit": "extended",
+  "budgets": [
+    4,
+    6,
+    8,
+    12,
+    16,
+    24,
+    32,
+    "full"
+  ],
+  "evaluated_utc": "2026-10-13T09:22:01+00:00",
+  "funnel": {
+    "disputed": [
+      "annuaire-entreprises-data-gouv-fr-search-inf-pr950",
+      "diogoribeiro7-drl-cox-pr60",
+      "diogoribeiro7-drl-cox-pr59"
+    ],
+    "disputed_reasons": {
+      "annuaire-entreprises-data-gouv-fr-search-inf-pr950": "No test passes in the good state and fails in the bad state.",
+      "diogoribeiro7-drl-cox-pr59": "No test passes in the good state and fails in the bad state.",
+      "diogoribeiro7-drl-cox-pr60": "No test passes in the good state and fails in the bad state."
+    },
+    "excluded": 37,
+    "excluded_by_reason": {
+      "build_infeasible": 2,
+      "no_lockfile": 8,
+      "no_test_command": 2,
+      "not_dependency_drift": 4,
+      "outside_population": 4,
+      "python_unavailable": 6,
+      "search_space_above_cap": 14
+    },
+    "included": [],
+    "logged": 40,
+    "replayed": 3
+  },
+  "random_seeds": 10,
+  "seal_sha256": "dd60af3544105a5fbaa9795426471df58c7316e9121f80929276b612cc411f5b",
+  "strategies": [
+    "adaptive",
+    "exhaustive",
+    "random",
+    "one_factor",
+    "greedy",
+    "ddmin"
+  ]
+}

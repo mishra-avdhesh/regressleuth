@@ -1,0 +1,21 @@
+version: '1.0'
+id: "diogoribeiro7-drl-cox-pr59"
+description: "Dependency upgrade from poetry.lock to poetry.lock"
+good:
+  matplotlib: "3.11.1"
+  ruff: "0.16.6"
+  scikit-learn: "1.9.0"
+  tqdm: "4.70.0"
+bad:
+  matplotlib: "3.11.2"
+  ruff: "0.16.8"
+  scikit-learn: "1.9.1"
+  tqdm: "4.70.1"
+metric: {name: tests_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1}
+budget: {max_replays: 16, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', -m, regressleuth.lockfile_runner, --state, '{state}', --result, '{result}']
+  timeout_seconds: 2400

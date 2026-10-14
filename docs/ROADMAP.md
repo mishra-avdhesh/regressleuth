@@ -16,7 +16,7 @@ and its results remain frozen. None of the milestones below changes those stored
 | 6. Real replay | Reproduce one versioned vision or text incident on fixed cases using the available GPUs; preserve artifact digests, seeds, environment, and timing. Validate the Docker adapter on a host with a working daemon. | End-to-end wall time and GPU seconds per replay; timeout, failure, cleanup, path/volume, environment, isolation, and resource-limit tests for containers. Keep the adapter experimental until those checks pass. |
 | 7. Product workflow | Start with read-only extraction of changed artifacts from Git and one experiment tracker. Add further trackers and artifact stores after a common versioned manifest format is stable. Start multi-metric incidents with one target regression and explicit guardrails for latency, memory, or accuracy. | Deterministic artifact mapping, no secrets in reports, integration tests using pinned fixtures, and clear behavior when objectives conflict or an artifact cannot be replayed. |
 
-Gate 1 status (2026-10-10): the selection protocol and a first pilot exist. 30 public
+Gate 1 status (2026-10-13): still not met. Two further pre-registered studies (dependency drift v1 and lockfile updates v2, 80 public candidates) found no eligible multi-component incident; see BENCHMARKS.md. Earlier status (2026-10-10): the selection protocol and a first pilot exist. 30 public
 reports were screened; 9 single-component regressions reproduced in matched environments,
 were sealed, and produced no wrong `verified` diagnosis
 ([details](BENCHMARKS.md#external-historical-pilot-9-public-regressions-sealed-evaluated-once)).

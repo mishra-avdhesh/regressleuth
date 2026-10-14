@@ -29,7 +29,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install
-        run: python -m pip install -e ".[demo,dev]"
+        run: python -m pip install -e ".[demo,dev,lockfiles]"
       - name: Lint, format and strict types
         run: |
           ruff check .
@@ -41,13 +41,17 @@ jobs:
           python benchmarks/seal.py verify benchmarks/holdout --definitions-only
           python benchmarks/seal.py verify benchmarks/higher_order --definitions-only
           python benchmarks/historical/verify_snapshot.py
-          python benchmarks/drift/harness.py verify
+          python benchmarks/snapshot.py verify benchmarks/drift
+          python benchmarks/snapshot.py verify benchmarks/lockdrift
       - name: Prepare HTTP service demo
         run: python examples/http_service/prepare.py
       - name: Tests with coverage
         run: pytest --cov=regressleuth --cov-report=term-missing --cov-fail-under=90
       - name: Bundled demo
         run: regressleuth demo
+      - name: Real uv lockfile example
+        if: matrix.python-version == '3.11'
+        run: python tools/check_lockfile_example.py
 
   build:
     needs: verify

@@ -63,3 +63,5 @@ benchmarks/drift/work/
 # Local credentials
 .env
 .env.*
+.regressleuth-envs/
+benchmarks/lockdrift/work/

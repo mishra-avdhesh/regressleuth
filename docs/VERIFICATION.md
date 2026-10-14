@@ -137,6 +137,14 @@ abstained instead. Version 1's `healing` scenario was mis-specified (the healing
 present in the known-bad state, so 88% of incidents had no regression); version 2 replaced
 it.
 
+**Choosing sigma.** `regressleuth noise-scale INCIDENT` estimates it from calibration runs of
+the good state, on seeds the diagnosis never uses. It reports the one-sided upper bound
+`s * sqrt((n-1) / chi2_{1-c, n-1})`. Under Gaussian noise this bound is too small with
+probability at most `1 - c`, so the total error bound becomes `alpha + (1 - c)`.
+The calibration level must be strictly between zero and one. If all calibration results
+are identical, the command cannot suggest the positive `noise_scale` required by
+`interval: anytime`; use deterministic replay or supply a justified positive bound.
+
 **Cost.** The error budget is split over `2^k` masks, so intervals are wider than the
 default Welch interval and more runs are needed: the good baseline gets all `max_repeats`
 runs at once, because every comparison shares it. The pre-registered simulation in

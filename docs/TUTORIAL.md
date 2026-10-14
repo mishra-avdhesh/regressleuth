@@ -100,6 +100,13 @@ runner receives `seed` (the repeat index). Two modes:
 
 The same API: `diagnose(good, bad, run, repeats=3, max_repeats=24, noise_scale=0.004)`.
 
+Not sure what `noise_scale` to declare? `regressleuth noise-scale incident.yaml --runs 10`
+runs the good state ten times with calibration seeds (1000 and up, never used by the
+diagnosis). It prints the SD and a 99% upper confidence bound for it, ready to paste.
+The bound assumes roughly Gaussian run-to-run noise; using it adds 1% to the diagnosis
+error bound. If the calibration runs show no variation, use deterministic replay or
+provide a justified positive noise bound; the helper will not suggest zero.
+
 ## 6. Library and environment versions
 
 ```yaml
@@ -113,6 +120,27 @@ adapter:
 
 `{python}` becomes the interpreter of the selected environment. The repository's
 [environment demo](../examples/real_env) reproduces a real failure this way.
+
+### From two lockfiles
+
+When the change is a dependency upgrade, skip the runner entirely:
+
+```bash
+pip install "regressleuth[lockfiles]"          # adds uv
+regressleuth init incident --from-lockfiles good.txt bad.txt --project . \
+    --test tests/test_x.py::test_y [--test ...] [--python 3.11] [--group a,b] [--wheels-only]
+regressleuth diagnose incident/incident.yaml
+```
+
+Every distribution whose pin differs between the lockfiles becomes a component (`absent`
+if it was added or removed). Each replay builds, or reuses, a virtual environment in
+`incident/.regressleuth-envs/` with exactly that mix of pins. The project is installed
+editable without dependencies (`--no-install-project` tests the checkout as is). The named
+tests are then run; every one must pass. Mixes that cannot be installed are
+`incompatible`. When an upgrade drops dependencies (pandas 3 dropped pytz), group them
+with it: `--group pandas,pytz,tzdata`. Otherwise the uninstallable mixes leave the
+audit incomplete and the result is `inferred`. At most 12 components; split larger
+upgrades. See [examples/lockfile_upgrade](../examples/lockfile_upgrade).
 
 ## 7. A running service
 

@@ -1,0 +1,15 @@
+version: '1.0'
+id: "sohenpatel22-market-research-ai-agent-pr24"
+description: "Dependency upgrade from uv.lock to uv.lock"
+good:
+  pandas: "2.2.3"
+bad:
+  pandas: "3.0.6"
+metric: {name: tests_pass, direction: higher_is_better, regression_threshold: 0.5}
+replay: {repeats: 1, max_repeats: 1}
+budget: {max_replays: 16, audit: extended}
+cases: cases.json
+adapter:
+  type: command
+  command: ['{python}', -m, regressleuth.lockfile_runner, --state, '{state}', --result, '{result}']
+  timeout_seconds: 2400
