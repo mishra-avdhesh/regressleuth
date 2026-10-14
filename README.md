@@ -33,7 +33,7 @@ Replays: isolation 7/16 + audit 6; full exhaustive search = 16
 Verification: audit extended; interval student_t (not applied: deterministic); confidence 0.95; repeats 1/1
 ```
 
-`regressleuth demo --format html --output report.html` shows both states, every combination tried, how candidate causes were eliminated, the verification settings and the assumption checks. A free, static [replay explorer](space_static) with precomputed reports can be hosted on Hugging Face Static Spaces or GitHub Pages; the live [Gradio app](space) runs locally.
+`regressleuth demo --format html --output report.html` shows both states, every combination tried, how candidate causes were eliminated, the verification settings and the assumption checks. The free [replay explorer](https://huggingface.co/spaces/avdheshmishra/regressleuth) displays precomputed reports; its [source files](space_static) are included here. The live [Gradio app](space) runs locally.
 
 ## Use case 1: a dependency upgrade broke the tests
 
