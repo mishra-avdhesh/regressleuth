@@ -39,9 +39,9 @@ python -m venv /tmp/rl-clean && /tmp/rl-clean/bin/pip install dist/*.whl
 - Review `git ls-files` for private planning notes, prompt files, generated artifacts,
   credentials and machine-specific paths before creating a remote repository.
   `FINAL_PLAN.md` is a local planning note and is ignored by Git.
-- Add the final GitHub project URL to `[project.urls]` in `pyproject.toml` and the
-  README when the owner and repository name are known. Rebuild the distributions
-  after changing metadata. Add an ORCID to `CITATION.cff` if you have one.
+- Confirm the GitHub project URL in `[project.urls]` matches the public repository.
+  Rebuild the distributions after changing metadata. Add an ORCID to `CITATION.cff`
+  if you have one.
 - The free static Space in `space_static/` can be hosted before PyPI publication; it
   contains precomputed reports and needs no server or API. Regenerate it after changing
   the demo code or package version with `python tools/build_static_space.py`.
@@ -55,7 +55,7 @@ git status --short                    # should be empty before pushing
 git ls-files                          # review public paths again
 git diff HEAD --check                 # review any later changes
 # Create an empty public repository on GitHub, then:
-git remote add origin https://github.com/<owner>/regressleuth.git
+git remote add origin https://github.com/mishra-avdhesh/regressleuth.git
 git push -u origin main
 ```
 
@@ -99,8 +99,19 @@ the CI workflow passes on all three Python versions.
 
 ## 5. Hugging Face Space (free static route)
 
-Create a public **Static** Space in the chosen Hugging Face namespace and copy the
-contents of `space_static/` to its repository root. Check that both the pair example
+Create a public **Static** Space at
+`https://huggingface.co/spaces/avdheshmishra/regressleuth` and copy the contents
+of `space_static/` to its repository root. The URL without `/spaces/` is a model
+repository and does not host this app. One command-line route is:
+
+```bash
+python -m pip install -U huggingface_hub
+hf auth login
+hf repo create avdheshmishra/regressleuth --repo-type space --space-sdk static
+hf upload avdheshmishra/regressleuth space_static . --repo-type space
+```
+
+Check that both the pair example
 and double-healer control load with `extended` and historical `full` audits, and that
 the full reports open. The eight reports are snapshots made by the actual engine;
 selection in the browser does not run a new investigation. This route needs no

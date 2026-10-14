@@ -10,6 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["PyYAML>=6.0"]
 license = "Apache-2.0"
+authors = [{ name = "Avdhesh Mishra" }]
 keywords = ["machine-learning", "debugging", "root-cause-analysis", "mlops"]
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
@@ -20,6 +21,11 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Topic :: Software Development :: Debuggers",
 ]
+
+[project.urls]
+Homepage = "https://github.com/mishra-avdhesh/regressleuth"
+Repository = "https://github.com/mishra-avdhesh/regressleuth"
+Issues = "https://github.com/mishra-avdhesh/regressleuth/issues"
 
 [project.optional-dependencies]
 demo = ["scikit-learn>=1.3", "joblib>=1.3", "numpy>=1.24"]
