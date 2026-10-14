@@ -24,9 +24,13 @@ if (BENCHMARKS / "evaluate.py").is_file():
 CONTROL_NAMES = ("ctrl_tabular_cancelling_pair", "ctrl_text_lowercase_heals")
 
 
-def control(name: str, *, product_default: bool) -> Incident:
+def control(name: str, *, product_default: bool, tmp_path: Path) -> Incident:
     path = ROOT / "benchmarks" / "higher_order" / "controls" / f"{name}.yaml"
     raw = yaml.safe_load(path.read_text())
+    # Stored replay tables supply outcomes; incident validation only needs a cases file.
+    cases = tmp_path / "cases.json"
+    cases.write_text("[]", encoding="utf-8")
+    raw["cases"] = str(cases)
     if product_default:
         raw["budget"].pop("audit")
     incident = Incident.from_spec(raw, base_dir=path.parent)
@@ -36,8 +40,8 @@ def control(name: str, *, product_default: bool) -> Incident:
 
 
 @pytest.mark.parametrize("name", CONTROL_NAMES)
-def test_known_nonmonotone_controls_never_verify_with_product_default(name: str) -> None:
-    incident = control(name, product_default=True)
+def test_known_nonmonotone_controls_never_verify_with_product_default(name: str, tmp_path: Path) -> None:
+    incident = control(name, product_default=True, tmp_path=tmp_path)
     assert incident.search.audit == "extended"
     assert incident.replay.interval == "student_t"
     suite = evaluate.suites()["higher_order"]
@@ -54,20 +58,25 @@ def test_known_nonmonotone_controls_never_verify_with_product_default(name: str)
             assert verification["interval_method"] == "student_t"
 
 
-def test_frozen_profile_remains_explicit_and_reproduces_archived_control() -> None:
+def test_frozen_profile_remains_explicit_and_reproduces_archived_control(tmp_path: Path) -> None:
     config = json.loads((ROOT / "benchmarks" / "configs" / "frozen_2026_10_08.json").read_text())
     assert config["audit"] == "full" and config["interval"] == "normal"
     assert evaluate.evaluate_suite.__kwdefaults__ == {"interval": "normal", "audits": ("full", "extended")}
-    incident = control("ctrl_text_lowercase_heals", product_default=False)
+    incident = control("ctrl_text_lowercase_heals", product_default=False, tmp_path=tmp_path)
     table = evaluate.table_of(evaluate.suites()["higher_order"], incident)
     report = investigate(incident, budget=6, strategy="adaptive", executor=evaluate.lookup(incident, table))
     assert report.status == "verified"
     assert report.to_dict()["verification"]["audit_mode"] == "full"
 
 
-def test_legacy_user_file_uses_safe_defaults_but_frozen_evaluator_selects_legacy() -> None:
+def test_legacy_user_file_uses_safe_defaults_but_frozen_evaluator_selects_legacy(tmp_path: Path) -> None:
     path = ROOT / "benchmarks" / "incidents" / "tabular_threshold.json"
-    incident = Incident.from_file(path)
+    raw = json.loads(path.read_text())
+    raw["replay"]["cases"] = "cases.json"
+    (tmp_path / "cases.json").write_text("[]", encoding="utf-8")
+    manifest = tmp_path / path.name
+    manifest.write_text(json.dumps(raw), encoding="utf-8")
+    incident = Incident.from_file(manifest)
     assert incident.search.audit == "extended"
     assert incident.replay.interval == "student_t"
     assert incident.report_values == "omit"
@@ -75,8 +84,8 @@ def test_legacy_user_file_uses_safe_defaults_but_frozen_evaluator_selects_legacy
     assert config["audit"] == "full" and config["interval"] == "normal"
 
 
-def test_all_report_formats_expose_effective_verification_profile() -> None:
-    incident = control("ctrl_tabular_cancelling_pair", product_default=True)
+def test_all_report_formats_expose_effective_verification_profile(tmp_path: Path) -> None:
+    incident = control("ctrl_tabular_cancelling_pair", product_default=True, tmp_path=tmp_path)
     table = evaluate.table_of(evaluate.suites()["higher_order"], incident)
     report = investigate(incident, budget=8, executor=evaluate.lookup(incident, table))
     data = json.loads(render_json(report))
