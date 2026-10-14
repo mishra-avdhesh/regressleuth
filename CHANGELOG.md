@@ -27,7 +27,7 @@
 - **Lockfile incidents:** `-e .` lines (the project itself, as pip-compile writes it) are accepted. Custom package indexes named in the lockfile (for example PyTorch's CPU index in `uv.lock`, a legacy source in `poetry.lock`, `--extra-index-url` in requirements) are passed to uv. Virtual-environment paths work on Windows. Project paths across Windows drives fall back to absolute.
 - `regressleuth noise-scale` warns when the regression threshold is under four times the noise bound, where anytime replays often end inconclusive.
 - The dev extra installs `packaging` and, on Python 3.10, `tomli`, which the TOML lockfile readers need.
-- README reorganized around the two practical use cases, with the evidence condensed into one table; the case study, adapter guide, security notes and release checklist were updated.
+- README reorganized around the two practical use cases, with the evidence condensed into one table; the case study, adapter guide, and security notes were updated.
 
 ### Lockfile incidents (2026-10-12)
 
